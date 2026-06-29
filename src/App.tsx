@@ -178,6 +178,19 @@ export default function App() {
     setFitAnswers((prev) => ({ ...prev, [questionId]: value }));
   }
 
+  function skipFitSurvey() {
+    const presets: Answers[] = [
+      { fit_goal: "a", fit_problem: "a", fit_gap: "a", fit_format: "a", fit_time: "a", fit_connection: "c" },
+      { fit_goal: "b", fit_problem: "b", fit_gap: "b", fit_format: "b", fit_time: "b", fit_connection: "a" },
+      { fit_goal: "c", fit_problem: "c", fit_gap: "c", fit_format: "c", fit_time: "c", fit_connection: "b" },
+      { fit_goal: "d", fit_problem: "d", fit_gap: "d", fit_format: "d", fit_time: "d", fit_connection: "d" }
+    ];
+    const randomPreset = presets[Math.floor(Math.random() * presets.length)];
+    setFitAnswers(randomPreset);
+    setFitCompleted(true);
+    go("square");
+  }
+
   function openAgent(context = "专家主页", returnStep: AppStep = step) {
     setAgentContext(context);
     setAgentReturnStep(returnStep);
@@ -230,7 +243,7 @@ export default function App() {
           onSkipToEnd={() => go("openQuestion")}
         />
         <main className="px-5 pb-28 pt-5">
-          {step !== "experts" && step !== "my" && step !== "expertHome" && step !== "coursePay" && step !== "fitSurvey" && step !== "cover" && step !== "agentPay" && step !== "agentChat" && (
+          {step !== "square" && step !== "experts" && step !== "my" && step !== "expertHome" && step !== "coursePay" && step !== "fitSurvey" && step !== "cover" && step !== "agentPay" && step !== "agentChat" && (
             <StepHeader
               step={step}
               agentSlot={
@@ -262,7 +275,7 @@ export default function App() {
           )}
           {step === "expertHome" && <ExpertHomePage expert={selectedExpert} agentUnlocked={agentUnlocked} onOpenAgent={() => openAgent("专家主页", "expertHome")} onStartCourse={() => openCourse("expertHome")} />}
           {step === "coursePay" && <CoursePayPage expert={selectedExpert} course={demoCourse} onPay={unlockCourse} />}
-          {step === "fitSurvey" && <FitSurveyPage answers={fitAnswers} profile={needProfile} primaryNeed={primaryNeed} onAnswer={saveFitAnswer} onNext={() => setShowFitResultModal(true)} />}
+          {step === "fitSurvey" && <FitSurveyPage answers={fitAnswers} profile={needProfile} primaryNeed={primaryNeed} onAnswer={saveFitAnswer} onNext={() => setShowFitResultModal(true)} onSkip={skipFitSurvey} />}
           {step === "agentPay" && <AgentPayPage expert={selectedExpert} context={agentContext} onPay={unlockAgent} />}
           {step === "agentChat" && <AgentChatPage expert={selectedExpert} context={agentContext} draft={agentDraft} messages={agentMessages} onDraft={setAgentDraft} onSend={sendAgentMessage} />}
           {step === "cover" && <CoverPage expertName={selectedExpert.name} course={activeCourse} variant={activeVariant} primaryNeed={primaryNeed} needProfile={needProfile} onStart={() => go("summary")} onOpenAudio={() => setShowAudioPlayer(true)} />}
@@ -502,7 +515,7 @@ function CoursePayPage({ expert, course, onPay }: { expert: Expert; course: Cour
           </div>
           <div className="text-right">
             <div className="text-xs text-smoke">原型模拟价</div>
-            <div className="mt-1 text-4xl font-black text-amber">¥49</div>
+            <div className="mt-1 text-4xl font-black text-amber">¥299</div>
           </div>
         </div>
         <div className="rounded-[24px] border border-white/10 bg-black/25 p-4">
@@ -551,10 +564,13 @@ function BenefitIcon({ type }: { type: "knowledge" | "certificate" | "event" | "
 }
 
 
-function FitSurveyPage({ answers, profile, primaryNeed, onAnswer, onNext }: { answers: Answers; profile: NeedProfile; primaryNeed: NeedKey; onAnswer: (id: string, value: string) => void; onNext: () => void }) {
+function FitSurveyPage({ answers, profile, primaryNeed, onAnswer, onNext, onSkip }: { answers: Answers; profile: NeedProfile; primaryNeed: NeedKey; onAnswer: (id: string, value: string) => void; onNext: () => void; onSkip: () => void }) {
   const done = fitSurveyComplete(answers);
   return (
-    <section className="space-y-4">
+    <section className="relative space-y-4">
+      <button onClick={onSkip} className="absolute right-0 top-0 z-10 rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] font-bold text-white/45 backdrop-blur transition hover:border-white/20 hover:text-white/75">
+        跳过
+      </button>
       <HeroCard title="先洞察你需要哪种服务介入" body="这里不问项目细节，只通过低敏问题洞察你当前更需要认知打开、方法学习、交流求解还是实战参与。" />
       {done ? (
         <Card className="border-amber/35 bg-amber/10">
@@ -606,14 +622,40 @@ function NeedProfileChart({ profile }: { profile: NeedProfile }) {
 
 
 function NeedProfilePie({ profile }: { profile: NeedProfile }) {
-  const a = profile.cognitive_opening;
-  const b = a + profile.method_learning;
-  const c = b + profile.conversation_solving;
-  const pie = `conic-gradient(#f6c757 0% ${a}%, #7c4dff ${a}% ${b}%, #b6e388 ${b}% ${c}%, #ffffff ${c}% 100%)`;
+  const segments = [
+    { need: "cognitive_opening" as NeedKey, color: "#f6c757" },
+    { need: "method_learning" as NeedKey, color: "#7c4dff" },
+    { need: "conversation_solving" as NeedKey, color: "#1f9384" },
+    { need: "practice_participation" as NeedKey, color: "#f2f2f2" }
+  ];
+  let offset = 0;
   return (
     <div className="grid grid-cols-[132px_1fr] items-center gap-4">
-      <div className="relative h-32 w-32 rounded-full border border-white/10 shadow-[0_18px_50px_rgba(0,0,0,.35)]" style={{ background: pie }}>
-        <div className="absolute inset-5 grid place-items-center rounded-full bg-void text-center">
+      <div className="relative h-32 w-32 rounded-full border border-white/10 bg-black shadow-[0_18px_50px_rgba(0,0,0,.35)]">
+        <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90" aria-hidden="true">
+          <circle cx="60" cy="60" r="42" fill="none" stroke="rgba(255,255,255,.08)" strokeWidth="24" />
+          {segments.map(({ need, color }) => {
+            const value = Math.max(0, profile[need]);
+            const dashOffset = -offset;
+            offset += value;
+            return (
+              <circle
+                key={need}
+                cx="60"
+                cy="60"
+                r="42"
+                fill="none"
+                pathLength={100}
+                stroke={color}
+                strokeWidth="24"
+                strokeDasharray={`${value} ${100 - value}`}
+                strokeDashoffset={dashOffset}
+                strokeLinecap="butt"
+              />
+            );
+          })}
+        </svg>
+        <div className="absolute inset-8 grid place-items-center rounded-full bg-black text-center">
           <div className="text-[10px] text-smoke">主需求</div>
           <div className="mt-1 text-xs font-black text-amber">{needLabels[primaryNeedFromProfile(profile)].short}</div>
         </div>
@@ -721,18 +763,26 @@ const squareServices = [
 ] as const;
 
 function SquarePage({ profile, primaryNeed, expert, onOpenCourse, onOpenAgent }: { profile: NeedProfile; primaryNeed: NeedKey; expert: Expert; onOpenCourse: () => void; onOpenAgent: () => void }) {
-  const rankedServices = [...squareServices].sort((a, b) => serviceScore(b.needFit, profile) - serviceScore(a.needFit, profile));
+  const courseService = squareServices.find((service) => service.type === "course") || squareServices[0];
+  const rankedServices = squareServices
+    .filter((service) => service.id !== courseService.id)
+    .sort((a, b) => serviceScore(b.needFit, profile) - serviceScore(a.needFit, profile));
   return (
     <section className="space-y-4 pt-6">
+      <ServiceCard
+        service={courseService}
+        rank={1}
+        expert={expert}
+        onClick={onOpenCourse}
+      />
       <div className="space-y-4">
         {rankedServices.map((service, index) => (
           <ServiceCard
             key={service.id}
             service={service}
-            rank={index + 1}
+            rank={index + 2}
             expert={expert}
             onClick={() => {
-              if (service.type === "course") onOpenCourse();
               if (service.type === "agent") onOpenAgent();
             }}
           />
@@ -750,16 +800,41 @@ function ServiceCard({ service, rank, expert, onClick }: { service: (typeof squa
   const actionable = service.type === "course" || service.type === "agent";
   if (service.type === "course") {
     return (
-      <button type="button" onClick={onClick} className="block w-full rounded-[32px] border border-amber/45 bg-amber/10 p-5 text-left transition hover:bg-amber/15 active:scale-[.985]">
-        <div className="text-xs font-bold uppercase tracking-[.28em] text-amber">Book-based Course</div>
-        <h3 className="mt-4 text-3xl font-black leading-tight text-white">让大象飞：AI 创业基础模块</h3>
-        <p className="mt-4 text-base leading-8 text-ash">用一套移动端任务流，理解霍夫曼关于机会识别、MVP、用户洞察与高速迭代的核心方法。</p>
-        <div className="mt-6 grid grid-cols-3 gap-3">
-          <Stat value="6" label="书籍章节" />
-          <Stat value="4" label="适配版本" />
-          <Stat value="1" label="完成证书" />
+      <button type="button" onClick={onClick} className="group relative block min-h-[320px] w-full overflow-hidden rounded-[34px] border border-amber/55 bg-black text-left shadow-[0_24px_70px_rgba(0,0,0,.42)] transition active:scale-[.985]">
+        <video
+          className="absolute inset-0 h-full w-full object-cover opacity-72 transition duration-700 group-hover:scale-105"
+          src={mediaUrl("videos/jimeng-2026-06-29-8979-霍夫曼本人本色出演，身份是创业导师，场景为现代办公室或小型创业路演现场，纪实感、....mp4")}
+          muted
+          autoPlay
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.54)_42%,rgba(0,0,0,.9)),radial-gradient(circle_at_18%_12%,rgba(246,199,87,.30),transparent_36%)]" />
+        <div className="relative z-10 flex min-h-[320px] flex-col justify-between p-5">
+          <div className="flex flex-col items-start gap-2">
+            <span className="rounded-full bg-white px-3 py-1 text-xs font-black text-black shadow-[0_10px_28px_rgba(255,255,255,.16)]">优先推荐</span>
+            <span className="text-[11px] font-bold uppercase tracking-[.26em] text-amber">Book-based Course</span>
+          </div>
+          <div>
+            <h3 className="max-w-[310px] text-[34px] font-black leading-[1.08] text-white">让大象飞：AI 创业基础模块</h3>
+            <p className="mt-4 text-[15px] leading-7 text-white/86">用一套移动端任务流，理解霍夫曼关于机会识别、MVP、用户洞察与高速迭代的核心方法。</p>
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="rounded-[18px] border border-white/15 bg-black/35 px-3 py-3 text-center backdrop-blur">
+              <div className="text-lg font-black text-white">6</div>
+              <div className="mt-1 text-[10px] text-white/68">书籍章节</div>
+            </div>
+            <div className="rounded-[18px] border border-white/15 bg-black/35 px-3 py-3 text-center backdrop-blur">
+              <div className="text-lg font-black text-white">4</div>
+              <div className="mt-1 text-[10px] text-white/68">适配版本</div>
+            </div>
+            <div className="rounded-[18px] border border-white/15 bg-black/35 px-3 py-3 text-center backdrop-blur">
+              <div className="text-lg font-black text-white">1</div>
+              <div className="mt-1 text-[10px] text-white/68">完成证书</div>
+            </div>
+          </div>
+          <div className="h-[52px] w-full rounded-full bg-white text-center text-base font-black leading-[52px] text-black">进入课程</div>
         </div>
-        <div className="mt-6 h-14 w-full rounded-full bg-white text-center text-base font-black leading-[56px] text-black">查看课程介绍</div>
       </button>
     );
   }
@@ -1660,23 +1735,23 @@ function CompletePage({ completionRate, cardCount, questionCount, profile, recom
         <Stat value={String(questionCount)} label="互动问题" />
         <Stat value={`${completionRate}%`} label="完成度" />
       </div>
-      <Card>
-        <div className="flex items-end justify-between gap-3">
+      <section className="space-y-3">
+        <div className="flex items-end justify-between gap-3 px-1">
           <div>
             <div className="text-xs font-bold uppercase tracking-[.22em] text-amber">Next Stage</div>
             <h3 className="mt-2 text-xl font-semibold">基于你的学习画像，推荐下一阶段</h3>
           </div>
-          <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-ash">{levelLabel(profile.level)}</span>
+          <span className="shrink-0 rounded-full bg-white/10 px-3 py-1 text-xs text-ash">{levelLabel(profile.level)}</span>
         </div>
         <div className="mt-4 space-y-3">
-          {visibleRecommendations.map((item) => <RecommendationMiniCard key={item.id} item={item} />)}
+          {visibleRecommendations.map((item, index) => <RecommendationServiceCard key={item.id} item={item} rank={index + 1} compact />)}
         </div>
         {recommendations.length > 2 && (
           <button onClick={onToggleMore} className="mt-4 h-11 w-full rounded-full border border-white/10 bg-white/[.055] text-sm font-semibold text-ash">
             {showMore ? "收起更多推荐" : "显示更多第二阶段卡片"}
           </button>
         )}
-      </Card>
+      </section>
       <PrimaryButton onClick={onNext}>生成我的证书</PrimaryButton>
     </section>
   );
@@ -1736,33 +1811,113 @@ function RecommendationPage({ recommendations, profileLevel }: { recommendations
     <section className="space-y-4">
       <HeroCard title="学习不是终点，下一阶段才是价值入口" body={`根据你的学习画像，你当前属于「${levelLabel(profileLevel)}」。Thinker 为你推荐以下路径。`} />
       {recommendations.map((item, index) => (
-        <Card key={item.id} className={index === 0 ? "border-plum bg-plum/15" : ""}>
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="text-xs font-bold uppercase tracking-[.2em] text-amber">推荐 {index + 1}</div>
-              <h3 className="mt-2 text-xl font-semibold leading-7">{item.title}</h3>
-            </div>
-            <span className="rounded-full border border-white/10 px-3 py-1 text-[11px] text-ash">{item.requiresApplication ? "需申请" : "可直接进入"}</span>
-          </div>
-          <p className="mt-3 text-sm leading-7 text-ash">{item.reason}</p>
-          <div className="mt-4 rounded-[20px] bg-black/25 p-3 text-xs leading-6 text-smoke">适合人群：{item.suitableFor} · 预计 {item.estimatedTime}</div>
-          <button className="mt-4 h-12 w-full rounded-full bg-white text-sm font-bold text-black">{item.ctaText}</button>
-        </Card>
+        <RecommendationServiceCard key={item.id} item={item} rank={index + 1} />
       ))}
     </section>
   );
 }
 
-function RecommendationMiniCard({ item }: { item: Recommendation }) {
+function recommendationVisual(item: Recommendation) {
+  const visuals: Record<Recommendation["type"], { serviceType: string; tag: string; image: string; status: string }> = {
+    advanced_learning: {
+      serviceType: "course",
+      tag: "进阶课程",
+      image: "https://www.foundersspace.com/wp-content/uploads/2021/02/Make-Elephants-Fly-shadow-565x765.jpg",
+      status: item.requiresApplication ? "申请后进入" : "可继续学习"
+    },
+    project_diagnosis: {
+      serviceType: "agent",
+      tag: "项目诊断",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
+      status: item.requiresApplication ? "审核制预约" : "可立即进入"
+    },
+    project_challenge: {
+      serviceType: "event",
+      tag: "项目挑战",
+      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80",
+      status: "7 天行动任务"
+    },
+    expert_project_pool: {
+      serviceType: "event",
+      tag: "项目池",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=900&q=80",
+      status: "优先匹配导师"
+    },
+    coffee_chat: {
+      serviceType: "agent",
+      tag: "Coffee Chat",
+      image: hoffmanAgentAvatar,
+      status: item.requiresApplication ? "小范围申请" : "可预约"
+    },
+    offline_lecture: {
+      serviceType: "event",
+      tag: "线下讲座",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80",
+      status: item.requiresApplication ? "预约席位" : "开放报名"
+    },
+    workshop: {
+      serviceType: "event",
+      tag: "工作坊",
+      image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80",
+      status: "小班训练"
+    },
+    mentor_service: {
+      serviceType: "agent",
+      tag: "导师服务",
+      image: hoffmanAgentAvatar,
+      status: item.requiresApplication ? "导师审核" : "可咨询"
+    }
+  };
+  return visuals[item.type];
+}
+
+function RecommendationServiceCard({ item, rank, compact = false }: { item: Recommendation; rank: number; compact?: boolean }) {
+  const visual = recommendationVisual(item);
+  const theme = serviceCardTheme(visual.serviceType, rank);
   return (
-    <div className="rounded-[22px] border border-white/10 bg-black/25 p-4">
-      <div className="flex items-start justify-between gap-3">
-        <h4 className="font-semibold leading-6">{item.title}</h4>
-        <span className="shrink-0 rounded-full bg-plum/20 px-2 py-1 text-[10px] text-ash">{item.requiresApplication ? "申请制" : "可进入"}</span>
+    <article
+      className={cx(
+        "group relative block w-full overflow-hidden rounded-[30px] border p-0 text-left shadow-[0_18px_48px_rgba(0,0,0,.32)]",
+        rank === 1 ? "border-amber/50" : "border-white/10",
+        compact ? "min-h-[170px]" : "min-h-[194px]"
+      )}
+    >
+      <div className={cx("absolute inset-0", theme.bg)} />
+      <img src={visual.image} alt={item.title} className={cx("absolute object-cover opacity-75 mix-blend-screen transition duration-500 group-hover:scale-105", theme.imageClass)} referrerPolicy="no-referrer" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,255,255,.26),transparent_25%),linear-gradient(135deg,rgba(0,0,0,.2),rgba(0,0,0,.62))]" />
+      <div className="absolute -right-12 -top-14 h-40 w-40 rounded-full border border-white/15 bg-white/10 blur-[1px]" />
+      <div className="absolute bottom-4 right-5 h-24 w-24 rounded-[28px] border border-white/15 bg-white/10 rotate-12" />
+      {visual.serviceType === "agent" && (
+        <div className="absolute right-5 top-14 z-10 h-16 w-16 overflow-hidden rounded-full border-2 border-white/70 bg-black shadow-[0_12px_32px_rgba(0,0,0,.35)]">
+          <img src={hoffmanAgentAvatar} alt="Hoffman avatar" className="h-full w-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+      )}
+
+      <div className={cx("relative z-10 flex flex-col justify-between p-5", compact ? "min-h-[170px]" : "min-h-[194px]")}>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="text-xs font-bold uppercase tracking-[.22em] text-white/70">推荐 {rank}</div>
+            <h3 className={cx("mt-2 max-w-[260px] font-black leading-[1.06] text-white", compact ? "text-2xl" : "text-3xl")}>{item.title}</h3>
+          </div>
+          <span className={cx("shrink-0 rounded-full px-3 py-1 text-xs font-black", theme.badge)}>
+            {visual.tag}
+          </span>
+        </div>
+
+        <div>
+          <p className="max-w-[286px] text-sm font-semibold leading-5 text-white/86">{item.reason}</p>
+          <div className="mt-4 flex items-end justify-between gap-3">
+            <div>
+              <div className="text-xs leading-5 text-white/72">{item.suitableFor} · {item.estimatedTime}</div>
+              <div className="mt-1 text-sm font-black text-white">{visual.status}</div>
+            </div>
+            <div className="shrink-0 rounded-full bg-white px-4 py-2 text-xs font-black text-black shadow-[0_10px_28px_rgba(255,255,255,.16)]">
+              {item.ctaText}
+            </div>
+          </div>
+        </div>
       </div>
-      <p className="mt-2 text-xs leading-6 text-ash">{item.reason}</p>
-      <button className="mt-3 h-10 w-full rounded-full bg-white text-xs font-bold text-black">{item.ctaText}</button>
-    </div>
+    </article>
   );
 }
 
@@ -1785,7 +1940,7 @@ function AgentPayPage({ expert, context, onPay }: { expert: Expert; context: str
       </Card>
       <Card className="border-amber/40 bg-amber/10">
         <div className="text-sm text-ash">模拟开通价</div>
-        <div className="mt-2 text-6xl font-semibold">¥29</div>
+        <div className="mt-2 text-6xl font-semibold">¥299</div>
         <div className="mt-3 text-sm leading-7 text-ash">开通后可以在课程学习中随时向专家 Agent 提问，并自动带上当前题目、观点或作业上下文。</div>
       </Card>
       <PrimaryButton onClick={onPay}>模拟支付并开通</PrimaryButton>
@@ -1870,7 +2025,7 @@ function AgentOverlay({ mode, expert, context, draft, messages, onDraft, onPay, 
             <p className="text-sm leading-7 text-ash">开通后，你可以在课程学习中随时基于当前上下文向 Hoffman 专家 Agent 提问，获得机会识别、MVP 和用户验证建议。</p>
             <div className="rounded-[24px] border border-plum/40 bg-plum/15 p-4">
               <div className="text-sm text-ash">模拟价格</div>
-              <div className="mt-1 text-4xl font-semibold">¥29</div>
+              <div className="mt-1 text-4xl font-semibold">¥299</div>
               <div className="mt-2 text-xs text-smoke">原型演示：点击后模拟支付成功</div>
             </div>
             <button onClick={onPay} className="h-12 w-full rounded-full bg-plum text-sm font-bold text-white">模拟支付并开通</button>
