@@ -1,0 +1,1538 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BookForge V8 · AI 课程工厂</title>
+<style>
+  :root{
+    --bg:#000000;
+    --paper:rgba(255,255,255,.045);
+    --ink:#ffffff;
+    --muted:#bdbdbd;
+    --line:rgba(255,255,255,.14);
+    --teal:#15846e;
+    --red:#8052ff;
+    --green:#15846e;
+    --steel:#bdbdbd;
+    --yellow:#ffb829;
+    --black:#000000;
+    --soft:rgba(255,255,255,.07);
+    --radius:24px;
+    --shadow:none;
+    --void:#000000;
+    --bone:#ffffff;
+    --ash:#bdbdbd;
+    --smoke:#9a9a9a;
+    --plum:#8052ff;
+    --amber:#ffb829;
+    --lichen:#15846e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+    font-family:"Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+  body{overflow-x:hidden}
+  button,input,select,textarea{font:inherit}
+  button{border:0;cursor:pointer}
+  .app{min-height:100vh;display:grid;grid-template-rows:auto 1fr}
+  .topbar{height:64px;background:var(--black);color:#fff;display:flex;align-items:center;
+    padding:0 24px;gap:24px;border-bottom:4px solid var(--red)}
+  .brand{display:flex;align-items:baseline;gap:10px;min-width:260px}
+  .brand strong{font-size:17px;letter-spacing:.02em}
+  .brand span{font-size:12px;color:#bac5c8}
+  .stages{display:flex;gap:4px;align-items:center;flex:1;overflow:auto;padding-bottom:1px}
+  .stage-btn{height:36px;padding:0 14px;border-radius:6px;background:transparent;color:#bac5c8;
+    border:1px solid transparent;white-space:nowrap;font-size:13px}
+  .stage-btn:hover{color:#fff;border-color:#374145}
+  .stage-btn.on{background:#fff;color:var(--black);border-color:#fff}
+  .top-meta{display:flex;align-items:center;gap:14px;color:#cdd6d9;font-size:12px;white-space:nowrap}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--green);margin-right:6px}
+  .shell{display:grid;grid-template-columns:310px minmax(0,1fr);min-height:0}
+  .sidebar{background:#e9eef0;border-right:1px solid var(--line);padding:18px 16px 24px;overflow:auto}
+  .brief{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px;box-shadow:0 4px 18px rgba(15,17,17,.04)}
+  .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--teal);font-weight:800}
+  .brief h1{font-size:21px;line-height:1.25;margin:7px 0 8px;letter-spacing:0}
+  .brief p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.7}
+  .metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+  .metric{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:8px}
+  .metric b{display:block;font-size:19px;line-height:1;color:var(--black);font-variant-numeric:tabular-nums}
+  .metric span{display:block;margin-top:4px;font-size:11px;color:var(--muted)}
+  .module-list{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+  .module-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .module-head{width:100%;display:grid;grid-template-columns:22px 1fr auto;gap:9px;align-items:center;
+    padding:11px 12px;background:transparent;text-align:left;color:var(--ink)}
+  .module-head:hover{background:#f8fbfb}
+  .module-head.on{background:#101212;color:#fff}
+  .module-index{height:22px;width:22px;display:grid;place-items:center;border-radius:50%;
+    background:var(--steel);color:#fff;font-size:11px;font-weight:800}
+  .module-head.on .module-index{background:var(--red)}
+  .module-title{font-size:13px;font-weight:800;line-height:1.35}
+  .module-count{font-size:11px;color:inherit;opacity:.65}
+  .lesson-list{display:none;border-top:1px solid var(--line);padding:8px;background:#fbfcfc}
+  .module-card.open .lesson-list{display:flex;flex-direction:column;gap:6px}
+  .lesson-btn{width:100%;text-align:left;background:transparent;border-radius:6px;padding:8px 8px;
+    color:#293236;font-size:12.5px;line-height:1.45;border:1px solid transparent}
+  .lesson-btn:hover{border-color:#ccd6d9}
+  .lesson-btn.on{background:#dde8e8;border-color:#aac2c0;color:#003f38;font-weight:800}
+  .main{min-width:0;overflow:auto}
+  .stage{display:none;padding:22px 24px 34px}
+  .stage.on{display:block}
+  .stage-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px}
+  .stage-title h2{font-size:28px;line-height:1.12;margin:0;letter-spacing:0}
+  .stage-title p{max-width:760px;margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+  .command-row{display:flex;gap:8px;flex-wrap:wrap}
+  .cmd{height:36px;border-radius:6px;padding:0 12px;background:var(--black);color:#fff;font-size:13px}
+  .cmd.secondary{background:#fff;color:var(--black);border:1px solid var(--line)}
+  .grid-3{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:14px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px;box-shadow:var(--shadow)}
+  .panel.flat{box-shadow:none}
+  .panel h3{font-size:15px;margin:0 0 10px;letter-spacing:0}
+  .panel p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+  .source-flow{display:grid;grid-template-columns:1fr 42px 1fr 42px 1fr;align-items:stretch;gap:10px}
+  .flow-box{border:1px solid var(--line);background:#fbfcfc;border-radius:var(--radius);padding:13px}
+  .flow-box h4{margin:0 0 8px;font-size:13px}
+  .flow-box ul{margin:0;padding-left:16px;color:var(--muted);font-size:12.5px;line-height:1.75}
+  .arrow{display:grid;place-items:center;color:var(--red);font-size:24px;font-weight:900}
+  .atom-table{width:100%;border-collapse:collapse;font-size:12.5px}
+  .atom-table th,.atom-table td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  .atom-table th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .atom-table tr:last-child td{border-bottom:0}
+  .type-mark{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-weight:800}
+  .swatch{width:9px;height:9px;border-radius:2px;background:var(--teal);display:inline-block}
+  .swatch.red{background:var(--red)}
+  .swatch.green{background:var(--green)}
+  .swatch.yellow{background:var(--yellow)}
+  .swatch.steel{background:var(--steel)}
+  .module-board{display:grid;grid-template-columns:repeat(4,minmax(190px,1fr));gap:12px}
+  .module-column{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .module-band{height:7px;background:var(--teal)}
+  .module-column:nth-child(2) .module-band{background:var(--red)}
+  .module-column:nth-child(3) .module-band{background:var(--green)}
+  .module-column:nth-child(4) .module-band{background:var(--steel)}
+  .module-body{padding:14px}
+  .module-body h3{font-size:16px;line-height:1.35;margin:0 0 8px}
+  .module-body p{font-size:12.5px;color:var(--muted);line-height:1.65;margin:0 0 12px}
+  .lesson-chip{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fbfcfc;
+    border-radius:6px;margin-top:7px;padding:9px;color:var(--ink)}
+  .lesson-chip b{display:block;font-size:12.5px;line-height:1.4}
+  .lesson-chip span{display:block;margin-top:4px;font-size:11.5px;color:var(--muted)}
+  .lesson-chip.on{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal);background:#f3fbfa}
+  .lesson-hero{display:grid;grid-template-columns:minmax(0,1.05fr) 320px;gap:14px;margin-bottom:14px}
+  .lesson-title h2{font-size:25px;line-height:1.2;margin:0 0 8px}
+  .lesson-title p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}
+  .meta-list{display:grid;gap:8px}
+  .meta-row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+  .meta-row:last-child{border-bottom:0;padding-bottom:0}
+  .meta-row span{font-size:12px;color:var(--muted)}
+  .meta-row b{font-size:12px;text-align:right}
+  .funnel{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px}
+  .funnel-step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:13px;min-height:188px}
+  .funnel-step h3{display:flex;align-items:center;gap:8px;font-size:13px;margin:0 0 10px}
+  .step-num{height:22px;width:22px;border-radius:50%;display:grid;place-items:center;background:var(--black);color:#fff;font-size:11px}
+  .funnel-step p{font-size:12.5px;line-height:1.7;margin:0;color:#30383b}
+  .format-grid{display:grid;grid-template-columns:repeat(3,minmax(190px,1fr));gap:12px}
+  .format-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+  .format-card h3{font-size:14px;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+  .format-card p{font-size:12.5px;line-height:1.7;color:var(--muted);margin:0}
+  .format-card.primary{border-color:#98b9b5;background:#f3fbfa}
+  .script{display:grid;grid-template-columns:1fr 360px;gap:14px}
+  .script-body{background:#111;border-radius:var(--radius);padding:18px;color:#f6f7f8}
+  .script-body h3{font-size:18px;margin:0 0 12px}
+  .script-section{border-top:1px solid #333;padding:13px 0}
+  .script-section:first-of-type{border-top:0;padding-top:0}
+  .script-section b{display:block;color:#f1bf42;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+  .script-section p{font-size:13.5px;line-height:1.72;color:#e1e6e7;margin:0}
+  .video-spec{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .video-spec h3{font-size:15px;margin:0 0 10px}
+  .spec-row{display:grid;grid-template-columns:86px 1fr;gap:10px;border-bottom:1px solid var(--line);padding:9px 0;font-size:12.5px}
+  .spec-row:last-child{border-bottom:0}
+  .spec-row span{color:var(--muted)}
+  .spec-row b{font-weight:700}
+  .timeline{display:grid;gap:10px}
+  .timeline-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:start}
+  .time{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:9px}
+  .beat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:11px}
+  .beat b{font-size:13px}
+  .beat p{margin:5px 0 0;color:var(--muted);font-size:12.5px;line-height:1.6}
+  .course-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(330px,.8fr);gap:14px;margin-bottom:14px}
+  .module-film{position:relative;min-height:360px;border-radius:var(--radius);overflow:hidden;background:#0f1111;box-shadow:var(--shadow)}
+  .module-film video{width:100%;height:100%;min-height:360px;object-fit:cover;display:block;filter:saturate(.92) contrast(1.03)}
+  .module-film::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,17,17,.86),rgba(15,17,17,.22) 58%,rgba(15,17,17,.05));pointer-events:none}
+  .film-copy{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;color:#fff;max-width:720px}
+  .film-copy h2{font-size:34px;line-height:1.1;margin:0 0 10px;letter-spacing:0}
+  .film-copy p{font-size:14px;line-height:1.7;margin:0;color:#dfe7e8;max-width:620px}
+  .module-brief{display:flex;flex-direction:column;gap:10px}
+  .thesis{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+  .thesis h3{font-size:16px;margin:0 0 10px}
+  .thesis p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
+  .lesson-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .course-tab{min-height:72px;text-align:left;padding:11px;border-radius:var(--radius);border:1px solid var(--line);background:#fff;color:var(--ink)}
+  .course-tab b{display:block;font-size:13px;line-height:1.35}
+  .course-tab span{display:block;margin-top:5px;font-size:11.5px;color:var(--muted)}
+  .course-tab.on{background:var(--black);color:#fff;border-color:var(--black)}
+  .course-tab.on span{color:#c9d2d4}
+  .course-player{display:grid;grid-template-columns:minmax(0,1.05fr) 360px;gap:14px;margin-top:14px}
+  .player-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .main-video{background:#0f1111;aspect-ratio:16/9;position:relative}
+  .main-video video{width:100%;height:100%;object-fit:cover;display:block;background:#0f1111}
+  .clip-copy{padding:16px}
+  .clip-kicker{display:flex;align-items:center;gap:8px;color:var(--red);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+  .clip-copy h3{font-size:20px;line-height:1.24;margin:0 0 8px}
+  .clip-copy p{font-size:13.5px;line-height:1.72;color:#30383b;margin:0}
+  .clip-note{margin-top:12px;display:grid;grid-template-columns:96px 1fr;gap:10px;border-top:1px solid var(--line);padding-top:12px;font-size:12.5px}
+  .clip-note span{color:var(--muted)}
+  .clip-note b{font-weight:700}
+  .clip-list{display:flex;flex-direction:column;gap:8px}
+  .clip-btn{position:relative;display:grid;grid-template-columns:52px 1fr;gap:10px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:8px;color:var(--ink)}
+  .clip-btn.done{border-color:rgba(21,132,110,.85);background:rgba(21,132,110,.1)}
+  .clip-btn.done::after{content:"已答";position:absolute;right:10px;top:8px;border:1px solid rgba(21,132,110,.8);color:#8ff0dc;background:rgba(21,132,110,.18);border-radius:999px;padding:2px 7px;font-size:10px;font-weight:800}
+  .clip-thumb{height:48px;border-radius:6px;background:#111;overflow:hidden}
+  .clip-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+  .clip-btn b{font-size:12.5px;line-height:1.35;display:block}
+  .clip-btn span{font-size:11px;color:var(--muted);display:block;margin-top:4px}
+  .clip-btn.on{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red);background:#fff8f6}
+  .course-task-flow{display:none;margin-top:14px;border:1px solid rgba(128,82,255,.55);border-radius:var(--radius);background:linear-gradient(135deg,rgba(128,82,255,.2),rgba(255,255,255,.045));padding:18px;color:var(--bone)}
+  .course-task-flow.on{display:grid;grid-template-columns:minmax(0,.72fr) minmax(320px,.28fr);gap:18px;align-items:stretch}
+  .task-progress{display:flex;align-items:center;gap:10px;color:var(--ash);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .task-progress-bar{height:8px;flex:1;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}
+  .task-progress-bar i{display:block;height:100%;width:var(--progress);background:var(--plum);border-radius:999px}
+  .task-question h3{font-size:24px;line-height:1.2;margin:14px 0 10px}
+  .task-question p{font-size:13.5px;line-height:1.72;color:var(--ash);margin:0 0 14px}
+  .answer-options{display:grid;gap:10px}
+  .answer-option{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.28);padding:12px;color:var(--bone);font-size:13px;line-height:1.55}
+  .answer-option input{margin-top:3px;accent-color:var(--plum)}
+  .task-answer textarea{width:100%;min-height:118px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.28);color:var(--bone);padding:13px;font-size:13px;line-height:1.65;resize:vertical}
+  .task-answer textarea::placeholder{color:rgba(255,255,255,.42)}
+  .task-side{border-left:1px solid var(--line);padding-left:18px;display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+  .task-side h4{font-size:13px;margin:0 0 8px;color:var(--ash);text-transform:uppercase;letter-spacing:.08em}
+  .task-side p{margin:0;color:var(--ash);font-size:12.5px;line-height:1.7}
+  .flow-status{min-height:20px;color:#8ff0dc;font-size:12.5px;line-height:1.6}
+  .flow-status.warn{color:#ffcf66}
+  .flow-navs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .flow-nav{height:44px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--bone);font-size:13px;font-weight:800}
+  .flow-nav.primary{background:var(--plum);border-color:var(--plum);color:#fff}
+  .flow-nav:disabled{opacity:.38;cursor:not-allowed}
+  @media (max-width:900px){.course-task-flow.on{grid-template-columns:1fr}.task-side{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:14px}}
+  .interactive{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .lab{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+  .lab h3{font-size:15px;margin:0 0 8px}
+  .lab p{font-size:12.5px;line-height:1.65;color:var(--muted);margin:0 0 12px}
+  .check-row{display:flex;gap:9px;align-items:flex-start;border-bottom:1px solid var(--line);padding:9px 0;font-size:12.5px;line-height:1.5}
+  .check-row:last-child{border-bottom:0}
+  .check-row input{margin-top:3px;accent-color:var(--red)}
+  .score-box{margin-top:12px;background:#111;color:#fff;border-radius:var(--radius);padding:12px}
+  .score-box b{font-size:24px;font-variant-numeric:tabular-nums}
+  .score-box span{display:block;font-size:12px;color:#d6dcde;margin-top:4px;line-height:1.5}
+  .work-grid{display:grid;gap:10px}
+  .field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px}
+  .field textarea,.field input{width:100%;border:1px solid var(--line);border-radius:6px;background:#fbfcfc;padding:9px;
+    min-height:58px;resize:vertical;color:var(--ink);font-size:12.5px;line-height:1.5}
+  .field input{min-height:auto}
+  .evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .course-only{display:none}
+  .course-only.on{display:block}
+  .hidden{display:none}
+  @media (max-width:1120px){
+    .shell{grid-template-columns:1fr}
+    .sidebar{border-right:0;border-bottom:1px solid var(--line)}
+    .grid-3,.grid-2,.source-flow,.lesson-hero,.script,.course-hero,.course-player,.interactive{grid-template-columns:1fr}
+    .arrow{display:none}
+    .module-board,.funnel,.format-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:720px){
+    .topbar{height:auto;align-items:flex-start;flex-direction:column;padding:14px;gap:12px}
+    .brand{min-width:0}
+    .top-meta{display:none}
+    .stage{padding:16px 14px 28px}
+    .stage-title{display:block}
+    .module-board,.funnel,.format-grid,.evidence-grid{grid-template-columns:1fr}
+    .metrics{grid-template-columns:repeat(4,1fr)}
+    .film-copy h2{font-size:26px}
+    .module-film,.module-film video{min-height:300px}
+  }
+
+  /* V8 visual pass: Dala-inspired void interface from DESIGN (2).md */
+  html,body{background:var(--void);color:var(--bone);
+    font-family:"Space Grotesk","Avenir Next","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+    background:
+      radial-gradient(circle at 78% 14%,rgba(128,82,255,.22),transparent 26%),
+      radial-gradient(circle at 14% 74%,rgba(21,132,110,.18),transparent 24%),
+      #000}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background-image:
+      radial-gradient(circle,rgba(128,82,255,.9) 0 1px,transparent 1.6px),
+      radial-gradient(circle,rgba(255,184,41,.75) 0 1px,transparent 1.5px),
+      radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 1.4px);
+    background-size:82px 82px,127px 127px,173px 173px;
+    background-position:12px 18px,44px 71px,92px 36px}
+  .app{background:transparent}
+  .topbar{position:sticky;top:0;z-index:20;height:72px;background:rgba(0,0,0,.82);
+    border-bottom:1px solid var(--line);backdrop-filter:blur(18px);padding:0 30px}
+  .brand strong{font-weight:700;font-size:18px;color:var(--bone);letter-spacing:.021em}
+  .brand span,.top-meta{color:var(--smoke);letter-spacing:.021em}
+  .stage-btn,.cmd,.course-tab,.lesson-btn,.module-head,.lesson-chip,.clip-btn,button{transition:background .18s,color .18s,border-color .18s,transform .18s}
+  .stage-btn{height:42px;border-radius:24px;color:var(--smoke);font-size:13px;letter-spacing:.021em;padding:0 18px}
+  .stage-btn:hover{color:var(--bone);border-color:rgba(255,255,255,.22);transform:translateY(-1px)}
+  .stage-btn.on{background:var(--plum);color:var(--bone);border-color:var(--plum)}
+  .shell{grid-template-columns:300px minmax(0,1fr);max-width:1500px;margin:0 auto;width:100%}
+  .sidebar{background:rgba(0,0,0,.5);border-right:1px solid var(--line);padding:24px 18px}
+  .main{overflow:visible}
+  .stage{padding:30px 30px 60px}
+  .stage-title{align-items:flex-start;margin-bottom:24px}
+  .stage-title h2{font-weight:600;font-size:42px;line-height:1.08;letter-spacing:-.02em;color:var(--bone);max-width:900px}
+  .stage-title p{color:var(--ash);font-size:15px;line-height:1.65;max-width:820px;letter-spacing:.025em}
+  .cmd{height:44px;border-radius:24px;padding:0 18px;background:var(--plum);color:var(--bone);
+    font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .cmd:hover{transform:translateY(-1px)}
+  .cmd.secondary{background:transparent;color:var(--bone);border:1px solid var(--line)}
+  .brief,.panel,.flow-box,.module-card,.module-column,.funnel-step,.format-card,.video-spec,.thesis,.player-card,.lab,.beat{
+    background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:24px;box-shadow:none;color:var(--bone)}
+  .brief{padding:22px}
+  .brief h1{font-size:24px;color:var(--bone);font-weight:600;letter-spacing:-.01em}
+  .brief p,.panel p,.flow-box ul,.module-body p,.lesson-title p,.format-card p,.beat p,.thesis p,.lab p{color:var(--ash)}
+  .eyebrow{color:var(--plum);font-size:12px;letter-spacing:.05em;font-weight:700}
+  .metrics{gap:10px}
+  .metric{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:12px}
+  .metric b{color:var(--bone);font-size:24px;font-weight:600}
+  .metric span{color:var(--smoke)}
+  .module-card{overflow:hidden}
+  .module-head{color:var(--ash);padding:14px;border-radius:0}
+  .module-head:hover{background:rgba(255,255,255,.055);color:var(--bone)}
+  .module-head.on{background:var(--plum);color:var(--bone)}
+  .module-index{background:rgba(255,255,255,.1);color:var(--bone)}
+  .module-head.on .module-index{background:rgba(255,255,255,.18)}
+  .lesson-list{background:rgba(255,255,255,.025);border-top:1px solid var(--line);padding:10px}
+  .lesson-btn{color:var(--ash);border-radius:18px;padding:10px;border:1px solid transparent}
+  .lesson-btn:hover{color:var(--bone);border-color:var(--line);background:rgba(255,255,255,.04)}
+  .lesson-btn.on{background:rgba(128,82,255,.18);border-color:rgba(128,82,255,.85);color:var(--bone)}
+  .course-hero{grid-template-columns:minmax(0,1.08fr) 400px;gap:18px;align-items:stretch;margin-bottom:18px}
+  .module-film{min-height:420px;border-radius:24px;border:1px solid var(--line);box-shadow:none}
+  .module-film video{min-height:420px}
+  .module-film::after{background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.35) 58%,rgba(0,0,0,.1))}
+  .film-copy{padding:34px}
+  .film-copy h2{font-size:48px;font-weight:600;line-height:1.02;letter-spacing:-.035em;max-width:760px}
+  .film-copy p{font-size:16px;line-height:1.55;color:var(--ash)}
+  .module-brief{gap:12px}
+  .thesis{padding:20px}
+  .thesis h3,.lab h3,.panel h3,.video-spec h3{font-size:18px;color:var(--bone);font-weight:600}
+  .lesson-tabs{grid-template-columns:1fr;gap:10px}
+  .course-tab{min-height:76px;background:rgba(255,255,255,.035);border:1px solid var(--line);
+    border-radius:24px;color:var(--bone);padding:16px}
+  .course-tab:hover{border-color:rgba(128,82,255,.7);transform:translateY(-1px)}
+  .course-tab b{font-size:15px;font-weight:600;color:var(--bone)}
+  .course-tab span{color:var(--smoke);font-size:12px}
+  .course-tab.on{background:rgba(128,82,255,.18);border-color:var(--plum)}
+  .module-brief{position:relative}
+  .hierarchy-root{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.055)}
+  .hierarchy-root::after{content:"";position:absolute;left:30px;top:100%;height:29px;border-left:1px solid rgba(128,82,255,.58)}
+  .lesson-tabs{position:relative;margin-left:30px;padding:30px 0 16px 22px;border-left:1px solid rgba(128,82,255,.58)}
+  .lesson-tabs::before{content:"LESSONS · 子课节";position:absolute;left:18px;top:6px;color:var(--plum);
+    font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .lesson-tabs::after{content:"";position:absolute;left:0;bottom:-24px;height:24px;border-left:1px solid rgba(255,184,41,.52)}
+  .course-tab{position:relative}
+  .course-tab::before{content:"";position:absolute;left:-23px;top:50%;width:16px;border-top:1px solid rgba(128,82,255,.58)}
+  .course-tab::after{content:"";position:absolute;left:-29px;top:calc(50% - 4px);width:8px;height:8px;border-radius:50%;
+    background:var(--void);border:1px solid var(--plum)}
+  .course-tab.on::after{background:var(--plum)}
+  .hierarchy-output{position:relative;margin-left:30px;border-color:rgba(255,184,41,.45);background:rgba(255,184,41,.07)}
+  .hierarchy-output::before{content:"OUTPUT · 模块产物";display:block;color:var(--amber);font-size:11px;font-weight:700;
+    letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+  .hierarchy-output::after{content:"";position:absolute;left:-31px;top:31px;width:24px;border-top:1px solid rgba(255,184,41,.52)}
+  .course-player{grid-template-columns:minmax(0,1fr) 360px;gap:18px;margin-top:18px;align-items:start}
+  .player-card{overflow:hidden}
+  .main-video{aspect-ratio:16/8.6;border-bottom:1px solid var(--line)}
+  .clip-copy{padding:22px}
+  .clip-kicker{color:var(--plum);font-size:12px;letter-spacing:.05em}
+  .clip-copy h3{font-size:28px;font-weight:600;line-height:1.15;color:var(--bone)}
+  .clip-copy p{font-size:15px;line-height:1.7;color:var(--ash)}
+  .clip-note{grid-template-columns:88px 1fr;border-top:1px solid var(--line);color:var(--ash)}
+  .clip-note b{color:var(--bone);font-weight:600}
+  .clip-list{position:sticky;top:96px;max-height:calc(100vh - 120px);overflow:auto;padding:44px 2px 0 18px;
+    border-left:1px solid rgba(128,82,255,.38)}
+  .clip-list::before{content:"CURRENT LESSON · 视频片段";position:absolute;left:18px;top:4px;color:var(--plum);
+    font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+  .clip-btn{grid-template-columns:72px 1fr;gap:12px;background:rgba(255,255,255,.035);border:1px solid var(--line);
+    border-radius:24px;padding:10px;color:var(--bone)}
+  .clip-btn{position:relative}
+  .clip-btn::before{content:attr(data-step);position:absolute;left:-34px;top:22px;width:22px;height:22px;border-radius:50%;
+    display:grid;place-items:center;background:var(--void);border:1px solid rgba(128,82,255,.55);color:var(--ash);
+    font-size:10px;font-weight:700;font-variant-numeric:tabular-nums}
+  .clip-btn.on::before{background:var(--plum);border-color:var(--plum);color:var(--bone)}
+  .clip-btn:hover{border-color:rgba(128,82,255,.7);transform:translateY(-1px)}
+  .clip-btn.on{background:rgba(128,82,255,.18);border-color:var(--plum);box-shadow:none}
+  .clip-thumb{height:56px;border-radius:16px}
+  .clip-btn b{font-size:13px;color:var(--bone);font-weight:600}
+  .clip-btn span,.clip-btn span span{color:var(--smoke)}
+  .interactive{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+  .lab{padding:22px}
+  .check-row{border-bottom:1px solid var(--line);color:var(--ash);font-size:14px}
+  .check-row:hover{color:var(--bone)}
+  .check-row input{accent-color:var(--plum)}
+  .score-box{background:rgba(128,82,255,.18);border:1px solid rgba(128,82,255,.8);border-radius:24px;color:var(--bone);padding:16px}
+  .field label{color:var(--bone);letter-spacing:.021em}
+  .field textarea,.field input{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;color:var(--bone);
+    min-height:78px;font-size:14px}
+  .field input{min-height:44px}
+  .field textarea:focus,.field input:focus{outline:none;border-color:var(--plum);background:rgba(128,82,255,.08)}
+  .field textarea::placeholder,.field input::placeholder{color:rgba(189,189,189,.55)}
+  .module-board{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .module-band{height:1px;background:var(--plum)}
+  .module-column:nth-child(n) .module-band{background:var(--plum)}
+  .module-body{padding:20px}
+  .module-body h3{color:var(--bone);font-size:18px;font-weight:600}
+  .lesson-chip{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;color:var(--bone)}
+  .lesson-chip.on{border-color:var(--plum);background:rgba(128,82,255,.18);box-shadow:none}
+  .funnel{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  .funnel-step{min-height:220px;padding:18px}
+  .funnel-step p,.script-section p{color:var(--ash)}
+  .step-num{background:var(--plum)}
+  .format-card.primary{background:rgba(128,82,255,.18);border-color:var(--plum)}
+  .script-body{background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:24px}
+  .script-section{border-top:1px solid var(--line)}
+  .script-section b{color:var(--plum)}
+  .atom-table th,.atom-table td{border-bottom:1px solid var(--line)}
+  .atom-table th{color:var(--smoke)}
+  .atom-table td{color:var(--ash)}
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:999px}
+  ::selection{background:var(--plum);color:var(--bone)}
+  @media (max-width:1180px){
+    .shell{grid-template-columns:1fr}
+    .sidebar{border-right:0;border-bottom:1px solid var(--line)}
+    .course-hero,.course-player,.interactive{grid-template-columns:1fr}
+    .clip-list{position:static;max-height:none}
+  }
+  @media (max-width:760px){
+    .topbar{padding:16px;height:auto}
+    .stage{padding:22px 16px 42px}
+    .stage-title h2{font-size:34px}
+    .film-copy h2{font-size:34px}
+    .module-film,.module-film video{min-height:340px}
+    .funnel,.module-board,.format-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <strong>BookForge V8</strong>
+      <span>AI 课程工厂</span>
+    </div>
+    <nav class="stages" aria-label="工作台">
+      <button class="stage-btn on" data-stage="course">课程台</button>
+      <button class="stage-btn" data-stage="extract">提炼台</button>
+      <button class="stage-btn" data-stage="framework">框架台</button>
+      <button class="stage-btn" data-stage="funnel">编排台</button>
+      <button class="stage-btn" data-stage="format">表现台</button>
+      <button class="stage-btn" data-stage="preview">预览台</button>
+    </nav>
+    <div class="top-meta"><span><i class="dot"></i>案例书已载入</span><span>精英短课</span></div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <section class="brief">
+        <div class="eyebrow">case book</div>
+        <h1>《让大象飞》AI 创业六章训练课</h1>
+        <p>严格对齐 Steven S. Hoffman 原书 6 章，重构为面向 AI 创业者的 6 模块 12 节任务式课程。</p>
+        <div class="metrics">
+          <div class="metric"><b>6</b><span>原书章节</span></div>
+          <div class="metric"><b>12</b><span>课节</span></div>
+          <div class="metric"><b>36</b><span>教学原子</span></div>
+          <div class="metric"><b>5</b><span>漏斗步骤</span></div>
+        </div>
+      </section>
+      <div class="module-list" id="sideModules"></div>
+    </aside>
+
+    <main class="main">
+      <section class="stage on" id="stage-course">
+        <div class="stage-title">
+          <div>
+            <h2 id="courseModuleHeading">模块 1：识别真正的机会</h2>
+            <p id="courseModuleIntro">这一版把视频改成任务前置材料：先看一个完整情景，再完成判断题或输入题，让学员从“看懂”进入“会判断”。</p>
+          </div>
+          <div class="command-row">
+            <button class="cmd" id="courseToFunnel">查看课程编排</button>
+            <button class="cmd secondary" id="courseToFramework">返回框架</button>
+          </div>
+        </div>
+
+        <div class="course-hero">
+          <div class="module-film">
+            <video id="moduleIntroVideo" src="" muted autoplay loop playsinline></video>
+            <div class="film-copy">
+              <div class="eyebrow" style="color:#f1bf42">module opening</div>
+              <h2 id="courseHeroTitle">AI 创业者是在解决用户问题，还是展示技术能力？</h2>
+              <p id="courseHeroText">本模块训练一个核心能力：把技术兴奋感还原成市场判断。学员最终要能说清楚自己的宝箱、钥匙和证据。</p>
+            </div>
+          </div>
+          <div class="module-brief">
+            <div class="thesis hierarchy-root">
+              <h3>课程主线</h3>
+              <p id="courseThesis">第 1 课识别技术陷阱：不要拿着钥匙找锁。第 2 课识别真实浪潮：不要把热点噪音误判为市场机会。</p>
+            </div>
+            <div class="lesson-tabs" id="courseLessonTabs"></div>
+            <div class="thesis hierarchy-output">
+              <h3>模块交付物</h3>
+              <p id="courseOutput">完成后产出两张卡：一张“宝箱-钥匙诊断卡”，一张“机会证据清单”。这两张卡会成为后续 MVP 验证模块的输入。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-player">
+          <article class="player-card">
+            <div class="main-video">
+              <video id="lessonVideo" src="" muted autoplay loop controls playsinline></video>
+            </div>
+            <div class="clip-copy">
+              <div class="clip-kicker" id="clipRole"></div>
+              <h3 id="clipTitle"></h3>
+              <p id="clipText"></p>
+              <div class="clip-note">
+                <span>教学动作</span><b id="clipAction"></b>
+                <span>课程文本</span><b id="clipScript"></b>
+              </div>
+            </div>
+          </article>
+          <aside class="clip-list" id="clipList"></aside>
+        </div>
+
+        <div class="interactive">
+          <section class="lab course-only" id="trapLab">
+            <h3>技术陷阱五问诊断</h3>
+            <p>勾选越多，说明项目越可能把技术当成机会本身。这个互动对应第 1 课的 How 和 Practice。</p>
+            <div id="trapChecks"></div>
+            <div class="score-box"><b id="trapScore">0/5</b><span id="trapResult">先播放诊断片段，再勾选你的项目现状。</span></div>
+          </section>
+
+          <section class="lab course-only" id="treasureLab">
+            <h3>宝箱-钥匙-证据卡</h3>
+            <p>用三句话把 AI 项目从“技术说明”改写成“机会判断”。</p>
+            <div class="work-grid">
+              <div class="field"><label>宝箱：用户正在付费或强烈表达的真实问题</label><textarea placeholder="例如：销售团队每天花 2 小时整理客户跟进记录..."></textarea></div>
+              <div class="field"><label>钥匙：你的 AI 技术如何打开这个宝箱</label><textarea placeholder="例如：用语音转写 + CRM 自动摘要减少手工录入..."></textarea></div>
+              <div class="field"><label>证据：你已经拥有的真实行为证据</label><textarea placeholder="例如：3 家试点客户每周使用，1 家愿意付费续约..."></textarea></div>
+            </div>
+          </section>
+
+          <section class="lab course-only" id="waveLab">
+            <h3>真浪潮四类证据</h3>
+            <p>第 2 课的互动目标是把热点判断改写成证据判断。</p>
+            <div class="evidence-grid">
+              <div class="field"><label>付费</label><input placeholder="谁已经付钱？"></div>
+              <div class="field"><label>留存</label><input placeholder="谁持续使用？"></div>
+              <div class="field"><label>频次</label><input placeholder="多久用一次？"></div>
+              <div class="field"><label>传播</label><input placeholder="谁主动推荐？"></div>
+            </div>
+            <div class="score-box"><b id="evidenceScore">0/4</b><span id="evidenceResult">填写证据字段后，系统会提示当前机会证据完整度。</span></div>
+          </section>
+
+          <section class="lab course-only" id="reflectionLab">
+            <h3>本模块反思</h3>
+            <p>这不是课后感想，而是进入下一模块“MVP 验证”的前置输入。</p>
+            <div class="work-grid">
+              <div class="field"><label>我现在最不确定的一条机会假设</label><textarea placeholder="写下你最需要验证的机会假设。"></textarea></div>
+              <div class="field"><label>下一步最小验证动作</label><textarea placeholder="写下 7 天内能完成的真实验证动作。"></textarea></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="stage" id="stage-extract">
+        <div class="stage-title">
+          <div>
+            <h2>从知识原子升级为教学原子</h2>
+            <p>提炼台不再追求“拆得多”，而是判断每个原子能不能进入课程、能不能被讲清楚、能不能被练习验证。</p>
+          </div>
+          <div class="command-row">
+            <button class="cmd" data-jump="framework">进入框架台</button>
+            <button class="cmd secondary" id="selectFirstLesson">查看第 1 课</button>
+          </div>
+        </div>
+
+        <div class="source-flow">
+          <div class="flow-box">
+            <h4>输入资料</h4>
+            <ul>
+              <li>原书章节</li>
+              <li>作者观点</li>
+              <li>案例事实</li>
+              <li>AI 行业迁移场景</li>
+            </ul>
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-box">
+            <h4>教学原子</h4>
+            <ul>
+              <li>核心论点</li>
+              <li>方法动作</li>
+              <li>判断标准</li>
+              <li>案例证据</li>
+            </ul>
+          </div>
+          <div class="arrow">→</div>
+          <div class="flow-box">
+            <h4>课程单元</h4>
+            <ul>
+              <li>模块骨架</li>
+              <li>学习漏斗</li>
+              <li>互动形式</li>
+              <li>练习交付</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:14px">
+          <h3>教学原子样例</h3>
+          <table class="atom-table">
+            <thead>
+              <tr><th>ID</th><th>原子</th><th>类型</th><th>教学角色</th><th>AI 场景迁移</th></tr>
+            </thead>
+            <tbody id="atomRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="stage" id="stage-framework">
+        <div class="stage-title">
+          <div>
+            <h2>4 个一级模块搭出课程金字塔</h2>
+            <p>一级模块回答大问题，二级知识点承担教学主线，三级案例负责让高认知学员快速完成迁移。</p>
+          </div>
+          <div class="command-row">
+            <button class="cmd" data-jump="funnel">进入编排台</button>
+          </div>
+        </div>
+        <div class="module-board" id="moduleBoard"></div>
+      </section>
+
+      <section class="stage" id="stage-funnel">
+        <div class="stage-title">
+          <div>
+            <h2 id="lessonHeading">学习漏斗</h2>
+            <p id="lessonSummary">每节课按破冰、What、How、Case、Practice 重构，避免把书摘直接搬进课堂。</p>
+          </div>
+          <div class="command-row">
+            <button class="cmd" data-jump="format">匹配表现形式</button>
+          </div>
+        </div>
+
+        <div class="lesson-hero">
+          <div class="panel lesson-title">
+            <h2 id="lessonTitle"></h2>
+            <p id="lessonQuestion"></p>
+          </div>
+          <div class="panel">
+            <h3>课节参数</h3>
+            <div class="meta-list">
+              <div class="meta-row"><span>模块</span><b id="lessonModule"></b></div>
+              <div class="meta-row"><span>适合人群</span><b>AI 创业者 / AI 产品负责人</b></div>
+              <div class="meta-row"><span>交付物</span><b id="lessonDeliverable"></b></div>
+              <div class="meta-row"><span>风险</span><b>Low</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="funnel" id="funnelSteps"></div>
+      </section>
+
+      <section class="stage" id="stage-format">
+        <div class="stage-title">
+          <div>
+            <h2>让内容变得可视、可点、可练</h2>
+            <p>表现台根据知识类型选择教学形式。概念用短视频，判断用测评，方法用模板，案例用复盘板，练习用 AI 教练。</p>
+          </div>
+          <div class="command-row">
+            <button class="cmd" data-jump="preview">进入预览台</button>
+          </div>
+        </div>
+        <div class="format-grid" id="formatGrid"></div>
+        <div class="panel" style="margin-top:14px">
+          <h3>课程体验节奏</h3>
+          <div class="timeline">
+            <div class="timeline-row"><div class="time">00:00</div><div class="beat"><b>短视频破冰</b><p>用 AI 场景中的强痛点开场，快速建立“这和我有关”。</p></div></div>
+            <div class="timeline-row"><div class="time">02:00</div><div class="beat"><b>概念图讲解</b><p>把原书核心观点压缩成一张可记忆的判断图。</p></div></div>
+            <div class="timeline-row"><div class="time">06:00</div><div class="beat"><b>交互诊断</b><p>让学员输入自己的项目，系统即时判断技术陷阱风险。</p></div></div>
+            <div class="timeline-row"><div class="time">12:00</div><div class="beat"><b>案例复盘</b><p>原书案例与 AI 行业案例并排，训练迁移能力。</p></div></div>
+            <div class="timeline-row"><div class="time">18:00</div><div class="beat"><b>AI 教练作业</b><p>学员输出自己的项目版本，AI 按 Rubric 给反馈。</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage" id="stage-preview">
+        <div class="stage-title">
+          <div>
+            <h2>课程预览与视频生成预留</h2>
+            <p>这里展示第 1 课的可交付脚本。课程结构确认后，可用 HyperFrames 生成 60-120 秒视频讲解。</p>
+          </div>
+          <div class="command-row">
+            <button class="cmd secondary" id="videoButton">HyperFrames 视频待生成</button>
+          </div>
+        </div>
+        <div class="script">
+          <div class="script-body">
+            <h3 id="scriptTitle">第 1 课脚本</h3>
+            <div id="scriptSections"></div>
+          </div>
+          <aside class="video-spec">
+            <h3>HyperFrames 生成规格</h3>
+            <div class="spec-row"><span>长度</span><b>90 秒概念短片</b></div>
+            <div class="spec-row"><span>比例</span><b>16:9，1920 x 1080</b></div>
+            <div class="spec-row"><span>结构</span><b>痛点开场 / 概念图 / 案例对比 / 行动问题</b></div>
+            <div class="spec-row"><span>视觉</span><b>黑白底 + 红/绿/钢蓝强调</b></div>
+            <div class="spec-row"><span>声音</span><b>后续可接 TTS 或真人口播</b></div>
+            <div class="spec-row"><span>状态</span><b>课程结构确认后生成</b></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+const modules = [
+  {
+    id:"m1",
+    title:"寻找方向：识别真正的机会",
+    chapter:"第 1 章 寻找方向",
+    question:"你是在追逐技术能力，还是在抓住真实市场机会？",
+    output:"宝箱-钥匙-证据卡",
+    lessons:[
+      {
+        id:"l1",
+        title:"Demo 很惊艳，为什么仍然没人付费？",
+        deliverable:"技术陷阱诊断卡",
+        atoms:["ka-101","ka-105","ka-106","ka-108"],
+        funnel:{
+          ice:"先看一个 AI 路演片段：Demo 成功，但客户没有购买。你要判断团队到底证明了什么。",
+          what:"Steven S. Hoffman 的核心提醒是：无法证明客户需要的技术，是一份死刑判决书。",
+          how:"用“宝箱-钥匙”框架拆分：技术只是钥匙，被验证的用户问题和付费证据才是宝箱。",
+          case:"施乐 PARC 发明大量关键技术，但真正获得商业价值的是把技术转成用户体验的人。",
+          practice:"写下你的项目里：钥匙是什么、宝箱是什么、现在有什么证据。"
+        },
+        formats:["任务视频","选择题","诊断测评","AI 教练点评"]
+      },
+      {
+        id:"l2",
+        title:"如何判断一个机会是不是真浪潮？",
+        deliverable:"机会证据清单",
+        atoms:["ka-104","ka-501","ka-502"],
+        funnel:{
+          ice:"先看一个“热点很热但用户流失”的反转场景，判断它是浪潮还是噪音。",
+          what:"浪潮不是讨论量，而是用户行为的改变。",
+          how:"用四类证据检查机会：付费、留存、频次、传播。",
+          case:"iPhone、移动支付和 AI Copilot 都不是单点技术胜利，而是用户习惯、基础设施和场景成熟的合力。",
+          practice:"列出你项目当前最硬的一条真实行为证据。"
+        },
+        formats:["任务视频","证据板","选择题","输入题"]
+      }
+    ]
+  },
+  {
+    id:"m2",
+    title:"准备启航：组队与最小验证",
+    chapter:"第 2 章 准备启航",
+    question:"你是在用最小组织验证机会，还是一开始就把启动方式做重了？",
+    output:"7 天 MVP 验证实验表",
+    lessons:[
+      {
+        id:"l3",
+        title:"早期团队为什么越小越快？",
+        deliverable:"2-5 人启动配置表",
+        atoms:["ka-203","ka-204"],
+        funnel:{
+          ice:"先看两个团队对比：一个大团队忙着排计划，一个小团队当天接触真实用户。",
+          what:"理想早期团队通常是 2-5 人，因为沟通、协调和迭代最快。",
+          how:"把启动团队压缩到三类角色：机会判断、产品验证、用户触达。",
+          case:"AI 产品早期不需要完整部门，更需要快速学习回路。",
+          practice:"写出你当前项目最小启动团队的 3 个核心角色。"
+        },
+        formats:["任务视频","团队配置表","选择题"]
+      },
+      {
+        id:"l4",
+        title:"MVP 不是缩水产品，而是验证动作",
+        deliverable:"7 天验证实验表",
+        atoms:["ka-201","ka-202"],
+        funnel:{
+          ice:"先看两个团队：一个做复杂系统迟迟不上线，一个用半自动服务当天拿到付费意愿。",
+          what:"MVP 的艺术是只提供核心价值，尽快交到客户手中。",
+          how:"用一个关键假设、一个用户动作、一个验证指标设计 MVP。",
+          case:"AI 写作、AI 客服、AI 数据分析都可以先用人工 + AI 半自动方式验证。",
+          practice:"设计一个 7 天内能完成的 MVP 验证动作。"
+        },
+        formats:["任务视频","实验表","输入题","AI 教练点评"]
+      }
+    ]
+  },
+  {
+    id:"m3",
+    title:"打造产品：从技术到用户体验",
+    chapter:"第 3 章 打造产品",
+    question:"用户会为你的技术付费，还是只会为更好的结果和体验付费？",
+    output:"产品体验诊断表",
+    lessons:[
+      {
+        id:"l5",
+        title:"技术价值如何变成用户价值？",
+        deliverable:"用户价值改写卡",
+        atoms:["ka-301","ka-302","ka-102"],
+        funnel:{
+          ice:"先看创始人讲复杂模型时客户困惑，改讲用户收益后客户追问价格。",
+          what:"设计创新是为用户解决一个真正的问题。",
+          how:"把技术语言改写成用户结果、场景触发和可感知收益。",
+          case:"iPhone 的价值不只是硬件技术，而是体验、生态和用户习惯。",
+          practice:"把你的产品介绍从技术参数改成一句用户收益。"
+        },
+        formats:["任务视频","改写工作台","选择题"]
+      },
+      {
+        id:"l6",
+        title:"爱产品，但不要爱到听不见用户",
+        deliverable:"产品体验诊断表",
+        atoms:["ka-301","ka-401"],
+        funnel:{
+          ice:"先看一个团队不断优化自认为重要的功能，但用户真正卡在另一个流程。",
+          what:"爱产品是动力，但过度爱产品会让团队忽略用户真实行为。",
+          how:"从用户完成任务的前、中、后三段检查体验断点。",
+          case:"AI 助手产品最常见的断点不是模型回答，而是工作流接入和结果复用。",
+          practice:"列出你产品里一个用户最可能放弃使用的时刻。"
+        },
+        formats:["任务视频","体验地图","输入题"]
+      }
+    ]
+  },
+  {
+    id:"m4",
+    title:"锁定市场：吃透用户与市场",
+    chapter:"第 4 章 锁定市场",
+    question:"你是在听用户说什么，还是在看用户真实做什么？",
+    output:"客户访谈脚本",
+    lessons:[
+      {
+        id:"l7",
+        title:"用户说想要，不等于真的会用",
+        deliverable:"行为证据清单",
+        atoms:["ka-401","ka-402"],
+        funnel:{
+          ice:"先看客户访谈中点头认可，回到办公室却继续使用旧流程的场景。",
+          what:"客户反馈是起点，不是终点。",
+          how:"区分口头兴趣、试用行为、持续使用、预算推动四种信号。",
+          case:"B 端 AI 试点里，口头支持和内部预算推动是完全不同的证据。",
+          practice:"写出你项目当前最可信的一条用户行为证据。"
+        },
+        formats:["任务视频","选择题","证据清单"]
+      },
+      {
+        id:"l8",
+        title:"客户访谈要追问过去行为",
+        deliverable:"5 问访谈脚本",
+        atoms:["ka-401","ka-402"],
+        funnel:{
+          ice:"先看一个泛泛而谈的访谈，如何通过追问过去行为变成有效洞察。",
+          what:"用户对未来的想象不可靠，过去行为更接近真实需求。",
+          how:"追问上一次发生时间、替代方案、成本、触发场景和决策链。",
+          case:"AI 产品访谈要问“你上一次怎么解决”，而不是“你想不想要 AI”。",
+          practice:"写出 5 个能逼近过去行为的访谈问题。"
+        },
+        formats:["任务视频","访谈模拟器","输入题"]
+      }
+    ]
+  },
+  {
+    id:"m5",
+    title:"持续创新：失败、迭代与内部创新",
+    chapter:"第 5 章 持续创新",
+    question:"你的失败是在消耗资源，还是在加速学习？",
+    output:"创新假设复盘表",
+    lessons:[
+      {
+        id:"l9",
+        title:"失败是不是学习？",
+        deliverable:"失败复盘卡",
+        atoms:["ka-202"],
+        funnel:{
+          ice:"先看一个 AI 实验失败后，团队是继续堆功能，还是证伪关键假设。",
+          what:"失败是创新过程的重要组成部分，无法被消除。",
+          how:"把失败记录成：假设、实验、结果、证伪、下一步。",
+          case:"最有价值的失败不是失败本身，而是它明确排除了一个错误方向。",
+          practice:"写下你项目最近一次失败证伪了什么。"
+        },
+        formats:["任务视频","复盘表","选择题"]
+      },
+      {
+        id:"l10",
+        title:"边缘实验如何变成创新来源？",
+        deliverable:"内部创新候选表",
+        atoms:["ka-602"],
+        funnel:{
+          ice:"先看一个被忽视的小工具被用户自发复用，最终变成新产品方向。",
+          what:"伟大创意常始于微不足道的业余项目。",
+          how:"识别边缘实验中的复用、转介绍、主动反馈和异常留存。",
+          case:"Gmail、Buffer 等产品都说明边缘项目可能成为主线。",
+          practice:"列出团队最近一个被忽视的小实验，以及它可能验证的假设。"
+        },
+        formats:["任务视频","创新看板","输入题"]
+      }
+    ]
+  },
+  {
+    id:"m6",
+    title:"高速运转：速度、增长与竞争",
+    chapter:"第 6 章 高速运转",
+    question:"你是真的快，还是只是很忙？",
+    output:"90 天行动路线图",
+    lessons:[
+      {
+        id:"l11",
+        title:"速度的本质是学习速度",
+        deliverable:"学习速度诊断表",
+        atoms:["ka-501","ka-502"],
+        funnel:{
+          ice:"先看两个团队：一个会议很多但没有反馈，一个当天实验、当天调整。",
+          what:"速度不是动作数量，而是实验、反馈和决策的循环速度。",
+          how:"用每周实验数、反馈周期、决策延迟评估团队速度。",
+          case:"AI 工具可以压缩开发时间，但不能替代真实用户反馈。",
+          practice:"写出你团队当前最慢的一个学习环节。"
+        },
+        formats:["任务视频","速度诊断","选择题"]
+      },
+      {
+        id:"l12",
+        title:"如何设计 90 天行动路线图？",
+        deliverable:"90 天行动路线图",
+        atoms:["ka-601","ka-501"],
+        funnel:{
+          ice:"先看创始人面对融资、招人、做功能、找用户的混乱任务，最后只保留第一张验证卡。",
+          what:"高速运转不是乱跑，而是在窗口期内快速完成验证、产品、增长和叙事。",
+          how:"把 90 天拆成：需求验证、MVP、行为证据、增长叙事四段。",
+          case:"AI 产品早期最需要的是连续证据链，而不是漂亮路线图。",
+          practice:"写下未来 90 天你的第一优先级。"
+        },
+        formats:["任务视频","路线图","结业作业"]
+      }
+    ]
+  }
+];
+
+const courseMedia = {
+  fallbackIntro:"videos/jimeng-2026-06-12-4099-一支高质感商业课程开场视频，画面是一个 AI 创业团队在深夜会议室讨论产品方向，....mp4",
+  modules:[
+    {
+      intro:"Hoffman video/jimeng-2026-06-16-9057-面向镜头提出任务：“请判断，这是真需求还是伪需求？”随后切入创业情景：一个初创团....mp4",
+      heroTitle:"AI 创业者是在解决用户问题，还是展示技术能力？",
+      heroText:"第 1 章训练机会判断：技术只是钥匙，被验证的市场机会才是宝箱。",
+      thesis:"第 1 课识别技术陷阱；第 2 课区分真实浪潮和市场噪音。",
+      output:"产出“宝箱-钥匙-证据卡”和“机会证据清单”，作为后续 MVP 验证的输入。",
+      lessons:[
+        {
+          title:"第 1 课：Demo 很惊艳，为什么仍然没人付费？",
+          outcome:"完成技术陷阱诊断卡",
+          clips:[
+            {role:"任务视频",title:"Demo 成功，购买失败",src:"Hoffman video/jimeng-2026-06-16-8128-面向镜头说出任务感开场：“看这个团队，他们证明的是技术，还是需求？”随后切入 A....mp4",text:"先看路演片段：创始人证明了技术效果，但客户合上了签约文件。你要判断团队到底证明了什么。",action:"观察反差并做判断",script:"选择题：这个团队最大的问题，是技术不够强，还是把 Demo 惊艳感误认为市场需求？"},
+            {role:"任务视频",title:"钥匙不是宝箱",src:"Hoffman video/jimeng-2026-06-16-9974-开场提出：“你看到的是钥匙，还是宝箱？”随后切入一个 AI 创业者在桌前兴奋展示....mp4",text:"看技术钥匙打开空房间的隐喻，再判断真正的宝箱是什么。",action:"区分技术能力和市场机会",script:"输入题：你的项目里“钥匙”是什么？“宝箱”是什么？"},
+            {role:"任务视频",title:"开源冲击测试",src:"Hoffman video/jimeng-2026-06-16-8053-面向镜头提出：“如果明天你的核心技术被开源，你还剩什么？”随后切入 AI 初创公....mp4",text:"假设核心能力被复制，观察团队还剩下哪些真实资产。",action:"完成技术陷阱五问",script:"输入题：如果核心技术明天被开源，你的公司还剩什么？"}
+          ]
+        },
+        {
+          title:"第 2 课：如何判断一个机会是不是真浪潮？",
+          outcome:"完成机会证据清单",
+          clips:[
+            {role:"任务视频",title:"热点不等于浪潮",src:"Hoffman video/jimeng-2026-06-16-2661-开场提出：“这是真浪潮，还是市场噪音？”随后切入热闹 AI 峰会：人群鼓掌、媒体....mp4",text:"看热闹峰会三个月后的真实数据反转，判断哪个信号更可信。",action:"区分噪音和行为证据",script:"选择题：峰会热度、媒体报道、社群讨论和用户续费，哪个更接近真实浪潮？"},
+            {role:"任务视频",title:"真浪潮的四类证据",src:"videos/jimeng-2026-06-12-7587-一个抽象但真实感强的增长证据仪表盘，四组数据模块像城市灯光一样逐步亮起，分别代表....mp4",text:"看四类证据如何逐步亮起：付费、留存、频次、传播。",action:"建立证据框架",script:"输入题：你当前最强的一条行为证据属于哪一类？"},
+            {role:"任务视频",title:"机会证据板",src:"videos/jimeng-2026-06-12-3491-一个创始团队在白板前搭建“机会证据板”，墙上贴着用户访谈照片、数据图表、付费记录....mp4",text:"看团队把混乱信息整理成证据板，判断哪些能进入机会判断。",action:"生成章节交付物",script:"输入题：写下你的付费、留存、频次、传播证据。"}
+          ]
+        }
+      ]
+    },
+    {
+      intro:"Hoffman video/jimeng-2026-06-16-8150-开场提出：“他们是在做 MVP，还是在做小号完整产品？”随后切入两个团队对比：左....mp4",
+      heroTitle:"小团队、小实验，先证明核心假设",
+      heroText:"第 2 章训练启动方式：不要用大团队和完整产品拖慢学习速度。",
+      thesis:"第 1 课压缩启动团队；第 2 课把 MVP 改成最小验证动作。",
+      output:"产出 2-5 人启动配置表和 7 天 MVP 验证实验表。",
+      lessons:[
+        {title:"第 3 课：早期团队为什么越小越快？",outcome:"完成启动配置表",clips:[{role:"任务视频",title:"大团队很忙，小团队在学习",src:"videos/jimeng-2026-06-12-3212-一个高级 AI 产品诊断工作台，界面上有“技术能力”“用户痛点”“付费意愿”“市场....mp4",text:"看两个团队的启动方式对比，判断谁更接近早期创新状态。",action:"识别过重启动",script:"选择题：早期 AI 项目最应该先证明团队规模，还是核心假设？"}]},
+        {title:"第 4 课：MVP 不是缩水产品，而是验证动作",outcome:"完成 7 天验证实验表",clips:[{role:"任务视频",title:"完整产品没上线，半自动服务先成交",src:"Hoffman video/jimeng-2026-06-16-8150-开场提出：“他们是在做 MVP，还是在做小号完整产品？”随后切入两个团队对比：左....mp4",text:"看复杂产品和半自动验证的反差，判断真正的 MVP 是什么。",action:"设计最小验证动作",script:"输入题：你的项目 7 天内最应该验证的关键假设是什么？"}]}
+      ]
+    },
+    {
+      intro:"Hoffman video/jimeng-2026-06-16-6396-开场提出：“这句话，用户听得懂吗？”随后切入创始人向客户解释复杂模型、Agent....mp4",
+      heroTitle:"把技术翻译成用户能感知的价值",
+      heroText:"第 3 章训练产品表达：用户不会为参数付费，用户为更好的结果和体验付费。",
+      thesis:"第 1 课把技术价值改写成用户价值；第 2 课定位用户体验断点。",
+      output:"产出用户价值改写卡和产品体验诊断表。",
+      lessons:[
+        {title:"第 5 课：技术价值如何变成用户价值？",outcome:"完成用户价值改写卡",clips:[{role:"任务视频",title:"技术语言没人买，用户结果引发兴趣",src:"Hoffman video/jimeng-2026-06-16-6396-开场提出：“这句话，用户听得懂吗？”随后切入创始人向客户解释复杂模型、Agent....mp4",text:"看客户从困惑到追问价格的表情变化，判断哪种表达更接近用户价值。",action:"改写产品价值",script:"选择题：先进模型架构和每周少花 5 小时，哪个更接近用户价值？"}]},
+        {title:"第 6 课：爱产品，但不要爱到听不见用户",outcome:"完成产品体验诊断表",clips:[{role:"任务视频",title:"团队优化错了地方",src:"videos/jimeng-2026-06-12-5253-时间流逝感的科技采用周期视频：同一个城市街角从早期科技试验阶段逐渐过渡到大众日常....mp4",text:"看团队持续打磨自认为重要的功能，却忽略用户真正卡住的工作流。",action:"识别体验断点",script:"输入题：你的产品里用户最可能在哪一步放弃？"}]}
+      ]
+    },
+    {
+      intro:"Hoffman video/jimeng-2026-06-16-1730-开场提出：“听他说什么，还是看他做什么？”随后切入客户访谈：客户在会议中说“这个....mp4",
+      heroTitle:"听用户说什么，更要看用户做什么",
+      heroText:"第 4 章训练用户洞察：反馈只是起点，行为证据才是判断依据。",
+      thesis:"第 1 课区分口头兴趣和真实行为；第 2 课训练客户访谈追问。",
+      output:"产出行为证据清单和 5 问客户访谈脚本。",
+      lessons:[
+        {title:"第 7 课：用户说想要，不等于真的会用",outcome:"完成行为证据清单",clips:[{role:"任务视频",title:"会议点头，回去继续用旧流程",src:"Hoffman video/jimeng-2026-06-16-1730-开场提出：“听他说什么，还是看他做什么？”随后切入客户访谈：客户在会议中说“这个....mp4",text:"看客户口头认可但后台 0 使用的反转，判断哪个信号最可信。",action:"识别行为证据",script:"选择题：客户说有意思和客户持续使用，哪个更可信？"}]},
+        {title:"第 8 课：客户访谈要追问过去行为",outcome:"完成 5 问访谈脚本",clips:[{role:"任务视频",title:"从想不想要，到上一次怎么解决",src:"videos/jimeng-2026-06-12-3491-一个创始团队在白板前搭建“机会证据板”，墙上贴着用户访谈照片、数据图表、付费记录....mp4",text:"看一次访谈如何通过追问过去行为变得有效。",action:"生成访谈问题",script:"输入题：写出一个追问用户过去行为的问题。"}]}
+      ]
+    },
+    {
+      intro:"Hoffman video/jimeng-2026-06-16-2861-开场提出：“这个失败，是浪费，还是学习？”随后切入 AI 团队实验失败：第一个成....mp4",
+      heroTitle:"让失败变成创新系统的一部分",
+      heroText:"第 5 章训练持续创新：失败不是事故，不能学习的失败才是浪费。",
+      thesis:"第 1 课把失败变成假设复盘；第 2 课识别边缘实验里的创新信号。",
+      output:"产出失败复盘卡和内部创新候选表。",
+      lessons:[
+        {title:"第 9 课：失败是不是学习？",outcome:"完成失败复盘卡",clips:[{role:"任务视频",title:"实验失败，但证伪关键假设",src:"Hoffman video/jimeng-2026-06-16-2861-开场提出：“这个失败，是浪费，还是学习？”随后切入 AI 团队实验失败：第一个成....mp4",text:"看团队从沮丧到明确下一步，判断这个失败的价值在哪里。",action:"复盘失败价值",script:"选择题：最有价值的失败，是失败后能证伪什么？"}]},
+        {title:"第 10 课：边缘实验如何变成创新来源？",outcome:"完成创新候选表",clips:[{role:"任务视频",title:"被忽视的小工具被用户自发复用",src:"videos/jimeng-2026-06-12-8751-一个历史商业案例风格的蒙太奇画面，展示早期团队从一个不起眼的小实验中发现突破口。....mp4",text:"看一个边缘实验如何因为异常复用变成新的产品方向。",action:"识别创新信号",script:"输入题：你的团队最近一个被忽视的小实验是什么？"}]}
+      ]
+    },
+    {
+      intro:"Hoffman video/jimeng-2026-06-16-5776-开场提出：“他们是真的快，还是只是很忙？”随后切入两个团队：一个团队白板上排满会....mp4",
+      heroTitle:"速度不是忙碌，而是学习速度",
+      heroText:"第 6 章训练高速运转：快速实验、快速反馈、快速决策，才是真正的速度。",
+      thesis:"第 1 课诊断团队学习速度；第 2 课形成 90 天行动路线图。",
+      output:"产出学习速度诊断表和 90 天行动路线图。",
+      lessons:[
+        {title:"第 11 课：速度的本质是学习速度",outcome:"完成学习速度诊断表",clips:[{role:"任务视频",title:"很忙，不等于很快",src:"Hoffman video/jimeng-2026-06-16-5776-开场提出：“他们是真的快，还是只是很忙？”随后切入两个团队：一个团队白板上排满会....mp4",text:"看两个团队的节奏对比，判断真正的速度来自哪里。",action:"诊断学习速度",script:"选择题：更多会议、更多功能和更快反馈，哪个是真正速度？"}]},
+        {title:"第 12 课：如何设计 90 天行动路线图？",outcome:"完成 90 天行动路线图",clips:[{role:"任务视频",title:"从混乱任务到第一验证卡",src:"Hoffman video/jimeng-2026-06-16-3792-开场提出：“如果只有 90 天，你先证明什么？”随后切入创始人面对一堆混乱任务：....mp4",text:"看创始人把融资、招人、功能和 PR 推开，只留下第一张验证卡。",action:"确定 90 天优先级",script:"输入题：未来 90 天，你的第一优先级是什么？"}]}
+      ]
+    }
+  ]
+};
+
+const atoms = [
+  ["ka-101","无法证明客户需要的技术，是一份死刑判决书","核心论点","What","AI 创业者容易把模型能力误认为市场需求"],
+  ["ka-105","先拿到藏宝箱，再想办法撬锁","方法隐喻","How","把技术能力翻译成用户问题和商业机会"],
+  ["ka-106","施乐 PARC 与乔布斯：发明者不等于获益者","案例证据","Case","解释 AI 基础能力与商业应用价值的分离"],
+  ["ka-108","技术陷阱自检清单","编辑派生","Practice","把专家观点变成可完成的项目诊断"],
+  ["ka-201","MVP 只提供核心价值，尽快交给客户","方法动作","How","把 AI 产品从完整开发压缩到验证实验"],
+  ["ka-401","客户反馈是起点，不是终点","判断标准","What","识别用户需求和用户行为之间的落差"]
+];
+
+const formatCards = [
+  ["任务视频","10-15 秒完整情景闭环，学员必须先观察视频再做判断。",true],
+  ["选择题","基于视频中出现的反转、结果或行为证据做判断。",true],
+  ["输入题","把视频中的判断迁移到自己的 AI 项目。",true],
+  ["方法模板","把 How 转成表格、清单、画布，作为章节交付物。",false],
+  ["AI 教练点评","学员提交作业后，按 Rubric 输出反馈和下一步动作。",true],
+  ["章节产物","每章形成一张可复用创业工具卡，进入下一章。",false]
+];
+
+const labels = [
+  ["破冰","ice"],
+  ["What","what"],
+  ["How","how"],
+  ["Case","case"],
+  ["Practice","practice"]
+];
+
+let currentModule = 0;
+let currentLesson = 0;
+let courseLesson = 0;
+let courseClip = 0;
+let courseTaskNotice = "";
+const courseTaskAnswers = {};
+
+const trapQuestions = [
+  "如果核心技术明天被开源，我的公司优势会明显消失。",
+  "我更常讲模型能力，而不是用户正在承受的具体损失。",
+  "我还没有真实付费、续用或强行为证据。",
+  "用户买单的理由更像“技术很酷”，而不是“问题被解决”。",
+  "如果从零开始，我不确定还会选择现在这条技术路径。"
+];
+
+const firstLessonTasks = [
+  {
+    type:"choice",
+    prompt:"看完这个路演片段，这个团队真正证明了什么？",
+    guide:"先不要被 Demo 的惊艳感带走，观察客户最后有没有出现购买、试用或持续使用的行为。",
+    options:[
+      "证明了技术可以跑通，但还没有证明用户会购买",
+      "证明了团队已经找到产品市场匹配",
+      "证明了只要技术足够酷，市场自然会出现"
+    ],
+    feedback:"这道题训练你把“技术可行”与“市场需求成立”拆开看。"
+  },
+  {
+    type:"text",
+    prompt:"视频里的“宝箱”和“钥匙”分别是什么？",
+    guide:"宝箱是用户愿意为之行动或付费的高价值问题；钥匙才是 AI 技术、产品能力或解决方案。",
+    placeholder:"例如：宝箱=客服主管每周被低质量线索拖慢；钥匙=自动筛选和优先级排序 Agent。",
+    feedback:"先说清楚宝箱，再选择钥匙。否则团队很容易拿着技术到处找问题。"
+  },
+  {
+    type:"text",
+    prompt:"如果明天核心技术被开源，这家公司还剩下什么可防守资产？",
+    guide:"请优先写行为资产和业务资产，而不是继续描述模型能力。",
+    placeholder:"例如：专有数据、行业工作流嵌入、客户关系、渠道、交付 know-how、真实使用反馈。",
+    feedback:"这道题用来识别技术护城河幻觉：真正的机会不能只建立在暂时领先的模型能力上。"
+  }
+];
+
+function $(sel){return document.querySelector(sel)}
+function $$(sel){return Array.from(document.querySelectorAll(sel))}
+
+function activeLesson(){
+  return modules[currentModule].lessons[currentLesson];
+}
+
+function mediaUrl(src){
+  return encodeURI(src);
+}
+
+function posterUrl(src){
+      const file = src.split("/").pop();
+      return "posters/" + file + ".png";
+    }
+
+function activeCourseModule(){
+  return courseMedia.modules[currentModule] || courseMedia.modules[0];
+}
+
+function activeCourseLesson(){
+  return activeCourseModule().lessons[courseLesson] || activeCourseModule().lessons[0];
+}
+
+function activeCourseClip(){
+  return activeCourseLesson().clips[courseClip];
+}
+
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+}
+
+function isFirstLessonQuestionFlow(){
+  return currentModule === 0 && courseLesson === 0;
+}
+
+function taskKey(index=courseClip){
+  return [currentModule, courseLesson, index].join("-");
+}
+
+function taskAnswer(index=courseClip){
+  return courseTaskAnswers[taskKey(index)] || "";
+}
+
+function isTaskAnswered(index=courseClip){
+  return taskAnswer(index).trim().length > 0;
+}
+
+function activeFirstLessonTask(){
+  const clip = activeCourseClip();
+  return firstLessonTasks[courseClip] || {
+    type:"text",
+    prompt:clip.script.replace(/^选择题：|^输入题：/,""),
+    guide:clip.text,
+    placeholder:"写下你基于视频观察得到的判断。",
+    feedback:"回答完成后再进入下一题。"
+  };
+}
+
+function ensureCourseTaskPanel(){
+  let panel = document.getElementById("courseTaskFlow");
+  if(panel) return panel;
+  const anchor = document.querySelector(".course-player");
+  if(!anchor) return null;
+  panel = document.createElement("section");
+  panel.id = "courseTaskFlow";
+  panel.className = "course-task-flow";
+  anchor.insertAdjacentElement("afterend",panel);
+  return panel;
+}
+
+function updateClipProgress(){
+  $$(".clip-btn").forEach((btn,i)=>{
+    btn.classList.toggle("done",isFirstLessonQuestionFlow() && isTaskAnswered(i));
+  });
+}
+
+function renderCourseTaskFlow(){
+  const panel = ensureCourseTaskPanel();
+  if(!panel) return;
+  if(!isFirstLessonQuestionFlow()){
+    panel.classList.remove("on");
+    panel.innerHTML = "";
+    return;
+  }
+
+  const lesson = activeCourseLesson();
+  const clip = activeCourseClip();
+  const task = activeFirstLessonTask();
+  const answer = taskAnswer();
+  const answered = isTaskAnswered();
+  const total = lesson.clips.length;
+  const progress = Math.round(((courseClip + 1) / total) * 100);
+  const isLast = courseClip >= total - 1;
+  const answerMarkup = task.type === "choice" ? `
+    <div class="answer-options">
+      ${task.options.map(option=>`
+        <label class="answer-option">
+          <input type="radio" name="firstLessonTask" value="${escapeHtml(option)}" data-task-choice ${answer === option ? "checked" : ""}>
+          <span>${escapeHtml(option)}</span>
+        </label>
+      `).join("")}
+    </div>
+  ` : `
+    <div class="task-answer">
+      <textarea data-task-text placeholder="${escapeHtml(task.placeholder || "写下你的判断")}">${escapeHtml(answer)}</textarea>
+    </div>
+  `;
+
+  panel.classList.add("on");
+  panel.innerHTML = `
+    <div class="task-question">
+      <div class="task-progress">
+        <span>Question ${courseClip + 1}/${total}</span>
+        <span class="task-progress-bar" style="--progress:${progress}%"><i></i></span>
+      </div>
+      <h3>${escapeHtml(task.prompt)}</h3>
+      <p>${escapeHtml(task.guide)}</p>
+      ${answerMarkup}
+    </div>
+    <aside class="task-side">
+      <div>
+        <h4>当前视频任务</h4>
+        <p><b>${escapeHtml(clip.title)}</b></p>
+        <p>${escapeHtml(clip.action)} · ${escapeHtml(clip.script)}</p>
+      </div>
+      <div>
+        <h4>判断提示</h4>
+        <p>${escapeHtml(task.feedback)}</p>
+      </div>
+      <div>
+        <div class="flow-status ${courseTaskNotice ? "warn" : ""}">${courseTaskNotice || (answered ? "已完成当前问题，可以进入下一题。" : "请先完成当前问题，再进入下一题。")}</div>
+        <div class="flow-navs">
+          <button class="flow-nav" data-flow-prev ${courseClip === 0 ? "disabled" : ""}>上一题</button>
+          <button class="flow-nav primary" data-flow-next ${answered ? "" : "disabled"}>${isLast ? "进入第 2 课" : "下一题"}</button>
+        </div>
+      </div>
+    </aside>
+  `;
+
+  panel.querySelectorAll("[data-task-choice]").forEach(input=>input.addEventListener("change",e=>{
+    courseTaskAnswers[taskKey()] = e.target.value;
+    courseTaskNotice = "";
+    renderCourseTaskFlow();
+    updateClipProgress();
+  }));
+
+  const textarea = panel.querySelector("[data-task-text]");
+  if(textarea){
+    textarea.addEventListener("input",e=>{
+      courseTaskAnswers[taskKey()] = e.target.value;
+      const done = e.target.value.trim().length > 0;
+      const next = panel.querySelector("[data-flow-next]");
+      const status = panel.querySelector(".flow-status");
+      if(next) next.disabled = !done;
+      if(status){
+        status.textContent = done ? "已完成当前问题，可以进入下一题。" : "请先完成当前问题，再进入下一题。";
+        status.classList.remove("warn");
+      }
+      updateClipProgress();
+    });
+  }
+
+  const prev = panel.querySelector("[data-flow-prev]");
+  if(prev) prev.addEventListener("click",()=>{
+    if(courseClip > 0){
+      courseClip -= 1;
+      courseTaskNotice = "";
+      renderCourseClip();
+    }
+  });
+
+  const next = panel.querySelector("[data-flow-next]");
+  if(next) next.addEventListener("click",()=>{
+    if(!isTaskAnswered()){
+      courseTaskNotice = "先回答当前问题，再进入下一题。";
+      renderCourseTaskFlow();
+      return;
+    }
+    courseTaskNotice = "";
+    if(courseClip < total - 1){
+      courseClip += 1;
+      renderCourseClip();
+    }else{
+      courseLesson = 1;
+      currentLesson = 1;
+      courseClip = 0;
+      renderAll();
+    }
+  });
+}
+
+function renderCourse(){
+  const mod = modules[currentModule];
+  const mediaMod = activeCourseModule();
+  const intro = $("#moduleIntroVideo");
+  const introSrc = mediaMod.intro || courseMedia.fallbackIntro;
+  if(intro && intro.getAttribute("src") !== mediaUrl(introSrc)){
+    intro.setAttribute("src",mediaUrl(introSrc));
+    intro.setAttribute("poster",mediaUrl(posterUrl(introSrc)));
+  }
+
+  $("#courseModuleHeading").textContent = "模块 " + (currentModule + 1) + "：" + mod.title;
+  $("#courseModuleIntro").textContent = mod.chapter + " · " + mod.question;
+  $("#courseHeroTitle").textContent = mediaMod.heroTitle;
+  $("#courseHeroText").textContent = mediaMod.heroText;
+  $("#courseThesis").textContent = mediaMod.thesis;
+  $("#courseOutput").textContent = mediaMod.output;
+
+  $("#courseLessonTabs").innerHTML = mediaMod.lessons.map((lesson,i)=>`
+    <button class="course-tab ${i===courseLesson?"on":""}" data-course-lesson="${i}">
+      <b>${lesson.title.replace(/^第 \d+ 课：/,"")}</b>
+      <span>${lesson.outcome}</span>
+    </button>
+  `).join("");
+  $$(".course-tab").forEach(btn=>btn.addEventListener("click",()=>{
+    courseLesson = Number(btn.dataset.courseLesson);
+    courseClip = 0;
+    courseTaskNotice = "";
+    currentLesson = courseLesson;
+    renderAll();
+  }));
+
+  $("#clipList").innerHTML = activeCourseLesson().clips.map((clip,i)=>`
+    <button class="clip-btn ${i===courseClip?"on":""}" data-course-clip="${i}" data-step="${i+1}">
+      <span class="clip-thumb"><video src="${mediaUrl(clip.src)}" poster="${mediaUrl(posterUrl(clip.src))}" muted playsinline preload="metadata"></video></span>
+      <span><b>${clip.title}</b><span>${clip.role} · ${clip.action}</span></span>
+    </button>
+  `).join("");
+  $$(".clip-btn").forEach(btn=>btn.addEventListener("click",()=>{
+    const targetClip = Number(btn.dataset.courseClip);
+    if(isFirstLessonQuestionFlow() && targetClip > courseClip){
+      courseTaskNotice = isTaskAnswered() ? "请使用“下一题”按钮进入下一题。" : "先回答当前问题，再进入下一题。";
+      renderCourseTaskFlow();
+      return;
+    }
+    courseClip = targetClip;
+    courseTaskNotice = "";
+    renderCourseClip();
+  }));
+
+  renderCourseClip();
+  renderCourseLabs();
+}
+
+function renderCourseClip(){
+  const clip = activeCourseClip();
+  const video = $("#lessonVideo");
+  const nextSrc = mediaUrl(clip.src);
+  if(video.getAttribute("src") !== nextSrc){
+    video.setAttribute("src",nextSrc);
+    video.setAttribute("poster",mediaUrl(posterUrl(clip.src)));
+    video.load();
+  }
+  $("#clipRole").textContent = clip.role;
+  $("#clipTitle").textContent = clip.title;
+  $("#clipText").textContent = clip.text;
+  $("#clipAction").textContent = clip.action;
+  $("#clipScript").textContent = clip.script;
+  $$(".clip-btn").forEach((btn,i)=>btn.classList.toggle("on",i===courseClip));
+  updateClipProgress();
+  renderCourseTaskFlow();
+}
+
+function renderCourseLabs(){
+  const isOpportunityModule = currentModule === 0;
+  const firstLessonFlow = isFirstLessonQuestionFlow();
+  $("#trapLab").classList.toggle("on",false);
+  $("#treasureLab").classList.toggle("on",false);
+  $("#waveLab").classList.toggle("on",isOpportunityModule && courseLesson===1);
+  $("#reflectionLab").classList.toggle("on",(!isOpportunityModule || courseLesson===1) && !firstLessonFlow);
+
+  if(!$("#trapChecks").children.length){
+    $("#trapChecks").innerHTML = trapQuestions.map((q,i)=>`
+      <label class="check-row">
+        <input type="checkbox" data-trap="${i}">
+        <span>${q}</span>
+      </label>
+    `).join("");
+    $$("[data-trap]").forEach(input=>input.addEventListener("change",updateTrapScore));
+  }
+}
+
+function updateTrapScore(){
+  const score = $$("[data-trap]").filter(input=>input.checked).length;
+  $("#trapScore").textContent = score + "/5";
+  const result = score <= 1 ? "机会判断相对清晰，但仍建议补足真实行为证据。"
+    : score <= 3 ? "存在明显技术导向倾向，建议先回到宝箱-钥匙卡重新定义机会。"
+    : "技术陷阱风险很高，下一步不要继续堆功能，先做需求和付费验证。";
+  $("#trapResult").textContent = result;
+}
+
+function updateEvidenceScore(){
+  const inputs = $$("#waveLab input");
+  const score = inputs.filter(input=>input.value.trim()).length;
+  $("#evidenceScore").textContent = score + "/4";
+  const result = score === 0 ? "先填写至少一类证据。"
+    : score < 3 ? "证据仍偏薄，暂时只能视为机会假设。"
+    : score === 3 ? "已经具备较强机会信号，建议进入 MVP 验证。"
+    : "四类证据完整，可以进入下一模块设计最小验证实验。";
+  $("#evidenceResult").textContent = result;
+}
+
+function renderSidebar(){
+  $("#sideModules").innerHTML = modules.map((mod, mi)=>`
+    <section class="module-card ${mi===currentModule?"open":""}">
+      <button class="module-head ${mi===currentModule?"on":""}" data-module="${mi}">
+        <span class="module-index">${mi+1}</span>
+        <span class="module-title">${mod.title}</span>
+        <span class="module-count">${mod.lessons.length} 课</span>
+      </button>
+      <div class="lesson-list">
+        ${mod.lessons.map((lesson, li)=>`
+          <button class="lesson-btn ${mi===currentModule&&li===currentLesson?"on":""}" data-module="${mi}" data-lesson="${li}">
+            ${li+1}. ${lesson.title}
+          </button>
+        `).join("")}
+      </div>
+    </section>
+  `).join("");
+  $$(".module-head").forEach(btn=>btn.addEventListener("click",()=>{
+    currentModule = Number(btn.dataset.module);
+    currentLesson = 0;
+    courseLesson = 0;
+    courseClip = 0;
+    courseTaskNotice = "";
+    renderAll();
+  }));
+  $$(".lesson-btn").forEach(btn=>btn.addEventListener("click",()=>{
+    currentModule = Number(btn.dataset.module);
+    currentLesson = Number(btn.dataset.lesson);
+    courseLesson = currentLesson;
+    courseClip = 0;
+    courseTaskNotice = "";
+    showStage("funnel");
+    renderAll();
+  }));
+}
+
+function renderAtoms(){
+  const classes = ["","red","steel","green","yellow",""];
+  $("#atomRows").innerHTML = atoms.map((a,i)=>`
+    <tr>
+      <td><b>${a[0]}</b></td>
+      <td>${a[1]}</td>
+      <td><span class="type-mark"><i class="swatch ${classes[i]}"></i>${a[2]}</span></td>
+      <td>${a[3]}</td>
+      <td>${a[4]}</td>
+    </tr>
+  `).join("");
+}
+
+function renderModuleBoard(){
+  $("#moduleBoard").innerHTML = modules.map((mod, mi)=>`
+    <article class="module-column">
+      <div class="module-band"></div>
+      <div class="module-body">
+        <h3>${mi+1}. ${mod.title}</h3>
+        <p>${mod.question}</p>
+        ${mod.lessons.map((lesson, li)=>`
+          <button class="lesson-chip ${mi===currentModule&&li===currentLesson?"on":""}" data-module="${mi}" data-lesson="${li}">
+            <b>${lesson.title}</b>
+            <span>${lesson.deliverable}</span>
+          </button>
+        `).join("")}
+      </div>
+    </article>
+  `).join("");
+  $$(".lesson-chip").forEach(btn=>btn.addEventListener("click",()=>{
+    currentModule = Number(btn.dataset.module);
+    currentLesson = Number(btn.dataset.lesson);
+    courseLesson = currentLesson;
+    courseClip = 0;
+    courseTaskNotice = "";
+    showStage("funnel");
+    renderAll();
+  }));
+}
+
+function renderLesson(){
+  const mod = modules[currentModule];
+  const lesson = activeLesson();
+  $("#lessonHeading").textContent = "学习漏斗：" + lesson.title;
+  $("#lessonSummary").textContent = mod.question;
+  $("#lessonTitle").textContent = lesson.title;
+  $("#lessonQuestion").textContent = "核心问题：" + mod.question;
+  $("#lessonModule").textContent = mod.title;
+  $("#lessonDeliverable").textContent = lesson.deliverable;
+  $("#funnelSteps").innerHTML = labels.map((item, i)=>`
+    <article class="funnel-step">
+      <h3><span class="step-num">${i+1}</span>${item[0]}</h3>
+      <p>${lesson.funnel[item[1]]}</p>
+    </article>
+  `).join("");
+}
+
+function renderFormats(){
+  const lesson = activeLesson();
+  $("#formatGrid").innerHTML = formatCards.map(card=>{
+    const isSuggested = lesson.formats.includes(card[0]);
+    return `
+      <article class="format-card ${isSuggested || card[2] ? "primary" : ""}">
+        <h3><span class="swatch ${isSuggested ? "red" : "steel"}"></span>${card[0]}</h3>
+        <p>${card[1]}${isSuggested ? " 当前课节建议采用。" : ""}</p>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderPreview(){
+  const lesson = activeLesson();
+  $("#scriptTitle").textContent = lesson.title + " · 脚本骨架";
+  $("#scriptSections").innerHTML = labels.map(item=>`
+    <section class="script-section">
+      <b>${item[0]}</b>
+      <p>${lesson.funnel[item[1]]}</p>
+    </section>
+  `).join("");
+}
+
+function showStage(name){
+  $$(".stage").forEach(s=>s.classList.toggle("on",s.id==="stage-"+name));
+  $$(".stage-btn").forEach(b=>b.classList.toggle("on",b.dataset.stage===name));
+}
+
+function renderAll(){
+  renderCourse();
+  renderSidebar();
+  renderAtoms();
+  renderModuleBoard();
+  renderLesson();
+  renderFormats();
+  renderPreview();
+}
+
+$$(".stage-btn").forEach(btn=>btn.addEventListener("click",()=>showStage(btn.dataset.stage)));
+$$("[data-jump]").forEach(btn=>btn.addEventListener("click",()=>showStage(btn.dataset.jump)));
+$("#selectFirstLesson").addEventListener("click",()=>{
+  currentModule = 0;
+  currentLesson = 0;
+  showStage("funnel");
+  renderAll();
+});
+$("#courseToFunnel").addEventListener("click",()=>{
+  currentLesson = courseLesson;
+  showStage("funnel");
+  renderAll();
+});
+$("#courseToFramework").addEventListener("click",()=>showStage("framework"));
+$$('#waveLab input').forEach(input=>input.addEventListener("input",updateEvidenceScore));
+$("#videoButton").addEventListener("click",()=>{
+  alert("视频生成入口已预留。课程结构确认后，可使用 HyperFrames 生成第 1 课 90 秒讲解短片。");
+});
+
+renderAll();
+</script>
+</body>
+</html>

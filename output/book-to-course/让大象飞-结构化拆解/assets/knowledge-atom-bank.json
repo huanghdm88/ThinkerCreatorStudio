@@ -1,0 +1,824 @@
+{
+  "atoms": [
+    {
+      "atom_id": "m1_atom_01",
+      "source_chapter": 1,
+      "source_card_id": "ch1_card_01",
+      "title": "寻找方向的核心命题",
+      "summary": "本章围绕“寻找方向：不管是否寒冬，总有浪潮在往这里来”，把“寻找方向”呈现为一种会改变行动环境的力量。学习者需要回到“技术并没有你以为的那么重要”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+      "content_type": "core_claim",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+          "matchKeyword": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "寻找方向：不管是否寒冬，总有浪潮在往这里来"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "寻找方向",
+        "core_claim"
+      ]
+    },
+    {
+      "atom_id": "m1_atom_02",
+      "source_chapter": 1,
+      "source_card_id": "ch1_card_02",
+      "title": "技术并没有你以为的那么重要的作用机制",
+      "summary": "课程不把本章处理成名词清单，而是要求学习者找出“技术并没有你以为的那么重要”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+      "content_type": "mechanism",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 13,
+          "paragraphIndexEnd": 14,
+          "quote": "技术并没有你以为的那么重要任何新的技术通常都会经历一个25年的接受和采用周期。",
+          "matchKeyword": "技术并没有你以为的那么重要",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "寻找方向",
+        "mechanism"
+      ]
+    },
+    {
+      "atom_id": "m1_atom_03",
+      "source_chapter": 1,
+      "source_card_id": "ch1_card_03",
+      "title": "创新之前，别说你不屑于模仿带来的场景判断",
+      "summary": "本卡把“创新之前，别说你不屑于模仿”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+      "content_type": "scenario_judgement",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 150,
+          "paragraphIndexEnd": 152,
+          "quote": "创新之前，别说你不屑于模仿独创性只不过是明智的模仿。哲学家和作家",
+          "matchKeyword": "创新之前，别说你不屑于模仿",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "寻找方向",
+        "scenario_judgement"
+      ]
+    },
+    {
+      "atom_id": "m1_atom_04",
+      "source_chapter": 1,
+      "source_card_id": "ch1_card_04",
+      "title": "寻找方向的风险边界",
+      "summary": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+      "content_type": "risk_tradeoff",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 16,
+          "paragraphIndexEnd": 17,
+          "quote": "安德森·霍洛维茨风险投资公司联合创始人谈到创新，最大的误区之一是，认为创新指的就是技术创新。实际并非如此。在创新的过程中技术仅仅是其中的一部分，...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "寻找方向",
+        "risk_tradeoff"
+      ]
+    },
+    {
+      "atom_id": "m1_atom_05",
+      "source_chapter": 1,
+      "source_card_id": "ch1_card_05",
+      "title": "把寻找方向：不管是否寒冬，总有浪潮在往这里来转成行动任务",
+      "summary": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“寻找方向”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+      "content_type": "application_task",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+          "matchKeyword": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "寻找方向：不管是否寒冬，总有浪潮在往这里来"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "寻找方向",
+        "application_task"
+      ]
+    },
+    {
+      "atom_id": "m2_atom_01",
+      "source_chapter": 2,
+      "source_card_id": "ch2_card_01",
+      "title": "准备启航的核心命题",
+      "summary": "本章围绕“准备启航：拉一支队伍，一起干吧”，把“准备启航”呈现为一种会改变行动环境的力量。学习者需要回到“将初创团队成员控制在5人以内”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+      "content_type": "core_claim",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+          "matchKeyword": "准备启航：拉一支队伍，一起干吧",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "准备启航：拉一支队伍，一起干吧"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "准备启航",
+        "core_claim"
+      ]
+    },
+    {
+      "atom_id": "m2_atom_02",
+      "source_chapter": 2,
+      "source_card_id": "ch2_card_02",
+      "title": "将初创团队成员控制在5人以内的作用机制",
+      "summary": "课程不把本章处理成名词清单，而是要求学习者找出“将初创团队成员控制在5人以内”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+      "content_type": "mechanism",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 16,
+          "paragraphIndexEnd": 17,
+          "quote": "将初创团队成员控制在5人以内无论什么时候，一支优秀、快速、精干的团队都能击败一支庞大、缓慢的团队。",
+          "matchKeyword": "将初创团队成员控制在5人以内",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "准备启航",
+        "mechanism"
+      ]
+    },
+    {
+      "atom_id": "m2_atom_03",
+      "source_chapter": 2,
+      "source_card_id": "ch2_card_03",
+      "title": "过多的资金有可能是一味毒药带来的场景判断",
+      "summary": "本卡把“过多的资金有可能是一味毒药”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+      "content_type": "scenario_judgement",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 59,
+          "paragraphIndexEnd": 60,
+          "quote": "过多的资金有可能是一味毒药我们接受小额预算。我们喜欢这种受到约束的感觉。这能激发创造力。",
+          "matchKeyword": "过多的资金有可能是一味毒药",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "准备启航",
+        "scenario_judgement"
+      ]
+    },
+    {
+      "atom_id": "m2_atom_04",
+      "source_chapter": 2,
+      "source_card_id": "ch2_card_04",
+      "title": "准备启航的风险边界",
+      "summary": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+      "content_type": "risk_tradeoff",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 39,
+          "paragraphIndexEnd": 39,
+          "quote": "RocketOn是一个分布在整个互联网上的虚拟世界，你可以在其中为自己创建一个化身，这个化身可以在任何网页上行走，这些网页包括谷歌、亚马逊、CN...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "准备启航",
+        "risk_tradeoff"
+      ]
+    },
+    {
+      "atom_id": "m2_atom_05",
+      "source_chapter": 2,
+      "source_card_id": "ch2_card_05",
+      "title": "把准备启航：拉一支队伍，一起干吧转成行动任务",
+      "summary": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“准备启航”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+      "content_type": "application_task",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+          "matchKeyword": "准备启航：拉一支队伍，一起干吧",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "准备启航：拉一支队伍，一起干吧"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "准备启航",
+        "application_task"
+      ]
+    },
+    {
+      "atom_id": "m3_atom_01",
+      "source_chapter": 3,
+      "source_card_id": "ch3_card_01",
+      "title": "打造产品的核心命题",
+      "summary": "本章围绕“打造产品：爱它，但不要太爱它”，把“打造产品”呈现为一种会改变行动环境的力量。学习者需要回到“所谓的商业神话往往并不适用于你的世界”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+      "content_type": "core_claim",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+          "matchKeyword": "打造产品：爱它，但不要太爱它",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "打造产品：爱它，但不要太爱它"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "打造产品",
+        "core_claim"
+      ]
+    },
+    {
+      "atom_id": "m3_atom_02",
+      "source_chapter": 3,
+      "source_card_id": "ch3_card_02",
+      "title": "所谓的商业神话往往并不适用于你的世界的作用机制",
+      "summary": "课程不把本章处理成名词清单，而是要求学习者找出“所谓的商业神话往往并不适用于你的世界”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+      "content_type": "mechanism",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 7,
+          "paragraphIndexEnd": 8,
+          "quote": "所谓的商业神话往往并不适用于你的世界当涉及任何具体的商业业务时，存在着同样强有力的一整套信条来引领我们的思考。我们用自以为是的设想来过滤、塑造和...",
+          "matchKeyword": "所谓的商业神话往往并不适用于你的世界",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "打造产品",
+        "mechanism"
+      ]
+    },
+    {
+      "atom_id": "m3_atom_03",
+      "source_chapter": 3,
+      "source_card_id": "ch3_card_03",
+      "title": "你最大的优势是已经输无可输带来的场景判断",
+      "summary": "本卡把“你最大的优势是已经输无可输”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+      "content_type": "scenario_judgement",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 69,
+          "paragraphIndexEnd": 70,
+          "quote": "你最大的优势是已经输无可输永远不要和一个已经输无可输的人对抗。",
+          "matchKeyword": "你最大的优势是已经输无可输",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "打造产品",
+        "scenario_judgement"
+      ]
+    },
+    {
+      "atom_id": "m3_atom_04",
+      "source_chapter": 3,
+      "source_card_id": "ch3_card_04",
+      "title": "打造产品的风险边界",
+      "summary": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+      "content_type": "risk_tradeoff",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 103,
+          "paragraphIndexEnd": 103,
+          "quote": "现在看起来好像很显然，人们非常认同通过出租空余的房间来获得额外收入这一创意，但最初情况却并非如此。当布赖恩·切斯基、乔·吉比亚（JoeGebbi...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "打造产品",
+        "risk_tradeoff"
+      ]
+    },
+    {
+      "atom_id": "m3_atom_05",
+      "source_chapter": 3,
+      "source_card_id": "ch3_card_05",
+      "title": "把打造产品：爱它，但不要太爱它转成行动任务",
+      "summary": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“打造产品”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+      "content_type": "application_task",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+          "matchKeyword": "打造产品：爱它，但不要太爱它",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "打造产品：爱它，但不要太爱它"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "打造产品",
+        "application_task"
+      ]
+    },
+    {
+      "atom_id": "m4_atom_01",
+      "source_chapter": 4,
+      "source_card_id": "ch4_card_01",
+      "title": "锁定市场的核心命题",
+      "summary": "本章围绕“锁定市场：你先吃透用户，用户才想吃透你”，把“锁定市场”呈现为一种会改变行动环境的力量。学习者需要回到“与其向用户疯狂推销，不如坐下来安静倾听”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+      "content_type": "core_claim",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+          "matchKeyword": "锁定市场：你先吃透用户，用户才想吃透你",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "锁定市场：你先吃透用户，用户才想吃透你"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "锁定市场",
+        "core_claim"
+      ]
+    },
+    {
+      "atom_id": "m4_atom_02",
+      "source_chapter": 4,
+      "source_card_id": "ch4_card_02",
+      "title": "与其向用户疯狂推销，不如坐下来安静倾听的作用机制",
+      "summary": "课程不把本章处理成名词清单，而是要求学习者找出“与其向用户疯狂推销，不如坐下来安静倾听”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+      "content_type": "mechanism",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 91,
+          "paragraphIndexEnd": 92,
+          "quote": "与其向用户疯狂推销，不如坐下来安静倾听你需要内心的谦卑才会认识到我们还有很多不懂的东西，绝不要吃老本，我们应该而且必须不断地学习和观察。如果我们...",
+          "matchKeyword": "与其向用户疯狂推销，不如坐下来安静倾听",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "锁定市场",
+        "mechanism"
+      ]
+    },
+    {
+      "atom_id": "m4_atom_03",
+      "source_chapter": 4,
+      "source_card_id": "ch4_card_03",
+      "title": "搜集数据，并用它检验你的创意带来的场景判断",
+      "summary": "本卡把“搜集数据，并用它检验你的创意”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+      "content_type": "scenario_judgement",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 157,
+          "paragraphIndexEnd": 158,
+          "quote": "搜集数据，并用它检验你的创意没有数据，你只不过是另一个持有这一观点的人而已。",
+          "matchKeyword": "搜集数据，并用它检验你的创意",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "锁定市场",
+        "scenario_judgement"
+      ]
+    },
+    {
+      "atom_id": "m4_atom_04",
+      "source_chapter": 4,
+      "source_card_id": "ch4_card_04",
+      "title": "锁定市场的风险边界",
+      "summary": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+      "content_type": "risk_tradeoff",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 12,
+          "paragraphIndexEnd": 12,
+          "quote": "谷歌就是这一类型企业的一个例子。它愿意投入大量的金钱和资源来开发企业新的核心竞争力，这意味着企业需要有新的分销渠道、新的市场推广方式、新的技术和...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "锁定市场",
+        "risk_tradeoff"
+      ]
+    },
+    {
+      "atom_id": "m4_atom_05",
+      "source_chapter": 4,
+      "source_card_id": "ch4_card_05",
+      "title": "把锁定市场：你先吃透用户，用户才想吃透你转成行动任务",
+      "summary": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“锁定市场”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+      "content_type": "application_task",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+          "matchKeyword": "锁定市场：你先吃透用户，用户才想吃透你",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "锁定市场：你先吃透用户，用户才想吃透你"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "锁定市场",
+        "application_task"
+      ]
+    },
+    {
+      "atom_id": "m5_atom_01",
+      "source_chapter": 5,
+      "source_card_id": "ch5_card_01",
+      "title": "持续创新的核心命题",
+      "summary": "本章围绕“持续创新：基业长青，靠的是内部创新”，把“持续创新”呈现为一种会改变行动环境的力量。学习者需要回到“好好利用每一个员工的独特想法”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+      "content_type": "core_claim",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+          "matchKeyword": "持续创新：基业长青，靠的是内部创新",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "持续创新：基业长青，靠的是内部创新"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "持续创新",
+        "core_claim"
+      ]
+    },
+    {
+      "atom_id": "m5_atom_02",
+      "source_chapter": 5,
+      "source_card_id": "ch5_card_02",
+      "title": "好好利用每一个员工的独特想法的作用机制",
+      "summary": "课程不把本章处理成名词清单，而是要求学习者找出“好好利用每一个员工的独特想法”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+      "content_type": "mechanism",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 44,
+          "paragraphIndexEnd": 45,
+          "quote": "好好利用每一个员工的独特想法大企业推进创新会有很多困扰。创新会涉及一些糟糕的设想，或者某些看上去很糟糕的设想。",
+          "matchKeyword": "好好利用每一个员工的独特想法",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "持续创新",
+        "mechanism"
+      ]
+    },
+    {
+      "atom_id": "m5_atom_03",
+      "source_chapter": 5,
+      "source_card_id": "ch5_card_03",
+      "title": "最可怕的是没有从失败中获取新的洞见带来的场景判断",
+      "summary": "本卡把“最可怕的是没有从失败中获取新的洞见”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+      "content_type": "scenario_judgement",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 115,
+          "paragraphIndexEnd": 116,
+          "quote": "最可怕的是没有从失败中获取新的洞见从每一次失败中我都能学到些东西。在我最早工作过的那两家公司里，我所参与设计的产品都彻底失败了，但现在我已经知道...",
+          "matchKeyword": "最可怕的是没有从失败中获取新的洞见",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "持续创新",
+        "scenario_judgement"
+      ]
+    },
+    {
+      "atom_id": "m5_atom_04",
+      "source_chapter": 5,
+      "source_card_id": "ch5_card_04",
+      "title": "持续创新的风险边界",
+      "summary": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+      "content_type": "risk_tradeoff",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 6,
+          "paragraphIndexEnd": 6,
+          "quote": "如果你打算作为一个企业家来进行创新，那么你就必须克服这种刻在你基因里的恐惧。这是因为创新是与明哲保身完全相反的一种人类行为，创新本身就蕴含了风险...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "持续创新",
+        "risk_tradeoff"
+      ]
+    },
+    {
+      "atom_id": "m5_atom_05",
+      "source_chapter": 5,
+      "source_card_id": "ch5_card_05",
+      "title": "把持续创新：基业长青，靠的是内部创新转成行动任务",
+      "summary": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“持续创新”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+      "content_type": "application_task",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+          "matchKeyword": "持续创新：基业长青，靠的是内部创新",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "持续创新：基业长青，靠的是内部创新"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "持续创新",
+        "application_task"
+      ]
+    },
+    {
+      "atom_id": "m6_atom_01",
+      "source_chapter": 6,
+      "source_card_id": "ch6_card_01",
+      "title": "高速运转的核心命题",
+      "summary": "本章围绕“高速运转：快点，一定要走在市场前列”，把“高速运转”呈现为一种会改变行动环境的力量。学习者需要回到“高速运转”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+      "content_type": "core_claim",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 5,
+          "paragraphIndexEnd": 5,
+          "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+          "matchKeyword": "高速运转",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "高速运转",
+        "core_claim"
+      ]
+    },
+    {
+      "atom_id": "m6_atom_02",
+      "source_chapter": 6,
+      "source_card_id": "ch6_card_02",
+      "title": "高速运转的作用机制",
+      "summary": "课程不把本章处理成名词清单，而是要求学习者找出“高速运转”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+      "content_type": "mechanism",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 5,
+          "paragraphIndexEnd": 5,
+          "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+          "matchKeyword": "高速运转",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "高速运转",
+        "mechanism"
+      ]
+    },
+    {
+      "atom_id": "m6_atom_03",
+      "source_chapter": 6,
+      "source_card_id": "ch6_card_03",
+      "title": "技术日新月异的时代，速度意味着一切带来的场景判断",
+      "summary": "本卡把“技术日新月异的时代，速度意味着一切”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+      "content_type": "scenario_judgement",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 8,
+          "paragraphIndexEnd": 9,
+          "quote": "技术日新月异的时代，速度意味着一切请记住，时间会影响到你业务的方方面面。技术永远不会停滞不前，它始终在不断地进化。只需要一项新技术就可以在一个晚...",
+          "matchKeyword": "技术日新月异的时代，速度意味着一切",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "高速运转",
+        "scenario_judgement"
+      ]
+    },
+    {
+      "atom_id": "m6_atom_04",
+      "source_chapter": 6,
+      "source_card_id": "ch6_card_04",
+      "title": "高速运转的风险边界",
+      "summary": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+      "content_type": "risk_tradeoff",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 11,
+          "paragraphIndexEnd": 11,
+          "quote": "沃尔玛的CIO罗林·福特（RollinFord）这样说道：“每天你醒来后所说的第一句话是‘我们有没有错过了什么？’你所要做的就是比别人跑得更快。...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "高速运转",
+        "risk_tradeoff"
+      ]
+    },
+    {
+      "atom_id": "m6_atom_05",
+      "source_chapter": 6,
+      "source_card_id": "ch6_card_05",
+      "title": "把高速运转：快点，一定要走在市场前列转成行动任务",
+      "summary": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“高速运转”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+      "content_type": "application_task",
+      "teaching_use": "用于引发判断、讨论、练习或项目迁移",
+      "difficulty": "L2",
+      "freshness_risk": "stable",
+      "copyright_risk": "low-transformed",
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 5,
+          "paragraphIndexEnd": 5,
+          "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+          "matchKeyword": "高速运转",
+          "anchorStatus": "keyword"
+        }
+      ],
+      "tags": [
+        "让大象飞",
+        "高速运转",
+        "application_task"
+      ]
+    }
+  ]
+}

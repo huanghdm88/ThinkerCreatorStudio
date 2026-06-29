@@ -1,0 +1,19 @@
+.DS_Store
+.vercel
+node_modules
+dist
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local/generated media workspace. Runtime media lives in public/.
+/videos
+/Hoffman video
+/audios
+/posters
+/renders
+/tmp
+*.zip

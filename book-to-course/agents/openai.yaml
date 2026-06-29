@@ -1,0 +1,4 @@
+interface:
+  display_name: "Book To Course"
+  short_description: "Turn books into structured course assets"
+  default_prompt: "Use $book-to-course to convert a source book into structured course data and validate it against the course definition."

@@ -1,0 +1,19 @@
+{
+  "need_dimensions": {
+    "cognitive_opening": "用反常识问题打开认知差距。",
+    "method_learning": "把观点改写成步骤、清单和判断标准。",
+    "conversation_solving": "把观点改写成对话、教练问题和会议提示。",
+    "practice_participation": "把观点改写成可提交的小任务或项目动作。"
+  },
+  "interaction_score_formula": {
+    "content_type_fit": 0.35,
+    "user_need_fit": 0.35,
+    "learning_stage_fit": 0.2,
+    "media_availability": 0.1
+  },
+  "copy_rules": [
+    "不硬分类用户，只调整四类需求权重。",
+    "同一证据可改写为不同提问方式，但不得改变原始主张。",
+    "实践参与型版本必须包含可提交产物。"
+  ]
+}

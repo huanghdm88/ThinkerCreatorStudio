@@ -1,0 +1,1112 @@
+{
+  "interactions": [
+    {
+      "interaction_id": "m1_i01",
+      "source_atom_id": "m1_atom_01",
+      "content_type": "core_claim",
+      "interaction_type": "video_choice",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "寻找方向只是一个概念，还是会改变现实？",
+      "options": [
+        "只是概念名词",
+        "会改变现实行动环境",
+        "只适合专家讨论"
+      ],
+      "correct_index": 1,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "video",
+        "duration": 15,
+        "prompt": "学习者在真实场景中误判“寻找方向的核心命题”，结尾让学习者选择真正问题或风险。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+          "matchKeyword": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "寻找方向：不管是否寒冬，总有浪潮在往这里来"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m1_i02",
+      "source_atom_id": "m1_atom_02",
+      "content_type": "mechanism",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "技术并没有你以为的那么重要为什么不是术语，却会形成力量？",
+      "options": [
+        "说清机制和场景连接",
+        "记住更多术语",
+        "只看是否流行"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 13,
+          "paragraphIndexEnd": 14,
+          "quote": "技术并没有你以为的那么重要任何新的技术通常都会经历一个25年的接受和采用周期。",
+          "matchKeyword": "技术并没有你以为的那么重要",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m1_i03",
+      "source_atom_id": "m1_atom_03",
+      "content_type": "scenario_judgement",
+      "interaction_type": "open",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "如果创新之前，别说你不屑于模仿成熟，哪个场景会先变化？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 150,
+          "paragraphIndexEnd": 152,
+          "quote": "创新之前，别说你不屑于模仿独创性只不过是明智的模仿。哲学家和作家",
+          "matchKeyword": "创新之前，别说你不屑于模仿",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m1_i04",
+      "source_atom_id": "m1_atom_04",
+      "content_type": "risk_tradeoff",
+      "interaction_type": "truefalse",
+      "target_need_fit": {
+        "cognitive_opening": 74,
+        "method_learning": 55,
+        "conversation_solving": 80,
+        "practice_participation": 45
+      },
+      "prompt": "寻找方向越强，风险会自动变小吗？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": "false",
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 16,
+          "paragraphIndexEnd": 17,
+          "quote": "安德森·霍洛维茨风险投资公司联合创始人谈到创新，最大的误区之一是，认为创新指的就是技术创新。实际并非如此。在创新的过程中技术仅仅是其中的一部分，...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m1_i05",
+      "source_atom_id": "m1_atom_05",
+      "content_type": "application_task",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "学完本章只是理解概念，还是要提交练习？",
+      "options": [
+        "写一个机会-风险-验证表",
+        "背诵全部案例",
+        "只讨论未来想象"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 1,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+          "matchKeyword": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "寻找方向：不管是否寒冬，总有浪潮在往这里来"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m2_i01",
+      "source_atom_id": "m2_atom_01",
+      "content_type": "core_claim",
+      "interaction_type": "video_choice",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "准备启航只是一个概念，还是会改变现实？",
+      "options": [
+        "只是概念名词",
+        "会改变现实行动环境",
+        "只适合专家讨论"
+      ],
+      "correct_index": 1,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "video",
+        "duration": 15,
+        "prompt": "学习者在真实场景中误判“准备启航的核心命题”，结尾让学习者选择真正问题或风险。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+          "matchKeyword": "准备启航：拉一支队伍，一起干吧",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "准备启航：拉一支队伍，一起干吧"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m2_i02",
+      "source_atom_id": "m2_atom_02",
+      "content_type": "mechanism",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "将初创团队成员控制在5人以内为什么不是术语，却会形成力量？",
+      "options": [
+        "说清机制和场景连接",
+        "记住更多术语",
+        "只看是否流行"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 16,
+          "paragraphIndexEnd": 17,
+          "quote": "将初创团队成员控制在5人以内无论什么时候，一支优秀、快速、精干的团队都能击败一支庞大、缓慢的团队。",
+          "matchKeyword": "将初创团队成员控制在5人以内",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m2_i03",
+      "source_atom_id": "m2_atom_03",
+      "content_type": "scenario_judgement",
+      "interaction_type": "open",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "如果过多的资金有可能是一味毒药成熟，哪个场景会先变化？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 59,
+          "paragraphIndexEnd": 60,
+          "quote": "过多的资金有可能是一味毒药我们接受小额预算。我们喜欢这种受到约束的感觉。这能激发创造力。",
+          "matchKeyword": "过多的资金有可能是一味毒药",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m2_i04",
+      "source_atom_id": "m2_atom_04",
+      "content_type": "risk_tradeoff",
+      "interaction_type": "truefalse",
+      "target_need_fit": {
+        "cognitive_opening": 74,
+        "method_learning": 55,
+        "conversation_solving": 80,
+        "practice_participation": 45
+      },
+      "prompt": "准备启航越强，风险会自动变小吗？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": "false",
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 39,
+          "paragraphIndexEnd": 39,
+          "quote": "RocketOn是一个分布在整个互联网上的虚拟世界，你可以在其中为自己创建一个化身，这个化身可以在任何网页上行走，这些网页包括谷歌、亚马逊、CN...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m2_i05",
+      "source_atom_id": "m2_atom_05",
+      "content_type": "application_task",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "学完本章只是理解概念，还是要提交练习？",
+      "options": [
+        "写一个机会-风险-验证表",
+        "背诵全部案例",
+        "只讨论未来想象"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 2,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+          "matchKeyword": "准备启航：拉一支队伍，一起干吧",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "准备启航：拉一支队伍，一起干吧"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m3_i01",
+      "source_atom_id": "m3_atom_01",
+      "content_type": "core_claim",
+      "interaction_type": "video_choice",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "打造产品只是一个概念，还是会改变现实？",
+      "options": [
+        "只是概念名词",
+        "会改变现实行动环境",
+        "只适合专家讨论"
+      ],
+      "correct_index": 1,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "video",
+        "duration": 15,
+        "prompt": "学习者在真实场景中误判“打造产品的核心命题”，结尾让学习者选择真正问题或风险。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+          "matchKeyword": "打造产品：爱它，但不要太爱它",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "打造产品：爱它，但不要太爱它"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m3_i02",
+      "source_atom_id": "m3_atom_02",
+      "content_type": "mechanism",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "所谓的商业神话往往并不适用于你的世界为什么不是术语，却会形成力量？",
+      "options": [
+        "说清机制和场景连接",
+        "记住更多术语",
+        "只看是否流行"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 7,
+          "paragraphIndexEnd": 8,
+          "quote": "所谓的商业神话往往并不适用于你的世界当涉及任何具体的商业业务时，存在着同样强有力的一整套信条来引领我们的思考。我们用自以为是的设想来过滤、塑造和...",
+          "matchKeyword": "所谓的商业神话往往并不适用于你的世界",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m3_i03",
+      "source_atom_id": "m3_atom_03",
+      "content_type": "scenario_judgement",
+      "interaction_type": "open",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "如果你最大的优势是已经输无可输成熟，哪个场景会先变化？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 69,
+          "paragraphIndexEnd": 70,
+          "quote": "你最大的优势是已经输无可输永远不要和一个已经输无可输的人对抗。",
+          "matchKeyword": "你最大的优势是已经输无可输",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m3_i04",
+      "source_atom_id": "m3_atom_04",
+      "content_type": "risk_tradeoff",
+      "interaction_type": "truefalse",
+      "target_need_fit": {
+        "cognitive_opening": 74,
+        "method_learning": 55,
+        "conversation_solving": 80,
+        "practice_participation": 45
+      },
+      "prompt": "打造产品越强，风险会自动变小吗？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": "false",
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 103,
+          "paragraphIndexEnd": 103,
+          "quote": "现在看起来好像很显然，人们非常认同通过出租空余的房间来获得额外收入这一创意，但最初情况却并非如此。当布赖恩·切斯基、乔·吉比亚（JoeGebbi...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m3_i05",
+      "source_atom_id": "m3_atom_05",
+      "content_type": "application_task",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "学完本章只是理解概念，还是要提交练习？",
+      "options": [
+        "写一个机会-风险-验证表",
+        "背诵全部案例",
+        "只讨论未来想象"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 3,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+          "matchKeyword": "打造产品：爱它，但不要太爱它",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "打造产品：爱它，但不要太爱它"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m4_i01",
+      "source_atom_id": "m4_atom_01",
+      "content_type": "core_claim",
+      "interaction_type": "video_choice",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "锁定市场只是一个概念，还是会改变现实？",
+      "options": [
+        "只是概念名词",
+        "会改变现实行动环境",
+        "只适合专家讨论"
+      ],
+      "correct_index": 1,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "video",
+        "duration": 15,
+        "prompt": "学习者在真实场景中误判“锁定市场的核心命题”，结尾让学习者选择真正问题或风险。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+          "matchKeyword": "锁定市场：你先吃透用户，用户才想吃透你",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "锁定市场：你先吃透用户，用户才想吃透你"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m4_i02",
+      "source_atom_id": "m4_atom_02",
+      "content_type": "mechanism",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "与其向用户疯狂推销，不如坐下来安静倾听为什么不是术语，却会形成力量？",
+      "options": [
+        "说清机制和场景连接",
+        "记住更多术语",
+        "只看是否流行"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 91,
+          "paragraphIndexEnd": 92,
+          "quote": "与其向用户疯狂推销，不如坐下来安静倾听你需要内心的谦卑才会认识到我们还有很多不懂的东西，绝不要吃老本，我们应该而且必须不断地学习和观察。如果我们...",
+          "matchKeyword": "与其向用户疯狂推销，不如坐下来安静倾听",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m4_i03",
+      "source_atom_id": "m4_atom_03",
+      "content_type": "scenario_judgement",
+      "interaction_type": "open",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "如果搜集数据，并用它检验你的创意成熟，哪个场景会先变化？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 157,
+          "paragraphIndexEnd": 158,
+          "quote": "搜集数据，并用它检验你的创意没有数据，你只不过是另一个持有这一观点的人而已。",
+          "matchKeyword": "搜集数据，并用它检验你的创意",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m4_i04",
+      "source_atom_id": "m4_atom_04",
+      "content_type": "risk_tradeoff",
+      "interaction_type": "truefalse",
+      "target_need_fit": {
+        "cognitive_opening": 74,
+        "method_learning": 55,
+        "conversation_solving": 80,
+        "practice_participation": 45
+      },
+      "prompt": "锁定市场越强，风险会自动变小吗？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": "false",
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 12,
+          "paragraphIndexEnd": 12,
+          "quote": "谷歌就是这一类型企业的一个例子。它愿意投入大量的金钱和资源来开发企业新的核心竞争力，这意味着企业需要有新的分销渠道、新的市场推广方式、新的技术和...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m4_i05",
+      "source_atom_id": "m4_atom_05",
+      "content_type": "application_task",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "学完本章只是理解概念，还是要提交练习？",
+      "options": [
+        "写一个机会-风险-验证表",
+        "背诵全部案例",
+        "只讨论未来想象"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 4,
+          "paragraphIndex": 1,
+          "paragraphIndexEnd": 1,
+          "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+          "matchKeyword": "锁定市场：你先吃透用户，用户才想吃透你",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "锁定市场：你先吃透用户，用户才想吃透你"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m5_i01",
+      "source_atom_id": "m5_atom_01",
+      "content_type": "core_claim",
+      "interaction_type": "video_choice",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "持续创新只是一个概念，还是会改变现实？",
+      "options": [
+        "只是概念名词",
+        "会改变现实行动环境",
+        "只适合专家讨论"
+      ],
+      "correct_index": 1,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "video",
+        "duration": 15,
+        "prompt": "学习者在真实场景中误判“持续创新的核心命题”，结尾让学习者选择真正问题或风险。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+          "matchKeyword": "持续创新：基业长青，靠的是内部创新",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "持续创新：基业长青，靠的是内部创新"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m5_i02",
+      "source_atom_id": "m5_atom_02",
+      "content_type": "mechanism",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "好好利用每一个员工的独特想法为什么不是术语，却会形成力量？",
+      "options": [
+        "说清机制和场景连接",
+        "记住更多术语",
+        "只看是否流行"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 44,
+          "paragraphIndexEnd": 45,
+          "quote": "好好利用每一个员工的独特想法大企业推进创新会有很多困扰。创新会涉及一些糟糕的设想，或者某些看上去很糟糕的设想。",
+          "matchKeyword": "好好利用每一个员工的独特想法",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m5_i03",
+      "source_atom_id": "m5_atom_03",
+      "content_type": "scenario_judgement",
+      "interaction_type": "open",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "如果最可怕的是没有从失败中获取新的洞见成熟，哪个场景会先变化？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 115,
+          "paragraphIndexEnd": 116,
+          "quote": "最可怕的是没有从失败中获取新的洞见从每一次失败中我都能学到些东西。在我最早工作过的那两家公司里，我所参与设计的产品都彻底失败了，但现在我已经知道...",
+          "matchKeyword": "最可怕的是没有从失败中获取新的洞见",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m5_i04",
+      "source_atom_id": "m5_atom_04",
+      "content_type": "risk_tradeoff",
+      "interaction_type": "truefalse",
+      "target_need_fit": {
+        "cognitive_opening": 74,
+        "method_learning": 55,
+        "conversation_solving": 80,
+        "practice_participation": 45
+      },
+      "prompt": "持续创新越强，风险会自动变小吗？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": "false",
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 6,
+          "paragraphIndexEnd": 6,
+          "quote": "如果你打算作为一个企业家来进行创新，那么你就必须克服这种刻在你基因里的恐惧。这是因为创新是与明哲保身完全相反的一种人类行为，创新本身就蕴含了风险...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m5_i05",
+      "source_atom_id": "m5_atom_05",
+      "content_type": "application_task",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "学完本章只是理解概念，还是要提交练习？",
+      "options": [
+        "写一个机会-风险-验证表",
+        "背诵全部案例",
+        "只讨论未来想象"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 5,
+          "paragraphIndex": 3,
+          "paragraphIndexEnd": 3,
+          "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+          "matchKeyword": "持续创新：基业长青，靠的是内部创新",
+          "anchorStatus": "chapter_title_context",
+          "sourceHeading": "持续创新：基业长青，靠的是内部创新"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m6_i01",
+      "source_atom_id": "m6_atom_01",
+      "content_type": "core_claim",
+      "interaction_type": "video_choice",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "高速运转只是一个概念，还是会改变现实？",
+      "options": [
+        "只是概念名词",
+        "会改变现实行动环境",
+        "只适合专家讨论"
+      ],
+      "correct_index": 1,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "video",
+        "duration": 15,
+        "prompt": "学习者在真实场景中误判“高速运转的核心命题”，结尾让学习者选择真正问题或风险。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 5,
+          "paragraphIndexEnd": 5,
+          "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+          "matchKeyword": "高速运转",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m6_i02",
+      "source_atom_id": "m6_atom_02",
+      "content_type": "mechanism",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "高速运转为什么不是术语，却会形成力量？",
+      "options": [
+        "说清机制和场景连接",
+        "记住更多术语",
+        "只看是否流行"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 5,
+          "paragraphIndexEnd": 5,
+          "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+          "matchKeyword": "高速运转",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m6_i03",
+      "source_atom_id": "m6_atom_03",
+      "content_type": "scenario_judgement",
+      "interaction_type": "open",
+      "target_need_fit": {
+        "cognitive_opening": 82,
+        "method_learning": 55,
+        "conversation_solving": 64,
+        "practice_participation": 45
+      },
+      "prompt": "如果技术日新月异的时代，速度意味着一切成熟，哪个场景会先变化？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 8,
+          "paragraphIndexEnd": 9,
+          "quote": "技术日新月异的时代，速度意味着一切请记住，时间会影响到你业务的方方面面。技术永远不会停滞不前，它始终在不断地进化。只需要一项新技术就可以在一个晚...",
+          "matchKeyword": "技术日新月异的时代，速度意味着一切",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m6_i04",
+      "source_atom_id": "m6_atom_04",
+      "content_type": "risk_tradeoff",
+      "interaction_type": "truefalse",
+      "target_need_fit": {
+        "cognitive_opening": 74,
+        "method_learning": 55,
+        "conversation_solving": 80,
+        "practice_participation": 45
+      },
+      "prompt": "高速运转越强，风险会自动变小吗？",
+      "options": [],
+      "correct_index": null,
+      "correct_answer": "false",
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 11,
+          "paragraphIndexEnd": 11,
+          "quote": "沃尔玛的CIO罗林·福特（RollinFord）这样说道：“每天你醒来后所说的第一句话是‘我们有没有错过了什么？’你所要做的就是比别人跑得更快。...",
+          "matchKeyword": "风险",
+          "anchorStatus": "keyword"
+        }
+      ]
+    },
+    {
+      "interaction_id": "m6_i05",
+      "source_atom_id": "m6_atom_05",
+      "content_type": "application_task",
+      "interaction_type": "choice",
+      "target_need_fit": {
+        "cognitive_opening": 55,
+        "method_learning": 82,
+        "conversation_solving": 50,
+        "practice_participation": 76
+      },
+      "prompt": "学完本章只是理解概念，还是要提交练习？",
+      "options": [
+        "写一个机会-风险-验证表",
+        "背诵全部案例",
+        "只讨论未来想象"
+      ],
+      "correct_index": 0,
+      "correct_answer": null,
+      "feedback": {
+        "correct": "判断到位",
+        "incorrect": "回到证据"
+      },
+      "media": {
+        "type": "text",
+        "prompt": "阅读观点卡后完成判断或迁移练习。"
+      },
+      "evidence_spans": [
+        {
+          "chapterIndex": 6,
+          "paragraphIndex": 5,
+          "paragraphIndexEnd": 5,
+          "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+          "matchKeyword": "高速运转",
+          "anchorStatus": "keyword"
+        }
+      ]
+    }
+  ]
+}

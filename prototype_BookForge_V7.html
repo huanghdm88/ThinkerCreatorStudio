@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookForge V7 · 编辑台 — Thinker Book-to-Assets</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden;background:#06070d;color:#e7e9f0;
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+  button{font-family:inherit}
+
+  /* ===== 顶栏 ===== */
+  #topbar{position:fixed;top:0;left:0;right:0;height:54px;z-index:100;display:flex;align-items:center;
+    padding:0 20px;gap:26px;background:rgba(8,10,20,.92);border-bottom:1px solid rgba(255,255,255,.07);
+    backdrop-filter:blur(10px)}
+  #topbar .brand{font-size:14px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+  #topbar .brand span{color:#8b91a8;font-weight:400;font-size:11px;margin-left:8px}
+  #steps{display:flex;gap:4px;flex:1;justify-content:center}
+  .step{font-size:12px;padding:7px 16px;border-radius:8px;border:1px solid transparent;cursor:pointer;
+    background:none;color:#8b91a8;transition:all .2s;white-space:nowrap}
+  .step:hover:not(.locked){color:#fff}
+  .step.on{background:rgba(99,102,241,.18);border-color:rgba(129,140,248,.5);color:#fff}
+  .step.locked{opacity:.35;cursor:not-allowed}
+  #ministats{font-size:11px;color:#8b91a8;white-space:nowrap}
+  #ministats b{color:#fff;font-variant-numeric:tabular-nums}
+
+  .scr{display:none;position:fixed;inset:54px 0 0 0;overflow:hidden}
+  .scr.on{display:block}
+  #scr-scan.on,#scr-studio.on,#scr-publish.on{display:flex}
+  #scr-scan,#scr-studio{flex-direction:column}
+  .scroll{height:100%;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#2a2f4a transparent}
+  ::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#2a2f4a;border-radius:4px}
+  .btn{font-size:12.5px;padding:9px 18px;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.05);color:#e7e9f0;transition:all .2s}
+  .btn:hover{background:rgba(255,255,255,.12)}
+  .btn.primary{background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;color:#fff;font-weight:600}
+  .btn.primary:hover{filter:brightness(1.15)}
+  .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-right:5px}
+  .tag.blue{background:rgba(59,130,246,.18);color:#93c5fd;border:1px solid rgba(59,130,246,.4)}
+  .tag.amber{background:rgba(245,158,11,.15);color:#fcd34d;border:1px solid rgba(245,158,11,.4)}
+  .tag.green{background:rgba(34,197,94,.14);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+  .tag.red{background:rgba(239,68,68,.14);color:#fca5a5;border:1px solid rgba(239,68,68,.4)}
+  .tag.gray{background:rgba(148,163,184,.12);color:#cbd5e1;border:1px solid rgba(148,163,184,.3)}
+
+  /* ===== ① 扫描流水线 ===== */
+  #scr-scan{background:radial-gradient(1100px 600px at 50% 20%,#0c0f1f 0%,#06070d 70%)}
+  #pipe{flex:1;min-height:0;display:grid;grid-template-columns:1.45fr 1fr 1.1fr}
+  .pcol{border-right:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;min-height:0}
+  .pcol:last-child{border-right:none}
+  .pcol>h3{padding:13px 18px;font-size:11.5px;letter-spacing:1.5px;color:#9aa1bd;flex-shrink:0;
+    border-bottom:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center}
+  .pcol>h3 b{color:#fff;font-variant-numeric:tabular-nums;font-size:12px}
+  .pbody{flex:1;overflow-y:auto;padding:16px 18px;min-height:0}
+  .chTitle{font-size:10.5px;color:#6e7591;letter-spacing:1px;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+  .chTitle::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07)}
+  #bookStream .chTitle:first-child{margin-top:0}
+  .para{font-size:13px;line-height:2.15;color:#cfd3e4;margin-bottom:15px;border-radius:8px;transition:color 1s}
+  .para.scanning{background:linear-gradient(100deg,transparent 20%,rgba(129,140,248,.16) 50%,transparent 80%);
+    background-size:250% 100%;animation:scanmove 1.1s linear infinite}
+  @keyframes scanmove{from{background-position:200% 0}to{background-position:-100% 0}}
+  .para.done{color:#565d76}
+  .key{border-radius:4px;padding:0 2px;transition:background .35s,color .35s}
+  .key.hit{background:rgba(252,211,77,.4);color:#fff}
+  .key.extracted{background:rgba(252,211,77,.07);color:#fcd34d;border-bottom:1px dashed rgba(252,211,77,.5)}
+  .para.done .key.extracted{color:#d9b14d}
+  .key sup{font-size:8px;color:#fbbf24;margin-left:3px;letter-spacing:0}
+  .flier{position:fixed;z-index:220;font-size:10px;background:#221f33;border:1px solid #fbbf24;color:#ffd9a8;
+    padding:3px 9px;border-radius:8px;pointer-events:none;white-space:nowrap;max-width:250px;overflow:hidden;
+    text-overflow:ellipsis;transition:transform .6s cubic-bezier(.3,.7,.3,1),opacity .6s}
+  .chGroup{margin-bottom:6px}
+  .atomChip{display:flex;gap:7px;align-items:flex-start;font-size:11px;line-height:1.55;
+    background:rgba(20,24,44,.85);border:1px solid rgba(140,150,255,.3);border-radius:9px;
+    padding:6px 9px;margin-bottom:6px;opacity:0;transform:translateX(-10px);transition:all .4s}
+  .atomChip.in{opacity:1;transform:none}
+  .atomChip .aid{font-size:9px;color:#aebbff;border:1px solid rgba(140,150,255,.35);border-radius:5px;
+    padding:0 4px;flex-shrink:0;margin-top:3px;font-variant-numeric:tabular-nums}
+  .atomChip .ak{font-size:8.5px;color:#6e7591;flex-shrink:0;margin-top:4px}
+  .fcard{border:1px solid var(--c,#6366f1);border-radius:13px;padding:11px 12px;margin-bottom:11px;
+    background:linear-gradient(160deg,rgba(26,30,52,.7),rgba(14,16,30,.7));opacity:.5;transition:all .45s}
+  .fcard.full{opacity:1;cursor:pointer;box-shadow:0 4px 22px rgba(0,0,0,.5)}
+  .fcard.full:hover{transform:translateY(-2px)}
+  .fcard .fhead{font-size:9.5px;color:var(--c);display:flex;justify-content:space-between;letter-spacing:1px}
+  .fcard h4{font-size:12px;line-height:1.55;margin:5px 0 8px;color:#e7e9f0}
+  .fslots{display:flex;flex-wrap:wrap;gap:4px}
+  .fslot{font-size:8.5px;border:1px dashed rgba(255,255,255,.25);color:#5b6178;border-radius:5px;
+    padding:1px 6px;transition:all .3s;font-variant-numeric:tabular-nums}
+  .fslot.fill{border-style:solid;border-color:#fbbf24;color:#ffd9a8;background:rgba(252,211,77,.08)}
+  .fcard .fprice{font-size:10.5px;color:#ffd9a8;margin-top:8px;opacity:0;transition:opacity .4s;
+    display:flex;justify-content:space-between}
+  .fcard.full .fprice{opacity:1}
+  #batch{border:1px dashed rgba(255,255,255,.18);border-radius:13px;padding:12px 14px;font-size:11px;
+    color:#9aa1bd;line-height:1.8;display:none;margin-bottom:11px}
+  #batch.on{display:block}
+  #batch b{color:#fff;font-size:17px;font-variant-numeric:tabular-nums}
+  .batchTypes{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .bt{font-size:9.5px;padding:2px 8px;border-radius:9px;border:1px solid rgba(255,255,255,.14);color:#cfd3e4}
+  .bt i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:4px}
+  #scanCtas{display:none;flex-direction:column;gap:8px}
+  #scanCtas.on{display:flex}
+  #scanFoot{flex-shrink:0;border-top:1px solid rgba(255,255,255,.07);padding:10px 20px;font-size:10.5px;
+    color:#8b91a8;display:flex;gap:24px;align-items:center;background:rgba(8,10,20,.8)}
+  #scanFoot b{color:#e7e9f0;font-variant-numeric:tabular-nums}
+  #scanFoot .gr{color:#565d76}
+  #skipScan{position:absolute;top:12px;right:18px;z-index:31;display:none}
+  #landing{position:absolute;inset:0;z-index:30;display:flex;align-items:center;
+    justify-content:center;background:radial-gradient(900px 520px at 50% 42%,#0d1022 0%,#06070d 75%);
+    transition:opacity .6s}
+  #landing.off{opacity:0;pointer-events:none}
+  #landWrap{display:flex;gap:30px;align-items:stretch;padding:0 5vw;max-width:1180px}
+  .lpanel{background:rgba(15,18,34,.72);border:1px solid rgba(255,255,255,.09);border-radius:20px;
+    padding:26px 28px;flex:1;min-width:380px}
+  .lpanel h2{font-size:17px;margin-bottom:5px}
+  .lsub2{font-size:11.5px;color:#8b91a8;line-height:1.8;margin-bottom:16px}
+  #dropzone{border:1.5px dashed rgba(255,170,80,.5);border-radius:16px;height:140px;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;gap:7px;cursor:pointer;transition:all .25s;
+    background:radial-gradient(220px 80px at 50% 60%,rgba(255,140,50,.08),transparent)}
+  #dropzone:hover{border-color:#ffb066;background:radial-gradient(260px 100px at 50% 60%,rgba(255,140,50,.16),transparent)}
+  #dropzone p{font-size:12.5px}
+  #dropzone span{font-size:10.5px;color:#8b91a8}
+  .ring2{width:44px;height:44px;border-radius:50%;
+    background:conic-gradient(from 0deg,#ff7a18,#6366f1,#14b8a6,#f59e0b,#ff7a18);
+    -webkit-mask:radial-gradient(circle,transparent 55%,#000 58%);mask:radial-gradient(circle,transparent 55%,#000 58%);
+    animation:spin 7s linear infinite}
+  #mats{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .mat{font-size:11px;padding:6px 12px;border-radius:18px;border:1px solid rgba(255,255,255,.14);
+    color:#cfd3e4;background:rgba(255,255,255,.04);cursor:pointer;transition:all .2s}
+  .mat:hover{border-color:#ffb066;color:#ffd9a8}
+  .lnote{font-size:10.5px;color:#6e7591;margin-top:13px;line-height:1.8}
+  .shelfRow{display:flex;gap:14px}
+  .spine{width:118px;height:172px;border-radius:6px 10px 10px 6px;position:relative;padding:12px 9px;
+    display:flex;flex-direction:column;justify-content:center;text-align:center;cursor:pointer;
+    transition:transform .25s;user-select:none}
+  .spine:hover{transform:translateY(-6px)}
+  .spine h3{font-size:14.5px;letter-spacing:1.5px;color:#fff;line-height:1.5}
+  .spine p{font-size:9px;margin-top:6px;line-height:1.6;color:#a5b4fc}
+  .spine .sstat{color:#ffd9a8}
+  .sbadge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:9px;
+    padding:2px 9px;border-radius:10px;white-space:nowrap}
+  .sbadge.ok{background:#14532d;color:#86efac;border:1px solid #22c55e}
+  .sbadge.wait{background:#451a03;color:#fdba74;border:1px solid #f59e0b}
+  .spine.done{background:linear-gradient(135deg,#1e3a8a,#312e81 55%,#4338ca);border-left:6px solid #0f1f52;
+    box-shadow:0 14px 36px rgba(0,0,0,.6),0 0 30px rgba(99,102,241,.25)}
+  .spine.queue{background:linear-gradient(135deg,#3f2d12,#52380f 55%,#713f12);border-left:6px solid #2a1d08;
+    box-shadow:0 14px 36px rgba(0,0,0,.6)}
+  .spine.queue p{color:#fcd34d}
+  .spine.tape{background:linear-gradient(135deg,#312e3f,#3b3450 55%,#4c4368);border-left:6px solid #232030}
+  .spine.tape p{color:#c4b5fd}
+  .spine.empty{border:1.5px dashed rgba(255,255,255,.2);background:none;color:#6e7591;font-size:24px;
+    align-items:center;justify-content:center;display:flex}
+  .shelfActs{margin-top:16px;display:flex;gap:10px}
+  #scr-scan.dragging::after{content:"松手 · 开始扫描";position:absolute;inset:0;z-index:90;display:flex;
+    align-items:center;justify-content:center;font-size:26px;letter-spacing:6px;color:#ffd9a8;
+    background:rgba(10,8,20,.75);border:2px dashed rgba(255,170,80,.6)}
+
+  /* ===== ② 编辑台 · 审稿台（双透镜） ===== */
+  #scr-studio{background:#08090f}
+  #studioBar{flex-shrink:0;display:flex;align-items:center;gap:14px;padding:10px 22px;
+    border-bottom:1px solid rgba(255,255,255,.07);background:rgba(10,12,22,.85)}
+  #studioTabs{display:flex;gap:6px;flex:1}
+  .stab{font-size:12px;padding:7px 15px;border-radius:9px;border:1px solid transparent;cursor:pointer;
+    background:none;color:#8b91a8;transition:all .2s;white-space:nowrap}
+  .stab:hover{color:#fff}
+  .stab.on{background:rgba(99,102,241,.16);border-color:rgba(129,140,248,.5);color:#fff}
+  #lensWrap{display:flex;border:1px solid rgba(255,255,255,.15);border-radius:10px;overflow:hidden}
+  .lensBtn{font-size:11.5px;padding:7px 16px;border:none;cursor:pointer;background:none;color:#8b91a8;
+    transition:all .25s;white-space:nowrap}
+  .lensBtn.on{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+  #itemRail{flex-shrink:0;display:flex;gap:8px;padding:10px 22px;overflow-x:auto;overflow-y:hidden;
+    border-bottom:1px solid rgba(255,255,255,.06);background:rgba(9,11,20,.7);
+    scrollbar-width:thin;scrollbar-color:#2a2f4a transparent}
+  .rchip{flex:0 0 178px;text-align:left;padding:8px 10px;border-radius:10px;cursor:pointer;
+    border:1px solid rgba(255,255,255,.1);background:rgba(18,21,40,.7);transition:all .2s}
+  .rchip:hover{border-color:rgba(129,140,248,.5)}
+  .rchip.on{border-color:#818cf8;background:rgba(99,102,241,.14)}
+  .rchip i{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:1px}
+  .rchip .rt{font-size:10.5px;line-height:1.45;color:#d9dceb;display:-webkit-box;-webkit-line-clamp:2;
+    -webkit-box-orient:vertical;overflow:hidden;height:30px}
+  .rchip .rs{display:block;font-size:9px;color:#6e7591;margin-top:4px;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  .rchip .rs .star{color:#ffd9a8}
+  .rchip .rs .ok{color:#5fbf82}.rchip .rs .warn{color:#fdba74}.rchip .rs .mid{color:#e3c75f}
+  #studioBody{flex:1;display:flex;min-height:0}
+  /* —— 关卡地图与多媒介块 —— */
+  #lvPath{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+  .lvNode{font-size:10.5px;padding:5px 11px;border-radius:18px;border:1px solid rgba(255,255,255,.14);
+    color:#cfd3e4;cursor:pointer;background:rgba(15,18,34,.6);transition:all .2s;white-space:nowrap}
+  .lvNode:hover{border-color:#818cf8;color:#fff}
+  .lvArrow{color:#3d4360;font-size:10px}
+  .lvNum{font-size:9px;letter-spacing:1px;color:#8b91a8;border:1px solid rgba(255,255,255,.15);
+    padding:1px 7px;border-radius:6px;white-space:nowrap}
+  .lvTag{font-size:9.5px;color:var(--mc,#93c5fd);border:1px solid currentColor;border-radius:6px;
+    padding:1px 7px;white-space:nowrap}
+  .player{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#10142a,#0a0c18);
+    border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px 14px;margin:4px 0 10px}
+  .player .pbtn{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,.18);
+    border:1px solid #818cf8;color:#c7d2fe;display:flex;align-items:center;justify-content:center;
+    font-size:13px;flex-shrink:0;cursor:pointer;transition:all .2s}
+  .player .pbtn:hover{background:rgba(129,140,248,.4)}
+  .player .pbar{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.08);position:relative;min-width:50px}
+  .player .pbar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:18%;border-radius:2px;background:#818cf8}
+  .player .pmeta{font-size:10px;color:#9aa1bd;line-height:1.7;white-space:nowrap}
+  #scr-studio:not(.lens) .lensOnly{display:none}
+  #scr-studio:not(.lens) .mediaBlk.closed .stext{display:none}
+  #scr-studio:not(.lens) .mediaBlk .shead h3::after{content:"  文稿 ▸";font-size:10px;color:#818cf8}
+  #scr-studio:not(.lens) .mediaBlk:not(.closed) .shead h3::after{content:"  收起文稿 ▾";font-size:10px;color:#818cf8}
+  .todoBox{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.35);border-radius:12px;
+    padding:10px 13px;margin:0 auto 18px;max-width:760px}
+  .todoBox b{font-size:11px;color:#fcd34d}
+  .todoItem{font-size:10.5px;line-height:1.6;color:#d9dceb;padding:6px 7px;border-radius:8px;cursor:pointer;
+    margin-top:5px;background:rgba(255,255,255,.04)}
+  .todoItem:hover{background:rgba(255,255,255,.1)}
+  #studioMain{flex:1;overflow-y:auto;padding:26px 36px 60px}
+  /* —— 阅读模式（默认）：学员视角，藏起一切生产痕迹 —— */
+  #scr-studio:not(.lens) #studioTodo,
+  #scr-studio:not(.lens) #qapanel,
+  #scr-studio:not(.lens) .chain,
+  #scr-studio:not(.lens) .crumb,
+  #scr-studio:not(.lens) .meta>:not(.priceTag),
+  #scr-studio:not(.lens) .shead .tag,
+  #scr-studio:not(.lens) .shead .atomTag,
+  #scr-studio:not(.lens) .shead .qaChip,
+  #scr-studio:not(.lens) .editBtn{display:none!important}
+  #scr-studio:not(.lens) .sect{border-left-color:rgba(255,255,255,.1);background:transparent;
+    padding:14px 2px 12px 16px;margin-bottom:4px}
+  #scr-studio:not(.lens) .sect .shead h3{cursor:pointer;user-select:none}
+  #scr-studio:not(.lens) .sect .shead h3::after{content:"  ▾";color:#565d76;font-size:11px}
+  #scr-studio:not(.lens) .sect.closed .shead h3::after{content:"  ▸"}
+  #scr-studio:not(.lens) .sect.closed .stext{display:-webkit-box;-webkit-line-clamp:1;
+    -webkit-box-orient:vertical;overflow:hidden;opacity:.45}
+  #scr-studio:not(.lens) .sect.closed table.mini,
+  #scr-studio:not(.lens) .sect.closed .aiReview,
+  #scr-studio:not(.lens) .sect.closed .pCert,
+  #scr-studio:not(.lens) .sect.closed .pComment{display:none}
+  /* —— 编辑透镜：溯源、风险、编辑全部浮现 —— */
+  #scr-studio.lens .sect .stext{display:block!important;opacity:1!important}
+  #scr-studio.lens .sect.closed table.mini,#scr-studio.lens .sect.closed .aiReview,
+  #scr-studio.lens .sect.closed .pCert,#scr-studio.lens .sect.closed .pComment{display:revert}
+  #studioDoc{max-width:760px;margin:0 auto}
+  #studioDoc .crumb{font-size:11px;color:#6e7591;margin-bottom:10px}
+  #studioDoc h1{font-size:23px;line-height:1.5;margin-bottom:10px}
+  #studioDoc .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:20px}
+  .chain{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:10.5px;color:#9aa1bd;
+    background:rgba(15,18,34,.7);border:1px solid rgba(255,255,255,.08);border-radius:12px;
+    padding:10px 14px;margin-bottom:24px}
+  .chain b{color:#c7d2fe}
+  .chain .ar{color:#4a5070}
+  .sect{position:relative;border-left:3px solid var(--cs,#3b82f6);background:rgba(15,18,34,.55);
+    border-radius:0 14px 14px 0;padding:16px 18px 14px;margin-bottom:14px}
+  .sect[data-cst="原书"]{--cs:#3b82f6}
+  .sect[data-cst="平台加工"]{--cs:#f59e0b}
+  .sect[data-cst="编辑原创"]{--cs:#22c55e}
+  .sect .shead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .sect .shead h3{font-size:14.5px;flex:1;min-width:200px}
+  .sect .stext{font-size:13px;line-height:2;color:#c6cbde;white-space:pre-wrap}
+  .sect .editBtn{opacity:0;font-size:10.5px;padding:3px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.06);color:#cfd3e4;cursor:pointer;transition:opacity .2s}
+  .sect:hover .editBtn{opacity:1}
+  .sect textarea{width:100%;min-height:130px;background:#0b0d18;color:#dfe3f2;border:1px solid #6366f1;
+    border-radius:10px;padding:12px;font-size:13px;line-height:1.9;font-family:inherit;margin-top:6px}
+  .sect .editActs{display:flex;gap:8px;margin-top:8px}
+  .sect .qaChip{font-size:10px;padding:2px 9px;border-radius:10px}
+  .qaChip.reviewing{background:rgba(245,158,11,.15);color:#fcd34d;border:1px solid rgba(245,158,11,.5);
+    animation:blink 1s ease-in-out infinite}
+  @keyframes blink{50%{opacity:.5}}
+  .qaChip.passed{background:rgba(34,197,94,.14);color:#86efac;border:1px solid rgba(34,197,94,.5)}
+  .atomTag{display:inline-block;font-size:9.5px;border:1px solid rgba(140,150,255,.4);border-radius:6px;
+    padding:1px 7px;color:#aebbff;cursor:pointer;transition:all .15s}
+  .atomTag:hover{background:rgba(140,150,255,.15)}
+  table.mini{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
+  table.mini th,table.mini td{border:1px solid rgba(255,255,255,.1);padding:7px 10px;text-align:left;line-height:1.6}
+  table.mini th{color:#9aa1bd;font-weight:500;background:rgba(255,255,255,.03)}
+  .aiReview{background:linear-gradient(160deg,rgba(20,24,46,.8),rgba(12,14,26,.8));border:1px solid rgba(129,140,248,.35);
+    border-radius:14px;padding:18px;font-size:12.5px;line-height:2;color:#c6cbde;margin-top:8px}
+  .aiReview .score{font-size:15px;color:#fcd34d;margin-bottom:8px}
+  .aiReview p{margin-bottom:8px}
+  .aiReview em{color:#93c5fd;font-style:normal}
+  .aiReview .fn{font-size:10.5px;color:#6e7591;border-top:1px dashed rgba(255,255,255,.12);padding-top:8px;margin-top:6px}
+  #qapanel{width:262px;flex-shrink:0;border-left:1px solid rgba(255,255,255,.07);overflow-y:auto;padding:16px 14px}
+  #qapanel h3{font-size:12px;letter-spacing:1px;color:#9aa1bd;margin-bottom:12px}
+  .qaItem{font-size:11px;line-height:1.7;color:#aab0c8;border-left:2px solid var(--q,#64748b);
+    padding:7px 10px;margin-bottom:9px;background:rgba(15,18,34,.5);border-radius:0 8px 8px 0}
+  .qaItem .t{color:#6e7591;font-size:9.5px}
+
+  /* ===== ③ 发布（开关列表 + 手机） ===== */
+  #pubLeft{flex:1;overflow-y:auto;padding:24px 26px 50px}
+  #pubLeft h2{font-size:17px;margin-bottom:4px}
+  #pubLeft .sub{font-size:11.5px;color:#8b91a8;margin-bottom:16px;line-height:1.8}
+  .swSec{font-size:10.5px;color:#6e7591;letter-spacing:1.5px;margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+  .swSec::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07)}
+  .srow{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid rgba(255,255,255,.08);
+    border-radius:11px;margin-bottom:7px;background:rgba(15,18,34,.55);font-size:11.5px;transition:border-color .3s}
+  .srow.live{border-color:rgba(34,197,94,.45)}
+  .srow i{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+  .srow .nm{flex:1;line-height:1.5}
+  .srow .pr{font-size:10px;color:#8b91a8;white-space:nowrap}
+  .srow .lock{font-size:9.5px;color:#fdba74;cursor:pointer;border:1px solid rgba(251,146,60,.4);
+    border-radius:7px;padding:2px 8px;white-space:nowrap}
+  .srow .lock:hover{background:rgba(251,146,60,.12)}
+  .sw{position:relative;width:37px;height:21px;flex-shrink:0}
+  .sw input{opacity:0;width:100%;height:100%;position:absolute;margin:0;cursor:pointer;z-index:2}
+  .sw .tr{position:absolute;inset:0;border-radius:11px;background:#2a2f4a;transition:background .25s;pointer-events:none}
+  .sw .tr::after{content:"";position:absolute;left:2px;top:2px;width:17px;height:17px;border-radius:50%;
+    background:#8b91a8;transition:all .25s}
+  .sw input:checked+.tr{background:#22c55e}
+  .sw input:checked+.tr::after{left:18px;background:#fff}
+  .sw input:disabled{cursor:not-allowed}
+  .sw input:disabled+.tr{opacity:.3}
+  .riskNote{font-size:10.5px;line-height:1.8;color:#e8d9c8;background:rgba(251,146,60,.07);
+    border:1px dashed rgba(251,146,60,.4);border-radius:9px;padding:9px 11px;margin:-2px 0 8px}
+  .riskNote b{color:#fdba74}
+  .riskNote .btn{font-size:10px;padding:4px 10px;margin-top:7px}
+  #priceStrip{display:flex;gap:8px;align-items:center;margin:22px 0 14px;flex-wrap:wrap;font-size:11.5px}
+  .pstep{background:rgba(15,18,34,.7);border:1px solid rgba(255,255,255,.1);border-radius:10px;
+    padding:8px 12px;text-align:center;line-height:1.5}
+  .pstep b{display:block;color:#ffd9a8;font-size:13px}
+  .pArr{color:#4a5070}
+  #redlines{font-size:11px;color:#fca5a5;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.25);
+    border-radius:12px;padding:12px 16px;line-height:2}
+  #phoneWrap{width:340px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;border-left:1px solid rgba(255,255,255,.07);padding:16px}
+  #phoneWrap .cap{font-size:11px;color:#8b91a8;margin-bottom:12px;text-align:center;line-height:1.7}
+  #phone{width:288px;height:584px;border-radius:36px;border:3px solid #2a2f4a;background:#0c0e1a;
+    overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.7)}
+  #phoneHead{padding:14px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;font-weight:600}
+  #phoneHead span{display:block;font-size:9.5px;color:#8b91a8;font-weight:400;margin-top:2px}
+  #phoneBody{flex:1;overflow-y:auto;padding:12px 14px}
+  #phoneTabs{display:flex;border-top:1px solid rgba(255,255,255,.08)}
+  .ptab{flex:1;font-size:10.5px;padding:10px 0;text-align:center;color:#6e7591;cursor:pointer;background:none;border:none}
+  .ptab.on{color:#a5b4fc}
+  .pEmpty{text-align:center;color:#5b6178;font-size:11.5px;line-height:2;padding-top:120px}
+  .pCard{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:11px 12px;margin-bottom:10px;
+    background:rgba(20,24,44,.7);font-size:11.5px;line-height:1.6}
+  .pCard .ty{font-size:9px;letter-spacing:1px;margin-bottom:3px}
+  .pCard .pr{color:#ffd9a8;font-size:10.5px;margin-top:4px}
+  .pCard.clickable{cursor:pointer;transition:border-color .2s}
+  .pCard.clickable:hover{border-color:#818cf8}
+  .pQ{font-size:12px;line-height:1.8;margin-bottom:10px}
+  .pOpt{display:block;width:100%;text-align:left;font-size:11px;line-height:1.6;padding:8px 10px;margin-bottom:6px;
+    border:1px solid rgba(255,255,255,.12);border-radius:9px;background:rgba(255,255,255,.03);color:#c6cbde;cursor:pointer}
+  .pOpt:hover{border-color:#818cf8}
+  .pResult{text-align:center;padding:16px 6px}
+  .pResult .face{font-size:38px}
+  .pResult h4{font-size:15px;margin:8px 0 6px}
+  .pResult p{font-size:11px;color:#9aa1bd;line-height:1.8}
+  .pCert{border:1.5px solid #fcd34d;border-radius:14px;padding:14px;text-align:center;margin-bottom:12px;
+    background:linear-gradient(160deg,rgba(60,50,16,.5),rgba(20,18,8,.6));font-size:11px;line-height:1.9}
+  .pCert h4{color:#fcd34d;font-size:12.5px;margin-bottom:4px}
+  .pComment{border:1.5px solid #38bdf8;border-radius:14px;padding:14px;font-size:11px;line-height:1.9;
+    background:linear-gradient(160deg,rgba(12,40,60,.5),rgba(8,14,26,.6))}
+  .pSect{margin-bottom:14px;border-left:2.5px solid var(--cs,#3b82f6);padding-left:10px}
+  .pSect[data-cst="原书"]{--cs:#3b82f6}.pSect[data-cst="平台加工"]{--cs:#f59e0b}.pSect[data-cst="编辑原创"]{--cs:#22c55e}
+  .pSect h5{font-size:11.5px;margin-bottom:4px}
+  .pSect p{font-size:10.5px;line-height:1.9;color:#aab0c8;display:-webkit-box;-webkit-line-clamp:3;
+    -webkit-box-orient:vertical;overflow:hidden;cursor:pointer;white-space:pre-wrap}
+  .pSect.exp p{display:block;-webkit-line-clamp:unset}
+  .pSect .more{font-size:9px;color:#818cf8;cursor:pointer}
+  .pBack{font-size:11px;color:#a5b4fc;background:none;border:none;cursor:pointer;margin-bottom:10px;padding:0}
+  .pDetail h4{font-size:14px;line-height:1.6;margin:6px 0 8px}
+  .pDetail .why{font-size:10.5px;color:#9aa1bd;line-height:1.8;background:rgba(255,255,255,.04);
+    border-radius:9px;padding:8px 10px;margin:8px 0}
+  .pBuy{width:100%;font-size:12px;padding:10px 0;border-radius:10px;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;margin-top:8px}
+
+  /* ===== ④ 增长 ===== */
+  #scr-growth .scroll{padding:26px 5vw 70px}
+  #scr-growth h2{font-size:17px;margin-bottom:4px}
+  #scr-growth .sub{font-size:11.5px;color:#8b91a8;margin-bottom:18px}
+  .gGrid{display:grid;grid-template-columns:minmax(420px,1.3fr) minmax(340px,1fr);gap:18px;align-items:start}
+  .gCard{background:rgba(15,18,34,.65);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
+  .gCard h3{font-size:13.5px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+  .gCard h3 span{font-size:10px;color:#6e7591;font-weight:400}
+  .fRow{margin-bottom:13px}
+  .fRow .lbl{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:4px}
+  .fRow .lbl b{color:#fff}.fRow .lbl .rev{color:#ffd9a8}
+  .fBarBg{height:20px;border-radius:7px;background:rgba(255,255,255,.05);overflow:hidden}
+  .fBar{height:100%;border-radius:7px;width:0;transition:width 1.1s cubic-bezier(.2,.8,.3,1);
+    background:linear-gradient(90deg,var(--fc,#6366f1),color-mix(in srgb,var(--fc,#6366f1) 55%,transparent))}
+  #fTotal{margin-top:14px;padding:12px 16px;border-radius:12px;background:rgba(252,211,77,.08);
+    border:1px solid rgba(252,211,77,.3);font-size:12.5px;line-height:1.8}
+  #fTotal b{color:#fcd34d;font-size:17px}
+  .gate{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;
+    padding:8px 4px;border-bottom:1px dashed rgba(255,255,255,.07);line-height:1.5}
+  .gate .v{font-variant-numeric:tabular-nums}
+  .alert{border-left:3px solid #f59e0b;background:rgba(245,158,11,.06);border-radius:0 10px 10px 0;
+    padding:10px 12px;margin-bottom:10px;font-size:11.5px;line-height:1.8}
+  .alert .go{font-size:10px;padding:3px 10px;border-radius:8px;border:1px solid rgba(129,140,248,.5);
+    background:rgba(99,102,241,.12);color:#a5b4fc;cursor:pointer;margin-top:5px}
+  .alert .go:hover{background:rgba(99,102,241,.3)}
+  .loops{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .loop{border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px 14px;font-size:11px;line-height:1.9}
+  .loop h4{font-size:12px;margin-bottom:5px}
+  .loop p{color:#9aa1bd}
+  #growthCta{text-align:center;margin-top:26px}
+
+  #toast{position:fixed;top:70px;left:50%;transform:translateX(-50%) translateY(-12px);z-index:200;
+    background:rgba(18,22,42,.96);border:1px solid rgba(255,180,90,.45);padding:10px 22px;border-radius:12px;
+    font-size:12.5px;opacity:0;transition:all .4s;pointer-events:none;max-width:80vw}
+  #toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+  #atomPop{position:fixed;z-index:210;background:rgba(12,15,30,.97);border:1px solid rgba(140,150,255,.4);
+    border-radius:12px;padding:12px 16px;font-size:12px;line-height:1.8;max-width:300px;display:none}
+  #atomPop em{color:#8b91a8;font-style:normal;font-size:10px;display:block}
+</style>
+</head>
+<body>
+
+<header id="topbar">
+  <div class="brand">BookForge <span>V7 · 扫描流水线 + 编辑台</span></div>
+  <nav id="steps">
+    <button class="step on" data-s="scan">① 扫描</button>
+    <button class="step locked" data-s="studio">② 编辑台</button>
+    <button class="step locked" data-s="publish">③ 发布</button>
+    <button class="step locked" data-s="growth">④ 增长</button>
+  </nav>
+  <div id="ministats">原子 <b id="msAtom">0</b> · 资产 <b id="msCard">0</b> · 已上架 <b id="msAppr">0</b></div>
+</header>
+
+<!-- ① 扫描流水线 -->
+<section id="scr-scan" class="scr on">
+  <button class="btn" id="skipScan">跳过扫描 ≫</button>
+  <div id="pipe">
+    <div class="pcol"><h3>原文 · 让大象飞<b><span class="gr" id="cArch">0 段已归档</span></b></h3>
+      <div class="pbody" id="bookStream"></div></div>
+    <div class="pcol"><h3>知识原子<b id="cAtomScan">0</b></h3>
+      <div class="pbody" id="atomCol"></div></div>
+    <div class="pcol"><h3>数字资产<b id="cAssetScan">0</b></h3>
+      <div class="pbody" id="assetCol">
+        <div id="featWrap"></div>
+        <div id="batch">其余资产由同一方式批量组装<br><b id="batchN">4</b> / 46 项
+          <div class="batchTypes" id="batchTypes"></div></div>
+        <div id="scanCtas">
+          <button class="btn primary" id="ctaStudio">打开编辑台 · 审阅与修改 →</button>
+          <button class="btn" id="ctaPub">去发布台上架 →</button>
+        </div>
+      </div></div>
+  </div>
+  <div id="scanFoot">
+    <span>原文 <b>13.3 万字</b>（据原稿 PDF 实测）· 100% 保留</span>
+    <span class="gr">灰色 = 已归档原文库（供 Agent 引用与引文核对）<b id="ftArch">0 段</b></span>
+    <span>琥珀下划线 = 提炼为原子 <b id="ftAtom">0</b></span>
+    <span>组装资产 <b id="ftAsset">0</b></span>
+  </div>
+  <div id="landing">
+    <div id="landWrap">
+      <div class="lpanel" id="lpFeed">
+        <h2>投料口</h2>
+        <p class="lsub2">任何承载作者方法论的内容，都能进入同一条资产化流水线</p>
+        <div id="dropzone"><div class="ring2"></div><p>把文件丢进来，开始逐句扫描</p><span>PDF / EPUB / DOCX / TXT / 转写稿</span></div>
+        <div id="mats">
+          <button class="mat">📕 图书 PDF / EPUB</button><button class="mat">🎤 演讲 / 课程转写稿</button>
+          <button class="mat">📰 专栏合集</button><button class="mat">🎧 播客音频</button>
+          <button class="mat">📹 视频课实录</button><button class="mat">📝 作者访谈</button>
+        </div>
+        <p class="lnote">🎧 音频与 📹 视频物料会先经转写 Agent 变成带时间码的文稿，再进入同一条扫描流水线——媒介是渲染层，文稿与原子才是内容层</p>
+      </div>
+      <div class="lpanel" id="lpShelf">
+        <h2>书架 · 已进入系统的物料</h2>
+        <div class="shelfRow">
+          <div class="spine done" id="spDone"><div class="sbadge ok">已资产化 ✓</div><h3>让大象飞</h3><p>STEVE HOFFMAN<br>中信出版集团</p><p class="sstat">20 原子 · 46 资产</p></div>
+          <div class="spine queue" id="spQueue"><div class="sbadge wait">排队中</div><h3>人机沟通法则</h3><p>第二本 · 复用验证<br>授权确认后开始</p></div>
+          <div class="spine queue tape" id="spTape"><div class="sbadge wait">待转写</div><h3>🎙 霍夫曼访谈实录</h3><p>音频 ×3 期<br>转写 Agent 队列中</p></div>
+          <div class="spine empty" id="spEmpty">＋</div>
+        </div>
+        <div class="shelfActs">
+          <button class="btn primary" id="enterDone">进入《让大象飞》资产宇宙</button>
+          <button class="btn" id="replayScan">重看逐句扫描过程</button>
+        </div>
+        <p class="lnote">点击已资产化的书直达成品；扫描过程会展示哪些句子被提炼为原子、其余原文去了哪里</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 编辑台 · 审稿台 -->
+<section id="scr-studio" class="scr">
+  <div id="studioBar">
+    <div id="studioTabs">
+      <button class="stab on" data-grp="course">📖 课程</button>
+      <button class="stab" data-grp="template">📋 模板</button>
+      <button class="stab" data-grp="insight">💡 观点卡</button>
+      <button class="stab" data-grp="service">🎪 活动与服务</button>
+      <button class="stab" data-grp="perk">🏅 权益卡</button>
+      <button class="stab" data-grp="agent">🤖 Agent</button>
+    </div>
+    <div id="lensWrap">
+      <button class="lensBtn on" data-m="read">阅读 · 学员看到的</button>
+      <button class="lensBtn" data-m="lens">编辑透镜 · 溯源与修改</button>
+    </div>
+  </div>
+  <div id="itemRail"></div>
+  <div id="studioBody">
+    <div id="studioMain"><div id="studioTodo"></div><div id="studioDoc"></div></div>
+    <aside id="qapanel"><h3>QA 日志 · 实时</h3><div id="qaLog"></div></aside>
+  </div>
+</section>
+
+<!-- ③ 发布 -->
+<section id="scr-publish" class="scr">
+  <div id="pubLeft" class="scroll">
+    <h2>发布 · 上架开关</h2>
+    <div class="sub">开 = 上架（学员手机立即可见）· 关 = 下架（即时撤下，随时反悔）· 🔒 = 高风险，确认后解锁。
+      已上架 <b id="liveCount" style="color:#86efac">0</b> / 46
+      <button class="btn" id="quickApprove" style="margin-left:10px;font-size:11px">⚡ 一键上架演示集（测评+闪课①+证书）</button></div>
+    <div id="switchList"></div>
+    <div id="priceStrip">
+      <div class="pstep">F1 测评<b>免费</b></div><span class="pArr">→</span>
+      <div class="pstep">闪课<b>¥29.9</b></div><span class="pArr">→</span>
+      <div class="pstep">全程微课<b>¥299</b></div><span class="pArr">→</span>
+      <div class="pstep">AI 教练版<b>¥599</b></div><span class="pArr">→</span>
+      <div class="pstep">21天行动营<b>¥2999</b></div><span class="pArr">→</span>
+      <div class="pstep">1v1 / 企业内训<b>¥1999 / ¥39800起</b></div>
+    </div>
+    <div id="redlines">合规红线：① 任何页面不得出现「作者本人/亲自」（授权前）② 不承诺融资、收益、成功率 ③ 公开传播物料必须上架确认且无长篇原文摘抄 ④ 书外案例必须标注「平台加工」</div>
+  </div>
+  <div id="phoneWrap">
+    <div class="cap">学员手机 · 实况镜像（1:1 可操作）<br>只显示已上架的资产</div>
+    <div id="phone">
+      <div id="phoneHead">Thinker · 让大象飞<span>Steve Hoffman · 数字资产空间</span></div>
+      <div id="phoneBody"></div>
+      <div id="phoneTabs">
+        <button class="ptab on" data-p="home">首页</button>
+        <button class="ptab" data-p="quiz">测评</button>
+        <button class="ptab" data-p="course">课程</button>
+        <button class="ptab" data-p="cert">证书</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ 增长 -->
+<section id="scr-growth" class="scr">
+  <div class="scroll">
+    <h2>增长仪表盘 · 一本书的 90 天</h2>
+    <div class="sub">三个问题：<b style="color:#fcd34d">Q1 赚多少</b>（给老板/作者）→ <b style="color:#7dd3fc">Q2 健康吗</b>（给操盘人）→ <b style="color:#86efac">Q3 怎么更好</b>（给编辑）· 数据为《课程矩阵与收费闭环》测算假设（演示数据）· 引流基数 3,000 人</div>
+    <div class="gGrid">
+      <div>
+        <div class="gCard"><h3>Q1 · 这本书能赚多少？ <span>给老板/作者 · 提案的核心证据</span></h3><div id="funnel"></div>
+          <div id="fTotal">90 天毛收入 <b>≈¥98,700</b> · 毛利率 >85% · 一人 + 一 AI 运营<br><span style="font-size:11px;color:#9aa1bd">这个数字就是给中信和作者的提案核心：值得分成，值得授权。</span></div>
+        </div>
+        <div class="gCard" style="margin-top:18px"><h3>为什么这能持续 · 四条闭环 <span>价值的证明结构</span></h3>
+          <div class="loops">
+            <div class="loop"><h4>💰 经济闭环</h4><p>免费测评引流 → ¥29.9 筛意愿 → ¥299/599 主力利润 → ¥2999 行动营 → 顶层服务。每一跳 2-10 倍，都有明确的"多付的钱买什么"。</p></div>
+            <div class="loop"><h4>📊 数据闭环</h4><p>测评/作业/完课数据 → 定位讲不清的原子 → 回写原子库与课程（右侧告警一键跳回编辑台）→ 内容越跑越准。</p></div>
+            <div class="loop"><h4>🤝 供给闭环</h4><p>行动营前 3 名 → 下期助教 → 真人点评供给从 1 位导师扩为导师+助教团 → 高价层不再卡在单一导师时间。</p></div>
+            <div class="loop"><h4>📜 版权闭环</h4><p>内部 Demo（全 Pending）→ 收入数据 → 向作者/中信提案分成 → 拿到授权 → 解锁作者本人权益 → 客单上探 → 下一位作者入驻更容易。</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="gCard"><h3>Q2 · 增长健康吗？ <span>给操盘人 · 连续两次不达标 → 回上一层修产品</span></h3><div id="gates"></div></div>
+        <div class="gCard" style="margin-top:18px"><h3>Q3 · 怎么变得更好？ <span>给编辑 · 告警一键跳回编辑台改内容</span></h3><div id="alerts"></div></div>
+      </div>
+    </div>
+    <div id="growthCta"><button class="btn primary" id="nextBook">把第二本书丢进来 →</button>
+      <p style="font-size:11px;color:#6e7591;margin-top:8px">《人机沟通法则》复用验证：Prompt/Schema 复用率目标 ≥80%</p></div>
+  </div>
+</section>
+
+<div id="toast"></div>
+<div id="atomPop"></div>
+
+<script>
+/* ================= 数据层（与 V2/V3 同源，取自工程文档） ================= */
+const ATOMS=[
+ {id:"ka-101",t:"技术陷阱：无法证明客户需要的技术，是一份死刑判决书",k:"论点",ch:1},
+ {id:"ka-102",t:"隐藏在苹果背后真正的天才是设计创新，而非技术",k:"论点",ch:1},
+ {id:"ka-103",t:"最成功的初创企业起步时几乎没有技术专利",k:"论据",ch:1},
+ {id:"ka-104",t:"新技术约 25 年的接受采用周期（书中援引马克·安德森）",k:"论据",ch:1},
+ {id:"ka-105",t:"先拿到藏宝箱，再想办法撬锁（先机会后技术）",k:"方法",ch:1},
+ {id:"ka-106",t:"施乐 PARC × 乔布斯：发明者≠获益者",k:"案例",ch:1},
+ {id:"ka-107",t:"爱迪生 vs 特斯拉：创新者用新技术开启商业机会",k:"案例",ch:1},
+ {id:"ka-108",t:"技术陷阱自检清单（五问）",k:"工具",ch:1,derived:true},
+ {id:"ka-302",t:"体验证据：iPhone 贵 2-3 倍，用户仍不改换门庭",k:"论据",ch:1},
+ {id:"ka-501",t:"浪潮的证据：用户增长、销售量、黏性",k:"论据",ch:1},
+ {id:"ka-502",t:"只关注市场机会，不被特定技术束缚",k:"论点",ch:1},
+ {id:"ka-201",t:"MVP 的艺术：只提供核心价值，尽快交到客户手中",k:"方法",ch:2},
+ {id:"ka-203",t:"理想团队 2—5 人：沟通与迭代最快",k:"方法",ch:2},
+ {id:"ka-204",t:"「过多的资金是一剂毒药」",k:"论点",ch:2},
+ {id:"ka-601",t:"融资：机会要大到能把大象送上天",k:"方法",ch:2},
+ {id:"ka-301",t:"设计创新就是为用户解决一个真正的问题",k:"论点",ch:3},
+ {id:"ka-401",t:"倾听客户，但把反馈作为起点而非终点",k:"方法",ch:4},
+ {id:"ka-402",t:"从客户言行的数据中提取创新洞见",k:"方法",ch:4},
+ {id:"ka-202",t:"失败是创新过程的重要组成部分，无法被消除",k:"论点",ch:5},
+ {id:"ka-602",t:"伟大创意始于微不足道的业余项目",k:"论点",ch:5},
+];
+const TYPES={
+ course:{n:"课程卡",c:"#818cf8"}, template:{n:"模板卡",c:"#2dd4bf"}, insight:{n:"观点卡",c:"#fbbf24"},
+ event:{n:"活动卡",c:"#f472b6"}, ama:{n:"AMA 卡",c:"#c084fc"}, coffee:{n:"Coffee Chat",c:"#fb923c"},
+ mentor:{n:"导师计划",c:"#38bdf8"}, agent:{n:"Agent 资产",c:"#cbd5e1"}, perk:{n:"权益卡",c:"#facc15"},
+};
+const CARDS=[
+ {t:"course",title:"闪课① 技术陷阱：为什么专利救不了你",sub:"15-20 分钟精讲 + 自检清单模板 + 模块徽章",a:["ka-101","ka-103","ka-105","ka-106","ka-107","ka-108"],cst:"原书",risk:"Low",price:"¥29.9",d:"flash1"},
+ {t:"insight",title:"「技术是钥匙，市场机会才是宝箱。」",sub:"金句卡 · 出自第 1 章「先找宝箱再配钥匙」",a:["ka-105"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"template",title:"技术陷阱自检清单（五问计分版）",sub:"对照项目逐条自检，≥3 分 = 正站在技术陷阱里",a:["ka-108"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"perk",title:"F1 测评「你掉进技术陷阱了吗？」",sub:"12 题交互测评 → 创业者画像 + 可分享测评卡",a:["ka-101","ka-201","ka-401","ka-203"],cst:"平台加工",risk:"Low",price:"免费引流",d:"f1"},
+ {t:"insight",title:"反直觉：拥有专有技术往往是负担",sub:"反直觉观点卡 · 它会绑架你的全部决策",a:["ka-101"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"course",title:"闪课② 一周验证一个想法",sub:"最小验证方法精讲 + 实验设计表",a:["ka-201","ka-202"],cst:"原书",risk:"Low",price:"¥29.9"},
+ {t:"template",title:"最小验证实验设计表",sub:"一两周、几乎不花钱，验证一个新想法",a:["ka-201"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"insight",title:"案例：施乐 PARC——发明者≠获益者",sub:"案例启发卡 · 发明了图形界面，收割的却是苹果",a:["ka-106"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"course",title:"F2 免费试听 · 第 1 讲「技术并没有你想的那么重要」",sub:"完整单元放出：免费层的质量就是付费层的广告",a:["ka-101","ka-102","ka-104"],cst:"原书",risk:"Low",price:"免费",d:"flash1"},
+ {t:"agent",title:"专家 Agent 知识库（RAG 可溯源）",sub:"20 条知识原子入库，问答逐条标注章节出处",a:["ka-101","ka-105","ka-201","ka-401","ka-501"],cst:"平台加工",risk:"Low",price:"App 资产"},
+ {t:"insight",title:"「隐藏在苹果公司背后真正的天才是它的设计创新」",sub:"金句卡 · 第 1 章引文 · 已对照原稿校正措辞（原 AI 稿误作「iPhone 背后」），上线前补页码",a:["ka-102"],cst:"原书",risk:"Medium",price:"待补页码"},
+ {t:"course",title:"闪课③ 让用户爱上产品的设计创新",sub:"体验设计精讲 + 产品体验诊断表",a:["ka-301","ka-302","ka-102"],cst:"原书",risk:"Low",price:"¥29.9"},
+ {t:"template",title:"产品体验诊断表",sub:"陌生人先问「这是什么技术」还是「在哪能买到」？",a:["ka-301","ka-302"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"event",title:"《让大象飞》21 天共读营",sub:"读书会 · 6 模块共读 + 每周话题讨论",a:["ka-101","ka-201","ka-301"],cst:"平台加工",risk:"Low",price:"社群活动"},
+ {t:"insight",title:"案例：爱迪生 vs 特斯拉",sub:"案例启发卡 · 商业化者胜过纯粹的发明天才",a:["ka-107"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"course",title:"闪课④ 吃透你的用户：客户访谈法",sub:"客户开发精讲 + 访谈脚本模板",a:["ka-401","ka-402"],cst:"原书",risk:"Low",price:"¥29.9"},
+ {t:"template",title:"客户访谈脚本模板",sub:"「你上一次遇到这个问题是什么时候？」",a:["ka-401"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"ama",title:"AMA：创业方法论开放问答",sub:"围绕 6 模块的社群开放提问，AI 溯源回答",a:["ka-105","ka-201","ka-401"],cst:"平台加工",risk:"Low",price:"社群权益"},
+ {t:"insight",title:"行动卡：如果明天技术被开源，你的公司还剩什么？",sub:"行动建议卡 · 平台基于第 1 章方法论延伸",a:["ka-101"],cst:"平台加工",risk:"Low",price:"免费传播"},
+ {t:"course",title:"闪课⑤ 增长实验：小预算撬动增长",sub:"增长引擎精讲 + 实验记录表",a:["ka-501","ka-502"],cst:"原书",risk:"Low",price:"¥29.9"},
+ {t:"template",title:"增长实验记录表",sub:"假设 → 实验 → 数据 → 决策，一表闭环",a:["ka-501"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"agent",title:"章节问答资产 · 全书 6 模块",sub:"每章核心问题 + 可引用答案，喂给 App 问答入口",a:["ka-104","ka-202","ka-402"],cst:"平台加工",risk:"Low",price:"App 资产"},
+ {t:"course",title:"闪课⑥ 团队、融资与创新文化",sub:"组织与融资精讲 + 融资准备自查表",a:["ka-203","ka-204","ka-601","ka-602"],cst:"原书",risk:"Low",price:"¥29.9"},
+ {t:"template",title:"融资准备自查表",sub:"对照第 6 模块逐项检查融资就绪度",a:["ka-601"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"insight",title:"「低成本、快速的失败是创业中最便宜的学习方式。」",sub:"金句卡 · 第 2 章",a:["ka-202"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"course",title:"P2 全程微课「硅谷创业方法论 6 讲」",sub:"6 模块完整版 + 全套模板 + 完课证书卡，闪课金额全额抵扣",a:["ka-101","ka-201","ka-301","ka-401","ka-501","ka-601"],cst:"原书",risk:"Low",price:"¥299"},
+ {t:"course",title:"P3 AI 教练版「方法论私教班」",sub:"P2 + 6 次作业逐条点评（按 rubric 引用原书标注章节）",a:["ka-105","ka-108","ka-201"],cst:"平台加工",risk:"Low",price:"¥599",d:"p3"},
+ {t:"template",title:"AI 教练点评 Rubric（R1-R4）",sub:"机会真实性 35% / 顺序诚实度 25% / 框架应用 20% / 行动具体度 20%",a:["ka-105","ka-402"],cst:"编辑原创",risk:"Low",price:"内部资产",d:"p3"},
+ {t:"perk",title:"完课证书卡 · 长在 Thinker 主页",sub:"完成 6/6 模块 + 作业 AI 审核通过，带验证编号",a:["ka-108"],cst:"编辑原创",risk:"Low",price:"P2/P3 权益",d:"cert"},
+ {t:"mentor",title:"P4 · 21 天 MVP 行动营「线上孵化器」",sub:"用书中方法推进你自己的项目到可验证 MVP，每期限 20 人",a:["ka-201","ka-401","ka-501","ka-105"],cst:"平台加工",risk:"Low",price:"¥2999"},
+ {t:"event",title:"Demo Day · 行动营路演日",sub:"W3 收官：数据复盘 + 路演，前 3 名获限量签名证书",a:["ka-501","ka-601"],cst:"平台加工",risk:"Low",price:"行动营权益"},
+ {t:"perk",title:"导师 comment 卡（每期限 10 张）",sub:"认证导师真人点评上学员主页——市面上没人能给的社交资本",a:["ka-105"],cst:"编辑原创",risk:"Low",price:"P4 稀缺权益",d:"cert"},
+ {t:"coffee",title:"1v1 创业诊断 Coffee Chat · 45 分钟",sub:"Thinker 认证导师（非作者本人）· 不承诺融资与收益",a:["ka-105","ka-401"],cst:"平台加工",risk:"High",price:"¥1,999"},
+ {t:"ama",title:"专题讨论：AI 时代还需要专利吗？",sub:"行业议题 · 涉第三方观点争议，公开前需编辑确认",a:["ka-101","ka-103"],cst:"平台加工",risk:"High",price:"社群权益"},
+ {t:"event",title:"企业创新工作坊「让大象飞」",sub:"P4 素材重组 + 企业案例定制，对接中信 B 端渠道",a:["ka-602","ka-204"],cst:"平台加工",risk:"Low",price:"¥39,800/天起"},
+ {t:"mentor",title:"企业创新陪跑 · 90 天",sub:"导师计划 · 面向企业创新部门的方法论辅导",a:["ka-601","ka-602"],cst:"平台加工",risk:"Low",price:"定制"},
+ {t:"coffee",title:"项目复盘咨询",sub:"用增长实验框架做一次完整项目复盘",a:["ka-501"],cst:"平台加工",risk:"Medium",price:"轻服务"},
+ {t:"agent",title:"MCP / API 可调用知识资产",sub:"知识原子以接口形式开放给 Agent 生态调用",a:["ka-101","ka-105"],cst:"平台加工",risk:"Low",price:"基础设施"},
+ {t:"perk",title:"优秀学员证书（本期前 20%）",sub:"AI 初评 + 人工复核，稀缺性即定价",a:["ka-108"],cst:"编辑原创",risk:"Low",price:"P3/P4 权益",d:"cert"},
+ {t:"insight",title:"观点卡：先赢市场，再建技术墙",sub:"早期阶段技术壁垒从不是胜负手",a:["ka-502","ka-103"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"insight",title:"观点卡：等风来，比造风便宜得多",sub:"25 年采用周期的创业含义",a:["ka-104"],cst:"平台加工",risk:"Low",price:"免费传播"},
+ {t:"insight",title:"行动卡：本周做 5 个付费意向测试",sub:"AI 教练高频建议沉淀为行动卡",a:["ka-201"],cst:"平台加工",risk:"Low",price:"免费传播"},
+ {t:"event",title:"主题沙龙「技术陷阱之夜」",sub:"线下沙龙 · 用自检清单现场诊断 3 个项目",a:["ka-108"],cst:"平台加工",risk:"Low",price:"活动票"},
+ {t:"insight",title:"反直觉：钱太多会杀死你的公司",sub:"充裕资金掩盖问题、杀死危机感",a:["ka-204"],cst:"原书",risk:"Low",price:"免费传播"},
+ {t:"template",title:"宝箱-钥匙项目重写工作表",sub:"把你的创业逻辑按「先机会后技术」重排",a:["ka-105"],cst:"编辑原创",risk:"Low",price:"随课附赠"},
+ {t:"ama",title:"读者提问精选 · 第 2 期",sub:"社群高票问题 + AI 溯源回答整理",a:["ka-202","ka-402"],cst:"平台加工",risk:"Low",price:"社群权益"},
+];
+
+/* —— 扫描用原文：逐句摘自《让大象飞》原稿 PDF（中信版，全文约 13.3 万字），章节为真实目录 —— */
+const BOOKDOC=[
+ {ch:"第一章 · 寻找方向：不管是否寒冬，总有浪潮在往这里来",derived:["ka-108"],paras:[
+  ["「",{k:"任何新的技术通常都会经历一个25年的接受和采用周期",a:"ka-104"},
+   "。」——马克·安德森。谈到创新，最大的误区之一是，认为创新指的就是技术创新。实际并非如此。在创新的过程中技术仅仅是其中的一部分，而且对于创业者来讲，技术也并不一定是创新最重要的部分。"],
+  ["让我们来看一下尼古拉·特斯拉令人惊叹的一生吧。他发明了日光灯、收音机、遥控装置、电动机、激光以及无线通信，但临终却身无分文并且还被人完全遗忘。托马斯·爱迪生是另一个很好的例子，他并不是第一个发明灯泡的那个人，但他却看到了其中的商机。",
+   {k:"爱迪生的形象浓缩了一个发明者和一个创新者之间的差异：发明者把新的科学和技术带入这个世界，而创新者利用这些新技术开启全新的商业机会",a:"ka-107"},
+   "。重大的突破往往来自下一代的创业者，",
+   {k:"他们只关注市场上出现的机会，而不会被任何特定的技术所约束",a:"ka-502"},"。"],
+  ["作为一个天使投资人，我一直在和一些拥有某种专利技术的初创企业进行接触。",
+   {k:"每当一家初创企业带着一项新的技术找到我，却无法向我证明客户需要这种技术时，我就会打退堂鼓。因为他们带过来的实际上是一份死刑判决书",a:"ka-101"},
+   "。",
+   {k:"这就好比有人给了你一把钥匙，可以打开某一个藏宝箱，但却没有告诉你那个藏宝箱被埋藏在什么地方。我认为最好还是先拿到那个藏宝箱，然后你可以再想办法去撬开那把锁",a:"ka-105"},
+   "。聪明的创业者就是这么干的。"],
+  ["如果你分析那些最为成功的初创企业，你可以看到，",
+   {k:"当它们起步时，它们中的绝大多数只有很少或者甚至没有任何技术专利",a:"ka-103"},
+   "——Uber、Airbnb、WeWork、Spotify、Dropbox、Wish……这些独角兽企业就是活生生的例子。"],
+  ["施乐公司的帕洛阿尔托研究中心是一个更能说明问题的案例。",
+   {k:"这个研究中心发明了以太网、图形用户界面、点阵式显示、桌面图标、弹出式菜单、重叠式窗口、鼠标以及面向对象的程序设计。在这些技术中没有任何一项在过去为施乐公司增加了多少利润",a:"ka-106"},
+   "。以史蒂夫·乔布斯为例，他拿走了施乐公司最为珍贵的发明，然后以这些发明为基础创造了 Mac。"],
+  ["让我们来看一下 iPhone。",
+   {k:"我们可能会把iPhone看成技术奇迹，但隐藏在苹果公司背后真正的天才是它的设计创新",a:"ka-102"},
+   "。苹果的主要创新体现在客户体验的设计和 APP 生态系统的设计上。用户真的爱上了这些产品——",
+   {k:"哪怕一部iPhone要比一部安卓系统的手机贵2—3倍，绝大多数iPhone的用户都不会改换门庭",a:"ka-302"},"。"],
+  [{k:"当硅谷的风险投资人坚持要看到初创企业的用户数增长和营业收入增长时，他们实际上是在说他们希望看到浪潮或者趋势存在的证据。这些证据可以是销售量、用户黏性、媒体报道",a:"ka-501"},
+   "。关于浪潮或趋势的证据越多，风险投资人也就越兴奋。"],
+ ]},
+ {ch:"第二章 · 准备启航：拉一支队伍，一起干吧",paras:[
+  ["根据我运营「创始人空间」以及为跨国企业做咨询所获得的经验，我发现",
+   {k:"一支理想的团队一般由2—5人组成。这是因为团队越小，团队成员之间的合作、沟通以及协调也就越好",a:"ka-203"},"。"],
+  ["初创企业 Pano Logic 的创始人尼尔斯·邦杰对此做了很好的总结：「",
+   {k:"过多的资金是一剂毒药。在一家公司生命的早期，资金太多的话会让公司跛脚并且使公司缺乏选择的余地",a:"ka-204"},"。」"],
+  [{k:"设计一件MVP（最简可行性产品）的艺术是在产品中仅提供核心价值而没有任何其他的东西",a:"ka-201"},
+   "。初创企业需要尽快地将产品送到客户的手中，这样就能获得客户的反馈并开始迭代，直到弄明白客户真正想要的是什么。"],
+  ["如果你想让你的宏大创意真正地飞起来，那么你所寻找的必须是一个真正庞大的机会。",
+   {k:"你可以把机会看作把一头好几吨重的大象送上天所需要的强劲动力，而这头大象正是你想改变这个世界的宏大愿景",a:"ka-601"},
+   "。想要获得融资，该项创新就必须要有足够大的市场。"],
+ ]},
+ {ch:"第三章 · 打造产品：爱它，但不要太爱它",paras:[
+  [{k:"设计创新就是为用户解决一个真正的问题",a:"ka-301"},
+   "。「去请一个真正的设计师吧，你绝对不要自己去干这件事……没有人能忍受这样糟糕的用户体验。」随着技术的进步，设计上的新的可能性每天都在出现，新的市场可以轻而易举地通过设计思维被创造出来。"],
+ ]},
+ {ch:"第四章 · 锁定市场：你先吃透用户，用户才想吃透你",paras:[
+  [{k:"倾听你的客户需求是非常有价值的，但他们并不总是能告诉你如何进行创新",a:"ka-401"},
+   "。大多数客户确实可以告诉你如何解决问题以及改进你现有的产品，但他们无法为你指出一条全新的思考和做事的途径。换句话说，",
+   {k:"你需要把客户的反馈作为一个起点，而不是终点。从这些数据中你所获得的洞见对于你的创新将会有巨大的价值",a:"ka-402"},"。"],
+ ]},
+ {ch:"第五章 · 持续创新：基业长青，靠的是内部创新",paras:[
+  ["很多大企业在谈论他们所谓的「创新渠道」，就好像他们已经获得了一种完美的创新方法，能够消除创新过程中的失败并确保成功。这种想法从根本上来讲是有问题的。",
+   {k:"你根本不可能消除或者降低失败的发生概率，因为失败是创新过程中的一个重要组成部分",a:"ka-202"},"。"],
+  [{k:"Twitter、Gmail、Buffer……所有这些成功的产品原本也只是分支或者业余项目而已。绝大多数真正伟大的创意在开始的时候往往显得微不足道",a:"ka-602"},
+   "——几乎所有能建立起 10 亿美元业务的创意，在开始的时候看上去就像是一个 2 亿美元的构思（《精细化增长》）。"],
+ ]},
+ {ch:"第六章 · 高速运转：快点，一定要走在市场前列",paras:[
+  ["「动作要快。与一些庞大的竞争对手相比，速度才是你的主要优势之一。」——萨姆·奥尔特曼。高速运转的初创企业可以在几个月内——不是几年——就完成从概念到产品发布的整个过程。（本章未命中原子提取规则：整段归档原文库，供 Agent 引用。）"],
+ ]},
+];
+/* 扫描右栏的 4 张样板资产（实时组装） */
+const FEATURED=[
+ {i:0, need:["ka-101","ka-103","ka-105","ka-106","ka-107","ka-108"]},
+ {i:2, need:["ka-108"]},
+ {i:1, need:["ka-105"]},
+ {i:3, need:["ka-101","ka-201","ka-401","ka-203"]},
+];
+
+const DETAILS={
+ flash1:{
+  kind:"course", title:"闪课① 技术陷阱：为什么专利救不了你", price:"¥29.9",
+  intro:"图文课约 4200 字 + 1 个模板 + 1 道行动作业 · 学完约 18 分钟 · 第 1 讲垂直切片（全 6 讲同模子批量产出）",
+  sections:[
+   {h:"开场 · 一个身无分文的天才",cst:"原书",atoms:["ka-107"],media:"video",dur:"2:40",
+    t:"1943 年 1 月，纽约客酒店 3327 房间，一位 86 岁的老人在贫困中去世。他发明了交流电系统、无线电基础技术，手握 300 多项专利——他是尼古拉·特斯拉，人类历史上最伟大的发明家之一，死时身无分文。而他的老对手爱迪生建立了通用电气。区别在哪？爱迪生不是第一个发明电灯的人，他是第一个把电灯变成生意的人。霍夫曼在《让大象飞》开篇就戳破创业者最普遍的幻觉：你以为你缺一项了不起的技术，其实你缺的是别的东西。"},
+   {h:"第一节 · 技术是钥匙，不是宝箱",cst:"原书",atoms:["ka-101","ka-105"],media:"audio",dur:"5:10",
+    t:"霍夫曼的比喻：技术是一把钥匙，市场机会才是宝箱。大多数技术型创业者拿着钥匙满世界找它能开的锁；聪明的创业者倒过来——先找到宝箱（被验证的市场机会），再去配那把钥匙，而那把钥匙往往不需要你自己发明，市面上现成的技术组合一下就够了。\n🟨【平台加工】判断你属于哪种路径只需一个问题：如果明天你的核心技术被开源了，你的公司还剩下什么？如果答案是「什么都不剩」，你建的不是公司，是一个等待被绕过的专利。"},
+   {h:"第二节 · 独角兽们的难堪事实",cst:"原书",atoms:["ka-103","ka-106","ka-102"],media:"audio",dur:"6:30",risk:"Medium · 引文已对照原稿校正（原 AI 稿误作「iPhone 背后」），上线前补页码",
+    t:"Uber、Airbnb、Spotify——这批改变世界的公司，创立之初几乎没有任何专利技术。反过来，发明了图形界面、鼠标和以太网的施乐 PARC，几乎没从这些发明中赚到钱；乔布斯拿走了施乐最珍贵的发明，以它们为基础创造了 Mac。发明者和获益者，常常不是同一个人。\n「我们可能会把 iPhone 看成技术奇迹，但隐藏在苹果公司背后真正的天才是它的设计创新。苹果的主要创新体现在客户体验的设计和 APP 生态系统的设计上。」——《让大象飞》第 1 章（已对照原稿校正）\n🟨【平台加工 · 中国案例】拼多多创立时没有任何阿里做不出的技术，它的武器是「社交拼团」这个设计创新；微信支付后来居上靠的是「红包」——把转账变成游戏。技术上的追赶者，完全可以是体验上的颠覆者。"},
+   {h:"第三节 · 时机：比技术更被低估的变量",cst:"原书",atoms:["ka-104"],media:"audio",dur:"4:20",
+    t:"霍夫曼引述的规律：一项新技术从发明到大众接受，通常要经历约 25 年的采用周期。VR 概念几十年前就有，移动支付的底层技术远早于它的爆发。\n🟨 这对创业者的含义：在错误的时机推出正确的产品，和推出错误的产品一样致命。重要的是用户习惯、配套基础设施、市场认知是否就位。等风来，比造风便宜得多。"},
+   {h:"第四节 · 本课工具：技术陷阱自检清单（五问）",cst:"编辑原创",atoms:["ka-108"],media:"tool",
+    t:"① 你的核心技术是否已有开源替代品，或竞争者能在 6 个月内复制？\n② 如果明天技术被复制，你的竞争优势是否就消失了？\n③ 用户付钱时，买的是你的技术本身，还是技术带来的体验？你确定吗？\n④ 你是否因为已投入太多时间金钱，而不敢质疑这项技术？\n⑤ 如果从零开始，你还会选同样的技术路径吗？\n计分：≥3 分 = 你正站在技术陷阱里。"},
+   {h:"结课行动 + 升级钩子",cst:"编辑原创",atoms:["ka-108"],media:"text",
+    t:"结课行动：用自检清单跑一遍你的项目，把得分和最刺痛你的那一条写下来（100 字以内）。\n升级钩子（结课页自动展示）：识别只是第 1 步——霍夫曼的完整方法论是 6 步。「全程 6 讲」¥299，本节课 ¥29.9 全额抵扣，48 小时内有效；想要有人盯着你练？AI 教练版 ¥599：你的每份作业都会得到逐条点评。"},
+  ],
+  quiz:[
+   {q:"按霍夫曼的观点，早期创业公司最不该把胜负押在哪一项上？",o:["商业模式","专有技术 ✓","用户体验","进入时机"]},
+   {q:"「先找宝箱再配钥匙」中「宝箱」指什么？",o:["融资","技术专利","被验证的市场机会 ✓","人才"]},
+   {q:"判断：iPhone 的成功主要源于苹果领先的硬件技术。",o:["对","错 ✓（设计创新与生态设计）"]},
+  ],
+  homework:"用「宝箱-钥匙」框架重写你的项目逻辑，提交三段话：① 宝箱——你的市场机会是什么？有什么证据它真实存在？② 钥匙——你的方案/技术是为宝箱配的，还是你先有了钥匙？诚实回答。③ 自检——清单得分 + 最刺痛你的一条 + 应对。",
+  rubric:[["R1 机会真实性","35%","给出用户行为证据（访谈/数据/付费），而非自我推断"],
+          ["R2 钥匙-宝箱顺序诚实度","25%","能诚实识别自己是否「钥匙找锁」，不回避"],
+          ["R3 框架应用准确度","20%","正确使用本讲概念，无误用"],
+          ["R4 行动具体度","20%","应对措施可在 2 周内执行、可检验"]],
+ },
+ f1:{
+  kind:"quiz", title:"F1 免费测评「你掉进技术陷阱了吗？」", price:"免费 · 漏斗入口与传播器",
+  intro:"12 道交互题（4 维 × 3 题）约 3 分钟 · 产出个性化报告 + 可分享测评卡（带二维码回流）· 100% AI 自动化，开发量一天以内",
+  dims:[["A 方向感","是否技术导向而非机会导向","第1讲·技术陷阱"],
+        ["B 验证力","是否先验证再投入","第2讲·最小验证"],
+        ["C 用户感","是否真的了解用户","第4讲·客户开发"],
+        ["D 资源观","对团队和资金的认知","第2/6讲"]],
+  qs:[
+   "A1 有了绝妙想法，第一反应？最佳：找 10 个目标用户聊，看是否真有痛点（3分）",
+   "A2 握有对手没有的核心技术意味着？最佳：用户在意体验不是技术，先找技术兑现为体验的场景（3分）",
+   "A3 哪种公司最危险？最佳：技术领先但说不清用户为什么需要它（3分）",
+   "B1 验证新想法的合理预算？最佳：一个最小实验，一两周、几乎不花钱（3分）",
+   "B2 MVP 两周仅 5 人留存？最佳：找这 5 个留存用户深聊为什么留下（3分）",
+   "B3 关于失败？最佳：低成本、快速的失败是创业中最便宜的学习方式（3分）",
+   "C1 多久和真实用户深聊一次？最佳：每周都有（3分）",
+   "C2 访谈最该问？最佳：「上一次遇到这个问题是什么时候？当时怎么解决的？」（3分）",
+   "C3 投资人觉得方向大 vs 用户不复购，信谁？最佳：用户行为，复购不会说谎（3分）",
+   "D1 初创团队理想规模？最佳：5 人以内，沟通和迭代最快（3分）",
+   "D2 一次性拿到远超需要的融资？最佳：警惕——充裕资金会掩盖问题、杀死危机感（3分）",
+   "D3 该不该做新功能的依据？最佳：用户访谈和数据中反复出现的需求（3分）",
+  ],
+  personas:[["🔧 技术信徒","A 维最低","「你最大的风险：拿着钥匙找宝箱。」","闪课①（¥29.9）"],
+            ["🏗️ 完美主义建造者","B 维最低","「用一年验证一个两周就能证伪的想法。」","闪课②"],
+            ["🔭 远视症患者","C 维最低","「你看得见市场，看不见用户。」","闪课④"],
+            ["💰 资源依赖者","D 维最低","「你相信资源，霍夫曼相信约束。」","闪课⑥"],
+            ["🚀 精益验证者","总分≥30 无短板","「你缺的只是一套完整框架。」","直推 P3（¥599）"]],
+ },
+ p3:{
+  kind:"coach", title:"P3 AI 教练版 · 作业点评实例", price:"¥599 · 与 P2 价差 ¥300 买「有人管我的项目」",
+  intro:"学员围绕自己的项目提交作业，AI 教练按 Rubric 逐条点评、引用原书标注章节。以下为模拟学员作业 + AI 真实输出格式（学员案例为虚构演示）。",
+  student:"宝箱：我做 AI 健身魔镜，机会是家庭健身人群不想去健身房，证据是 Keep 有几亿用户。钥匙：我们有自研姿态识别算法，准确率比开源高 8%，所以决定做硬件魔镜把算法用起来。自检：4 分，最刺痛第 4 题——因为算法投入两年，从没讨论过「不做魔镜」的选项。应对：再优化算法做差异化。",
+  review:[
+   ["总评","R1 ⚠️ 12/35 · R2 ✅ 20/25 · R3 ✅ 16/20 · R4 ⚠️ 6/20 → 54/100，本期暂列后 40%"],
+   ["R1 机会真实性（最需警惕）","你用「Keep 有几亿用户」证明魔镜的机会——这是别人的宝箱。Keep 验证的是免费线上健身内容有需求，恰恰没验证「用户愿花几千元买健身硬件」。建议本周做 5 个付费意向测试：给目标用户看落地页，看多少人愿付 99 元预订金。📖 这正是第 2 章「用最小实验验证假设」的标准场景。"],
+   ["R2 顺序诚实度（你做得最好的）","你直接承认「做魔镜是为了把算法用起来」——教科书级的「钥匙找锁」，而你看见了它。诚实是改变的前提，这 20 分是给勇气的。"],
+   ["R4 行动具体度（扣分最多）","「再优化算法」恰是第 4 题描述的沉没成本绑架的标准反应。两周内可执行的替代动作：① 付费意向测试；② 访谈 5 个买过同类硬件后吃灰的用户。两项结果都支持魔镜，再优化算法不迟。"],
+   ["下一步","你的卡点集中在「验证」——第 2 讲《一周验证一个想法》就是为你写的。完成实验后可重新提交，分数可覆盖。"],
+  ],
+  fn:"本点评由 Thinker AI 创业教练基于《让大象飞》方法论生成，📖 标注处可溯源至原书章节；AI 教练不代表 Steve Hoffman 本人观点。",
+ },
+ cert:{
+  kind:"cert", title:"权益卡 · 证书与导师 comment（长在 Thinker 主页）", price:"稀缺性即定价",
+  intro:"证书不发 PDF——是长在用户主页、带验证链接的卡片资产。三级稀缺：完课证书（全自动）→ 优秀学员（前 20%，AI 初评+人工复核）→ 签名限量（Demo Day 前 3）。导师 comment 卡每期限 10 张，是 ¥2999 定价的核心锚点。",
+  cert:{h:"🏆 让大象飞 · 硅谷创业方法论 6 讲 — 结业认证",b:"颁发给 @用户名 · 2026.XX · 完成 6/6 模块 · 作业通过 AI 审核\n颁发方：Thinker × 让大象飞课程组 · 验证编号 TH-MEF-XXXX"},
+  comment:{h:"💬 导师 comment（学员主页展示）",b:"「他在两周内砍掉了打磨一年的功能线，用 37 个真实用户访谈重建了产品方向——这正是『先找宝箱再配钥匙』最难做到的那部分。」\n—— 王XX · Thinker 认证创业导师 · 让大象飞行动营第 X 期"},
+  hook:"P3 结业报告末尾 → P4 钩子：「你的 6 次作业显示方法论得分前 25%，但项目仍停留在纸面验证。21 天 MVP 行动营下期还有 X 个名额——你的结业成绩已获得 ¥300 奖学金资格，72 小时内有效。」",
+ },
+};
+
+const FUNNEL=[
+ {l:"F1 测评完成（引流入口）",n:3000,conv:"—",rev:0,c:"#facc15"},
+ {l:"闪课购买 ¥29.9",n:150,conv:"5%",rev:4485,c:"#fbbf24"},
+ {l:"直购 P2/P3（P3 占 6 成）",n:30,conv:"1%",rev:14148,c:"#818cf8"},
+ {l:"闪课 → P2/P3 升级（48h 抵扣券）",n:30,conv:"20%",rev:14148,c:"#6366f1"},
+ {l:"P4 行动营首期 ¥2999（含预售定金）",n:20,conv:"—",rev:59980,c:"#38bdf8"},
+ {l:"P5a 1v1 诊断 ¥1999（零星）",n:3,conv:"—",rev:5997,c:"#fb923c"},
+];
+const GATES=[
+ ["测评完成率","≥60%","58%",false,"低于通过线 → 优化前 3 题文案后复测"],
+ ["测评 → 闪课转化","≥5%","5.0%",true,""],
+ ["闪课 → 中价升级","≥15%","20%",true,""],
+ ["P3 占比 > P2","P3 多数","60%",true,"AI 教练体验成立"],
+ ["P4 预售定金","≥20 人","22 人",true,"达标开营"],
+ ["行动营完营率","≥70%","75%",true,""],
+ ["NPS","≥40","44",true,""],
+];
+const ALERTS=[
+ {t:"第 3 讲完课率 41%（均值 62%）",d:"学员在「设计创新」概念段流失最多 → 建议为 ka-301 补充本土案例、缩短概念精讲",card:11},
+ {t:"作业 R1「机会真实性」平均分最低（14/35）",d:"多数学员用宏观数据代替用户证据 → 建议在 ka-201 下增补「付费意向测试」模板并前置到闪课②",card:6},
+ {t:"测评 B 维（验证力）薄弱用户占 38%",d:"最大的单一画像群体 → 建议闪课② 上首页主推位、测评报告强化对应推荐",card:5},
+];
+
+/* ================= 引擎 ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const S={scanned:false, statuses:CARDS.map(c=>c.risk==="High"?"pending":"internal"),
+  approvedSet:new Set(), curAsset:0, qaSeq:3};
+const DEMO_SET=[3,0,28];
+
+/* ---------- 导航 ---------- */
+function unlockSteps(){ $$(".step").forEach(b=>b.classList.remove("locked")); }
+function goto(s){
+  if(!S.scanned && s!=="scan"){ toast("先扫描这本书（或点「直接看成品」）"); return; }
+  $$(".scr").forEach(e=>e.classList.remove("on"));
+  $("#scr-"+s).classList.add("on");
+  $$(".step").forEach(b=>b.classList.toggle("on",b.dataset.s===s));
+  if(s==="publish"){ renderSwitches(); renderPhone(); }
+  if(s==="growth") renderGrowth();
+  if(s==="studio") buildStudio();
+}
+$$(".step").forEach(b=>b.addEventListener("click",()=>{ if(!b.classList.contains("locked")) goto(b.dataset.s); }));
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(t._h);
+  t._h=setTimeout(()=>t.classList.remove("on"),3800); }
+function mini(){ $("#msAtom").textContent=S.scanned?ATOMS.length:atomN;
+  $("#msCard").textContent=S.scanned?CARDS.length:assetN; $("#msAppr").textContent=S.approvedSet.size; }
+
+/* ---------- ① 扫描流水线 ---------- */
+let atomN=0, assetN=0, archN=0, sTimers=[], scanRun=false;
+const featState=FEATURED.map(f=>({...f, got:new Set(), el:null}));
+function sT(fn,ms){ sTimers.push(setTimeout(fn,ms)); }
+
+/* 因果链修正：资产卡不预先存在——第一颗适配原子落位时，系统才「识别出机会」生成候选卡 */
+function ensureFeat(f){
+  if(f.el) return;
+  const c=CARDS[f.i], m=TYPES[c.t];
+  const hint=$("#featHint"); if(hint) hint.remove();
+  const el=document.createElement("div"); el.className="fcard"; el.style.setProperty("--c",m.c);
+  el.innerHTML=`<div class="fhead"><span>⚡ ${m.n} · 识别到组装机会</span><span class="fst">0/${f.need.length}</span></div>
+    <h4>${c.title}</h4>
+    <div class="fslots">${f.need.map(()=>`<span class="fslot q">?</span>`).join("")}</div>
+    <div class="fprice"><span>${c.price}</span><span>已成型 ✓ 点击进编辑台</span></div>`;
+  el.addEventListener("click",()=>{ if(el.classList.contains("full")) openStudio(f.i); });
+  $("#featWrap").appendChild(el); f.el=el;
+  el.style.transform="translateY(10px) scale(.96)";
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    el.style.transition="transform .45s cubic-bezier(.2,.8,.3,1)"; el.style.transform="";
+    setTimeout(()=>el.style.transition="",500); }));
+}
+function renderPara(para){
+  const p=document.createElement("div"); p.className="para";
+  para.forEach(seg=>{
+    if(typeof seg==="string"){ p.appendChild(document.createTextNode(seg)); }
+    else{ const sp=document.createElement("span"); sp.className="key"; sp.dataset.a=seg.a;
+      sp.textContent=seg.k; p.appendChild(sp); }
+  });
+  return p;
+}
+function addAtomChip(atom){
+  let grp=$("#ag-"+atom.ch);
+  if(!grp){ const t=document.createElement("div"); t.className="chTitle";
+    t.textContent="第 "+atom.ch+" 章"; $("#atomCol").appendChild(t);
+    grp=document.createElement("div"); grp.className="chGroup"; grp.id="ag-"+atom.ch;
+    $("#atomCol").appendChild(grp); }
+  const chip=document.createElement("div"); chip.className="atomChip";
+  chip.innerHTML=`<span class="aid">${atom.id}</span><span>${atom.t}</span><span class="ak">${atom.derived?"🟩 编辑派生":atom.k}</span>`;
+  grp.appendChild(chip);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>chip.classList.add("in")));
+  $("#atomCol").scrollTop=$("#atomCol").scrollHeight;
+  return chip;
+}
+function flyClone(fromEl,toEl,text){
+  const a=fromEl.getBoundingClientRect(), b=toEl.getBoundingClientRect();
+  const f=document.createElement("div"); f.className="flier"; f.textContent=text;
+  f.style.left=a.left+"px"; f.style.top=a.top+"px";
+  document.body.appendChild(f);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    f.style.transform=`translate(${b.left-a.left}px,${b.top-a.top}px) scale(.85)`; f.style.opacity=".25"; }));
+  setTimeout(()=>f.remove(),650);
+}
+function feedFeatured(aid){
+  featState.forEach(f=>{
+    if(!f.need.includes(aid)||f.got.has(aid)) return;
+    ensureFeat(f); /* 此刻才诞生：原子在前，资产机会在后 */
+    f.got.add(aid);
+    const slot=f.el.querySelector(".fslot.q");
+    if(slot){ slot.classList.remove("q"); slot.classList.add("fill"); slot.textContent=aid; }
+    f.el.querySelector(".fst").textContent=f.got.size+"/"+f.need.length;
+    f.el.querySelector(".fhead span").textContent=TYPES[CARDS[f.i].t].n+" · 组装中";
+    if(f.got.size===f.need.length && !f.el.classList.contains("full")){
+      f.el.classList.add("full");
+      f.el.querySelector(".fhead span").textContent=TYPES[CARDS[f.i].t].n+" · 已成型";
+      assetN++; updateScanCounts();
+    }
+  });
+}
+function updateScanCounts(){
+  $("#cAtomScan").textContent=atomN; $("#cAssetScan").textContent=assetN;
+  $("#cArch").textContent=archN.toLocaleString()+" 段已归档";
+  $("#ftArch").textContent=archN.toLocaleString()+" 段";
+  $("#ftAtom").textContent=atomN; $("#ftAsset").textContent=assetN; mini();
+}
+function extractKey(kEl){
+  const aid=kEl.dataset.a, atom=ATOMS.find(x=>x.id===aid);
+  kEl.classList.remove("hit"); kEl.classList.add("extracted");
+  kEl.insertAdjacentHTML("beforeend",`<sup>${aid}</sup>`);
+  const chip=addAtomChip(atom);
+  flyClone(kEl,chip,atom.t);
+  atomN++; feedFeatured(aid); updateScanCounts();
+}
+/* 编辑派生原子：不来自原文提取，由编辑将本章观点工具化（如 ka-108 自检清单） */
+function spawnDerived(id){
+  const atom=ATOMS.find(x=>x.id===id);
+  const note=document.createElement("div");
+  note.className="para done";
+  note.innerHTML=`<span style="color:#86efac;font-size:11.5px">🟩 编辑派生（非原文提取）：基于本章观点工具化 → ${id}《${atom.t}》</span>`;
+  $("#bookStream").appendChild(note);
+  const chip=addAtomChip(atom);
+  chip.querySelector(".ak").textContent="🟩 编辑派生";
+  flyClone(note,chip,atom.t);
+  atomN++; feedFeatured(id); updateScanCounts();
+}
+function startScan(name){
+  if(scanRun) return; scanRun=true;
+  $("#landing").classList.add("off"); $("#skipScan").style.display="block";
+  if(name) toast(`已接收 ${name} · 演示模式：以《让大象飞》已验证流水线展示扫描过程`);
+  /* 右栏开局为空：先有原子，系统才识别得出资产机会 */
+  $("#featWrap").innerHTML=`<div id="featHint" style="font-size:10.5px;color:#5b6178;line-height:1.9;
+    border:1px dashed rgba(255,255,255,.12);border-radius:12px;padding:12px 14px">
+    等待知识原子就位…<br>每颗原子自带 suitable_assets 字段，系统识别出可组装的资产机会后，候选卡会在这里出现。</div>`;
+  featState.forEach(f=>{ f.el=null; f.got=new Set(); });
+  let ci=0, pi=0;
+  function nextPara(){
+    if(ci>=BOOKDOC.length){ finishScan(); return; }
+    const chap=BOOKDOC[ci];
+    if(pi===0){ const t=document.createElement("div"); t.className="chTitle";
+      t.textContent=chap.ch; $("#bookStream").appendChild(t); }
+    const pEl=renderPara(chap.paras[pi]);
+    $("#bookStream").appendChild(pEl);
+    $("#bookStream").scrollTop=$("#bookStream").scrollHeight;
+    pEl.classList.add("scanning");
+    const keys=[...pEl.querySelectorAll(".key")];
+    let ki=0;
+    function nextKey(){
+      if(ki>=keys.length){
+        pEl.classList.remove("scanning"); pEl.classList.add("done");
+        archN+=110+Math.floor(Math.random()*50); updateScanCounts();
+        pi++;
+        if(pi>=chap.paras.length){
+          if(chap.derived) chap.derived.forEach(id=>spawnDerived(id));
+          ci++; pi=0;
+        }
+        sT(nextPara,420); return;
+      }
+      const kEl=keys[ki]; kEl.classList.add("hit");
+      sT(()=>{ extractKey(kEl); ki++; nextKey(); },560);
+    }
+    sT(nextKey,700);
+  }
+  nextPara();
+}
+function finishScan(){
+  archN=1834; updateScanCounts();
+  $("#batch").classList.add("on");
+  /* 批量组装计数：4 → 46 */
+  const cnt={}; CARDS.forEach(c=>cnt[c.t]=(cnt[c.t]||0)+1);
+  $("#batchTypes").innerHTML=Object.entries(cnt).map(([t,n])=>
+    `<span class="bt"><i style="background:${TYPES[t].c}"></i>${TYPES[t].n} ${n}</span>`).join("");
+  let n=assetN;
+  const iv=setInterval(()=>{
+    n++; $("#batchN").textContent=n; assetN=n; updateScanCounts();
+    if(n>=CARDS.length){ clearInterval(iv); scanDone(); }
+  },55);
+  sTimers.push(iv);
+}
+function scanDone(){
+  S.scanned=true; assetN=CARDS.length; atomN=ATOMS.length; updateScanCounts(); mini();
+  unlockSteps(); $("#scanCtas").classList.add("on"); $("#skipScan").style.display="none";
+  $("#assetCol").scrollTop=$("#assetCol").scrollHeight;
+}
+function instantComplete(){
+  sTimers.forEach(t=>{clearTimeout(t);clearInterval(t);}); sTimers=[];
+  scanRun=true;
+  $("#landing").classList.add("off");
+  $("#bookStream").innerHTML=""; $("#atomCol").innerHTML="";
+  $("#featWrap").innerHTML=""; featState.forEach(f=>{ f.el=null; f.got=new Set(); });
+  BOOKDOC.forEach(chap=>{
+    const t=document.createElement("div"); t.className="chTitle"; t.textContent=chap.ch;
+    $("#bookStream").appendChild(t);
+    chap.paras.forEach(para=>{
+      const pEl=renderPara(para); pEl.classList.add("done");
+      pEl.querySelectorAll(".key").forEach(k=>{ k.classList.add("extracted");
+        k.insertAdjacentHTML("beforeend",`<sup>${k.dataset.a}</sup>`); });
+      $("#bookStream").appendChild(pEl);
+    });
+    if(chap.derived) chap.derived.forEach(id=>{
+      const atom=ATOMS.find(x=>x.id===id);
+      const note=document.createElement("div"); note.className="para done";
+      note.innerHTML=`<span style="color:#86efac;font-size:11.5px">🟩 编辑派生（非原文提取）：基于本章观点工具化 → ${id}《${atom.t}》</span>`;
+      $("#bookStream").appendChild(note);
+    });
+  });
+  atomN=0; ATOMS.forEach(a=>{ const chip=addAtomChip(a); chip.classList.add("in"); atomN++; });
+  assetN=0;
+  featState.forEach(f=>{ ensureFeat(f); f.got=new Set(f.need);
+    [...f.el.querySelectorAll(".fslot")].forEach((s,si)=>{
+      s.classList.remove("q"); s.classList.add("fill"); s.textContent=f.need[si]; });
+    f.el.querySelector(".fst").textContent=f.need.length+"/"+f.need.length;
+    f.el.classList.add("full");
+    f.el.querySelector(".fhead span").textContent=TYPES[CARDS[f.i].t].n+" · 已成型"; });
+  assetN=featState.length; archN=1834;
+  const cnt={}; CARDS.forEach(c=>cnt[c.t]=(cnt[c.t]||0)+1);
+  $("#batchTypes").innerHTML=Object.entries(cnt).map(([t,n])=>
+    `<span class="bt"><i style="background:${TYPES[t].c}"></i>${TYPES[t].n} ${n}</span>`).join("");
+  $("#batch").classList.add("on"); $("#batchN").textContent=CARDS.length;
+  $("#bookStream").scrollTop=0; $("#atomCol").scrollTop=0;
+  scanDone();
+}
+$("#dropzone").addEventListener("click",()=>startScan());
+$$("#mats .mat").forEach(m=>m.addEventListener("click",()=>{
+  const name=m.textContent.trim();
+  if(name.includes("🎧")||name.includes("📹"))
+    toast(`已接收 ${name} · 转写 Agent 生成带时间码文稿 → 进入扫描流水线（演示以《让大象飞》展示）`);
+  startScan(name.includes("🎧")||name.includes("📹")?null:name); }));
+$("#spDone").addEventListener("click",instantComplete);
+$("#enterDone").addEventListener("click",instantComplete);
+$("#replayScan").addEventListener("click",()=>startScan());
+$("#spQueue").addEventListener("click",()=>toast("《人机沟通法则》排队中 · 第二本复用验证将在授权确认后开始"));
+$("#spTape").addEventListener("click",()=>toast("🎙 访谈实录 ×3 在转写队列：音频 → 带时间码文稿 → 同一条扫描流水线"));
+$("#spEmpty").addEventListener("click",()=>startScan());
+$("#skipScan").addEventListener("click",instantComplete);
+$("#ctaStudio").addEventListener("click",()=>{ goto("studio"); openStudio(0); });
+$("#ctaPub").addEventListener("click",()=>goto("publish"));
+/* 拖真实文件 */
+addEventListener("dragover",e=>{ e.preventDefault();
+  if(!scanRun) $("#scr-scan").classList.add("dragging"); });
+addEventListener("dragleave",e=>{ if(e.relatedTarget===null) $("#scr-scan").classList.remove("dragging"); });
+addEventListener("drop",e=>{ e.preventDefault(); $("#scr-scan").classList.remove("dragging");
+  if(scanRun) return;
+  const f=e.dataTransfer.files[0];
+  startScan(f?`《${f.name.replace(/\.[^.]+$/,"")}》`:null); });
+
+/* ---------- ② 编辑台 · 审稿台（双透镜） ---------- */
+const GRPORDER=["course","template","insight","event","ama","coffee","mentor","agent","perk"];
+let studioBuilt=false, lensOn=false;
+function setLens(on){
+  lensOn=on;
+  $("#scr-studio").classList.toggle("lens",on);
+  $$(".lensBtn").forEach(b=>b.classList.toggle("on",(b.dataset.m==="lens")===on));
+}
+function buildStudio(){
+  if(studioBuilt) return; studioBuilt=true;
+  const box=document.createElement("div"); box.className="todoBox";
+  box.innerHTML=`<b>📌 编辑待办 · 3</b>
+   <div class="todoItem" data-go="publish">⚠ 高风险：1v1 Coffee Chat（商业承诺暗示）→ 去发布台解锁</div>
+   <div class="todoItem" data-go="publish">⚠ 高风险：AMA 专利议题（第三方观点争议）→ 去发布台解锁</div>
+   <div class="todoItem" data-i="10">⚠ 引文已按原稿校正待补页码：苹果设计创新金句 → 打开审阅</div>`;
+  $("#studioTodo").appendChild(box);
+  box.querySelectorAll(".todoItem").forEach(t=>t.addEventListener("click",()=>{
+    if(t.dataset.go){ goto("publish"); toast("在列表里找到 🔒 行，点「解锁需确认」"); }
+    else{ setLens(true); openStudio(+t.dataset.i); } }));
+  $$(".stab").forEach(b=>{
+    const grp=b.dataset.grp, n=grpItems(grp).length;
+    b.textContent=b.textContent+" "+n;
+    b.addEventListener("click",()=>{
+      const items=grpItems(grp);
+      const pick=(items.find(x=>x.c.d)||items[0]).i;
+      openStudio(pick); });
+  });
+  $$(".lensBtn").forEach(b=>b.addEventListener("click",()=>setLens(b.dataset.m==="lens")));
+  qaLogPush("#22c55e","r1 · 第1章引文 · 已校正","对照《让大象飞》原稿 PDF：原 AI 稿「隐藏在 iPhone 背后」校正为「隐藏在苹果公司背后」· 上线前补页码");
+  qaLogPush("#64748b","r2 · 拼多多/微信案例 · Low","已标注平台补充，非原书内容");
+  qaLogPush("#64748b","r3 · 25年周期表述 · Low","标注为作者引述的规律而非平台论断");
+}
+function initCollapse(){
+  $$("#studioDoc .sect").forEach((s,idx)=>{
+    if(s.classList.contains("mediaBlk")||idx>2) s.classList.add("closed");
+    const h=s.querySelector(".shead h3");
+    if(h) h.addEventListener("click",()=>{ if(!lensOn) s.classList.toggle("closed"); });
+  });
+}
+function qaLogPush(color,title,body){
+  const d=document.createElement("div"); d.className="qaItem"; d.style.setProperty("--q",color);
+  d.innerHTML=`<div class="t">${new Date().toTimeString().slice(0,8)}</div><b>${title}</b><br>${body}`;
+  $("#qaLog").prepend(d);
+}
+function priceWhy(c){ const p=c.price;
+  if(p.includes("2999")) return "高价层：真人点评×3 + 限量 comment 卡——稀缺时间与社交资本";
+  if(p.includes("599")) return "中价层：+AI 教练逐作业点评，「有人管我」的体验差价 ¥300";
+  if(p.includes("29.9")) return "低价层：AI 全自动产出，¥29.9 是付费意愿筛选器";
+  if(p.includes("299")) return "中价层：完整体系 + 完课证书（凭证稀缺性），走量基本盘";
+  if(p.includes("1,999")||p.includes("39,800")||p==="定制") return "顶层：纯真人稀缺时间，天然不可规模化";
+  if(p.includes("免费")) return "免费层：内容即广告——引流、传播、建立信任";
+  return "非独立定价：随主产品附赠 / 内部资产，为付费层增值"; }
+/* 品种分组：活动/AMA/Coffee/导师 合并为「活动与服务」 */
+function grpOf(t){ return ["event","ama","coffee","mentor"].includes(t)?"service":t; }
+function grpItems(grp){ return CARDS.map((c,i)=>({c,i})).filter(x=>grpOf(x.c.t)===grp); }
+/* 条目轨：同品种的全部条目，一行可扫；状态即审稿队列 */
+function renderRail(grp,active){
+  const r=$("#itemRail"); r.innerHTML="";
+  grpItems(grp).forEach(({c,i})=>{
+    const el=document.createElement("button");
+    el.className="rchip"+(i===active?" on":"");
+    const st=c.risk==="High"?'<span class="warn">⚠ 高风险</span>':
+             c.risk==="Medium"?'<span class="mid">🟡 待核</span>':'<span class="ok">✓ QA 已过</span>';
+    el.innerHTML=`<span class="rt"><i style="background:${TYPES[c.t].c}"></i>${c.title}</span>
+      <span class="rs">${c.d?'<span class="star">★ 全文</span> · ':""}${st} · ${c.price}</span>`;
+    el.addEventListener("click",()=>openStudio(i));
+    r.appendChild(el);
+  });
+  const act=r.querySelector(".rchip.on");
+  if(act) act.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
+}
+function openStudio(i){
+  buildStudio();
+  goto("studio"); S.curAsset=i;
+  const c=CARDS[i], grp=grpOf(c.t);
+  $$(".stab").forEach(b=>b.classList.toggle("on",b.dataset.grp===grp));
+  renderRail(grp,i);
+  if(c.d) renderDeep(c); else renderGeneric(c);
+  initCollapse();
+  $("#studioMain").scrollTop=0;
+}
+function atomTags(ids){ return ids.map(id=>`<span class="atomTag" data-a="${id}">${id}</span>`).join(" "); }
+function cstTag(cst){ return cst==="原书"?'<span class="tag blue">🟦 原书 · 作者可背书</span>':
+  cst==="平台加工"?'<span class="tag amber">🟨 平台加工 · 作者不背书</span>':'<span class="tag green">🟩 编辑原创</span>'; }
+function headMeta(c){
+  const i=CARDS.indexOf(c);
+  return `<div class="crumb">编辑台 Studio / ${TYPES[c.t].n} / ${c.risk==="High"?"⚠ 高风险":"受控中"}</div>
+   <h1>${c.title}</h1>
+   <div class="meta">${cstTag(c.cst)}
+     <span class="tag ${c.risk==="High"?"red":c.risk==="Medium"?"amber":"green"}">risk: ${c.risk}</span>
+     <span class="tag gray">publish: ${S.statuses[i]==="approved"?"已上架 🏅":S.statuses[i]==="pending"?"Pending":"Internal"}</span>
+     <span class="tag gray priceTag">${c.price}</span>
+     <span class="tag amber" style="border-style:dashed">💡 ${priceWhy(c)}</span>
+     <span style="font-size:11px;color:#6e7591">溯源：</span>${atomTags(c.a)}</div>`;
+}
+function chainBar(c){
+  return `<div class="chain"><b>${c.a.length} 个知识原子</b><span class="ar">→</span>课程设计 Agent<span class="ar">→</span>初稿
+   <span class="ar">→</span>QA v1（误归因/溯源/承诺）<span class="ar">→</span>修复方案表<span class="ar">→</span>结构化修复
+   <span class="ar">→</span>QA v2 复审<span class="ar">→</span><b style="color:#7dd3fc">Internal Ready</b>
+   <span class="ar">→</span><span style="color:#fcd34d">上架开关（去 ③ 发布）</span></div>`;
+}
+function renderGeneric(c){
+  $("#studioDoc").innerHTML= headMeta(c)+chainBar(c)+
+   `<div class="sect" data-cst="${c.cst}"><div class="shead"><h3>资产摘要</h3>${cstTag(c.cst)}${atomTags(c.a)}</div>
+     <div class="stext">${c.sub}。</div></div>
+    <div class="sect" data-cst="编辑原创"><div class="shead"><h3>速览说明</h3></div>
+     <div class="stext">这是 46 项批量资产之一（统一 Schema 产出），当前为摘要态。条目轨上带 ★ 的条目收录了全文样例（闪课①、F1 测评、P3 AI 教练、权益卡），其余按同模子批量生成；全部 46 项的上架管理在 ③ 发布。</div></div>`;
+  bindAtomTags();
+}
+function sectionHtml(s,di,si){
+  return `<div class="sect" data-cst="${s.cst}" data-di="${di}" data-si="${si}">
+    <div class="shead"><h3>${s.h}</h3>${cstTag(s.cst)}${s.risk?`<span class="tag amber">⚠ ${s.risk}</span>`:""}
+      ${atomTags(s.atoms)}<span class="qaChip passed" style="display:none"></span>
+      <button class="editBtn">✎ 编辑</button></div>
+    <div class="stext">${s.t}</div></div>`;
+}
+function renderDeep(c){
+  const d=DETAILS[c.d]; let h=headMeta(c)+chainBar(c)+
+    `<div class="sect" data-cst="编辑原创"><div class="shead"><h3>资产说明</h3></div><div class="stext">${d.intro}</div></div>`;
+  if(d.kind==="course"){
+    const MEDIA={video:{ic:"📹",n:"视频精讲",c:"#f87171"},audio:{ic:"🎧",n:"音频精讲",c:"#c084fc"},
+      text:{ic:"📖",n:"图文",c:"#93c5fd"},tool:{ic:"🛠",n:"工具模板",c:"#2dd4bf"},
+      quiz:{ic:"✅",n:"测验关卡",c:"#fbbf24"},hw:{ic:"✍️",n:"作业关卡",c:"#fb923c"},ai:{ic:"🤖",n:"AI 教练",c:"#818cf8"}};
+    /* 关卡地图：先看结构，再进内容 */
+    const nodes=[...d.sections.map(s=>({ic:MEDIA[s.media||"text"].ic,h:s.h.split("·")[0].trim()})),
+      {ic:"✅",h:"测验"},{ic:"✍️",h:"作业"},{ic:"🤖",h:"AI 教练"}];
+    h+=`<div id="lvPath">${nodes.map((n,ni)=>`<span class="lvNode" data-lv="${ni}">${n.ic} ${n.h}</span>`)
+      .join('<span class="lvArrow">›</span>')}</div>`;
+    /* 媒介关卡块：📹🎧 = 播放器渲染位 + 可展开文稿；同一原子文稿可输出多种媒介 */
+    h+=d.sections.map((s,si)=>{
+      const M=MEDIA[s.media||"text"];
+      const ply=(s.media==="video"||s.media==="audio")?
+        `<div class="player"><div class="pbtn">▶</div><div class="pbar"></div>
+          <div class="pmeta">${M.ic} ${M.n} · ${s.dur||""}<br>AI 文稿已就绪 · 媒体渲染位</div></div>`:"";
+      return `<div class="sect mediaBlk" data-cst="${s.cst}" data-di="${c.d}" data-si="${si}" id="lv-${si}">
+        <div class="shead"><span class="lvNum">关卡 ${si+1}</span>
+          <span class="lvTag" style="--mc:${M.c}">${M.ic} ${M.n}${s.dur?` · ${s.dur}`:""}</span>
+          <h3>${s.h}</h3>${cstTag(s.cst)}${s.risk?`<span class="tag amber">⚠ ${s.risk}</span>`:""}
+          ${atomTags(s.atoms)}<span class="qaChip passed" style="display:none"></span>
+          <button class="editBtn">✎ 编辑</button></div>
+        ${ply}<div class="stext">${s.t}</div></div>`;
+    }).join("");
+    h+=`<div class="sect mediaBlk" data-cst="编辑原创" id="lv-${d.sections.length}">
+      <div class="shead"><span class="lvNum">关卡 ${d.sections.length+1}</span>
+        <span class="lvTag" style="--mc:#fbbf24">✅ 测验关卡 · 3 题</span><h3>章节测验 · AI 自动判分</h3>${cstTag("编辑原创")}</div>
+      <div class="stext">${d.quiz.map((q,qi)=>`${qi+1}. ${q.q}\n　${q.o.join(" / ")}`).join("\n")}</div></div>`;
+    h+=`<div class="sect mediaBlk" data-cst="编辑原创" data-di="${c.d}" data-si="hw" id="lv-${d.sections.length+1}">
+      <div class="shead"><span class="lvNum">关卡 ${d.sections.length+2}</span>
+        <span class="lvTag" style="--mc:#fb923c">✍️ 作业关卡</span><h3>本讲作业 · 围绕你自己的项目</h3>${cstTag("编辑原创")}
+        <span class="qaChip passed" style="display:none"></span><button class="editBtn">✎ 编辑</button></div>
+      <div class="stext">${d.homework}</div>
+      <div class="lensOnly"><table class="mini"><tr><th>维度</th><th>权重</th><th>满分标准（AI 教练点评依据）</th></tr>
+      ${d.rubric.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</table></div></div>`;
+    h+=`<div class="sect mediaBlk" data-cst="平台加工" id="lv-${d.sections.length+2}">
+      <div class="shead"><span class="lvNum">关卡 ${d.sections.length+3}</span>
+        <span class="lvTag" style="--mc:#818cf8">🤖 AI 教练</span><h3>提交作业 → 获得逐条点评</h3>${cstTag("平台加工")}</div>
+      <div class="stext">学员提交作业后，AI 教练按上方 Rubric 逐条点评、引用原书标注章节——这是录播课给不了的体验，也是 ¥599 的定价依据。</div>
+      <button class="btn" id="goCoach" style="font-size:11px;margin-top:4px">查看一份真实点评实例 →</button></div>`;
+  }
+  if(d.kind==="quiz"){
+    h+=`<div class="sect" data-cst="平台加工"><div class="shead"><h3>测评维度（4 维 × 3 题）</h3>${cstTag("平台加工")}</div>
+      <table class="mini"><tr><th>维度</th><th>考察什么</th><th>来源模块</th></tr>
+      ${d.dims.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</table></div>`;
+    h+=`<div class="sect" data-cst="平台加工" data-di="f1" data-si="qs"><div class="shead"><h3>12 道题目（节选最佳选项）</h3>${cstTag("平台加工")}<span class="qaChip passed" style="display:none"></span><button class="editBtn">✎ 编辑</button></div>
+      <div class="stext">${d.qs.join("\n")}</div></div>`;
+    h+=`<div class="sect" data-cst="编辑原创"><div class="shead"><h3>画像与转化映射（报告生成逻辑）</h3>${cstTag("编辑原创")}</div>
+      <table class="mini"><tr><th>画像</th><th>触发</th><th>报告定位</th><th>推荐转化</th></tr>
+      ${d.personas.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}</table>
+      <div class="stext" style="margin-top:8px;font-size:11.5px;color:#8b91a8">报告结构：画像 + 四维雷达 + 最弱维 200 字诊断（引原书 🟦）+ 推荐课程 + 分享卡（带二维码回流）——整个漏斗的入口和传播器。</div></div>`;
+  }
+  if(d.kind==="coach"){
+    h+=`<div class="sect" data-cst="平台加工"><div class="shead"><h3>模拟学员作业（虚构演示）</h3>${cstTag("平台加工")}</div>
+      <div class="stext">${d.student}</div></div>`;
+    h+=`<div class="sect" data-cst="平台加工"><div class="shead"><h3>AI 教练点评输出</h3>${cstTag("平台加工")}</div>
+      <div class="aiReview"><div class="score">${d.review[0][1]}</div>
+      ${d.review.slice(1).map(r=>`<p><em>${r[0]}</em>：${r[1]}</p>`).join("")}
+      <div class="fn">${d.fn}</div></div></div>`;
+  }
+  if(d.kind==="cert"){
+    h+=`<div class="sect" data-cst="编辑原创"><div class="shead"><h3>完课证书卡（主页展示样张）</h3>${cstTag("编辑原创")}</div>
+      <div class="pCert" style="max-width:420px"><h4>${d.cert.h}</h4>${d.cert.b.replace(/\n/g,"<br>")}</div></div>`;
+    h+=`<div class="sect" data-cst="编辑原创"><div class="shead"><h3>导师 comment 卡（每期限 10 张）</h3>${cstTag("编辑原创")}</div>
+      <div class="pComment" style="max-width:420px">${d.comment.b.replace(/\n/g,"<br>")}</div></div>`;
+    h+=`<div class="sect" data-cst="编辑原创" data-di="cert" data-si="hook"><div class="shead"><h3>升级钩子文案（行为触发，非广告）</h3>${cstTag("编辑原创")}<span class="qaChip passed" style="display:none"></span><button class="editBtn">✎ 编辑</button></div>
+      <div class="stext">${d.hook}</div></div>`;
+  }
+  $("#studioDoc").innerHTML=h;
+  bindAtomTags(); bindEditors();
+  $$("#lvPath .lvNode").forEach(n=>n.addEventListener("click",()=>{
+    const t=$("#lv-"+n.dataset.lv);
+    if(t){ t.classList.remove("closed"); t.scrollIntoView({behavior:"smooth",block:"start"}); }}));
+  $$("#studioDoc .pbtn").forEach(p=>p.addEventListener("click",()=>
+    toast("演示渲染位 · 同一份原子文稿可输出 图文 / 音频 / 视频——媒介是渲染层，原子才是内容层")));
+  const gc=$("#goCoach"); if(gc) gc.addEventListener("click",()=>openStudio(26));
+}
+function bindAtomTags(){
+  $$("#studioDoc .atomTag").forEach(t=>t.addEventListener("click",e=>{
+    const a=ATOMS.find(x=>x.id===t.dataset.a); if(!a) return;
+    const pop=$("#atomPop");
+    pop.innerHTML=`<em>${a.id} · 第${a.ch}章 · ${a.k} · content_source_type: 原书</em>${a.t}
+      <em style="margin-top:6px">该原子是本段内容的溯源依据；在 ① 扫描页可看到它从原文哪句话被提炼。</em>`;
+    pop.style.display="block";
+    pop.style.left=Math.min(e.clientX+12,innerWidth-320)+"px"; pop.style.top=(e.clientY+12)+"px";
+    e.stopPropagation(); }));
+}
+addEventListener("click",()=>$("#atomPop").style.display="none");
+function getEditTarget(di,si){
+  const d=DETAILS[di];
+  if(si==="hw") return {get:()=>d.homework, set:v=>d.homework=v};
+  if(si==="qs") return {get:()=>d.qs.join("\n"), set:v=>d.qs=v.split("\n").filter(x=>x.trim())};
+  if(si==="hook") return {get:()=>d.hook, set:v=>d.hook=v};
+  return {get:()=>d.sections[si].t, set:v=>d.sections[si].t=v};
+}
+function bindEditors(){
+  $$("#studioDoc .editBtn").forEach(btn=>btn.addEventListener("click",()=>{
+    const sect=btn.closest(".sect"), di=sect.dataset.di, si=sect.dataset.si;
+    if(sect.querySelector("textarea")) return;
+    const tgt=getEditTarget(di,si), textDiv=sect.querySelector(".stext");
+    const ta=document.createElement("textarea"); ta.value=tgt.get();
+    const acts=document.createElement("div"); acts.className="editActs";
+    acts.innerHTML=`<button class="btn primary" style="font-size:11px;padding:6px 14px">保存 → 触发 QA 复审</button>
+      <button class="btn" style="font-size:11px;padding:6px 14px">取消</button>`;
+    textDiv.style.display="none"; sect.appendChild(ta); sect.appendChild(acts);
+    acts.children[1].onclick=()=>{ ta.remove(); acts.remove(); textDiv.style.display=""; };
+    acts.children[0].onclick=()=>{
+      tgt.set(ta.value); textDiv.textContent=ta.value;
+      ta.remove(); acts.remove(); textDiv.style.display="";
+      const chip=sect.querySelector(".qaChip");
+      chip.style.display="inline-block"; chip.className="qaChip reviewing"; chip.textContent="已修改 · QA v2 复审中…";
+      const c=CARDS[S.curAsset];
+      qaLogPush("#f59e0b",`e${S.qaSeq++} · 人工修改「${sect.querySelector("h3").textContent}」`,
+        `资产：${c.title} · 自动触发复审：检查 content_source_type 一致性 / 误归因 / 商业承诺`);
+      toast("修改已保存 · 自动触发 QA v2 复审（任何人工修改都回到受控流程）");
+      setTimeout(()=>{ chip.className="qaChip passed"; chip.textContent="QA v2 通过 ✓ 已更新";
+        qaLogPush("#22c55e",`e${S.qaSeq-1} · 复审通过`,
+          "字段一致 · 无误归因 · 无商业承诺 · 已同步至 C 端（③ 发布 → 手机）");
+      },2300);
+    };
+  }));
+}
+
+/* ---------- ③ 发布：开关列表 ---------- */
+const RISKWHY={
+ 32:"服务类资产易被理解为「作者本人参与」并暗示收益。法务/编辑需确认：页面署名为「Thinker 认证导师」、无任何融资/收益/成功率承诺，方可解锁上架。",
+ 33:"涉第三方观点争议（专利的价值边界）。编辑需确认表述为「议题讨论」，不构成对第三方的事实性论断，方可解锁上架。"};
+function srow(i){
+  const c=CARDS[i], st=S.statuses[i];
+  const d=document.createElement("div");
+  d.className="srow"+(st==="approved"?" live":"");
+  const lock=st==="pending"?`<span class="lock">🔒 解锁需确认</span>`:"";
+  d.innerHTML=`<i style="background:${TYPES[c.t].c}"></i>
+    <span class="nm">${c.title}</span><span class="pr">${c.price}</span>${lock}
+    <label class="sw"><input type="checkbox" ${st==="approved"?"checked":""} ${st==="pending"?"disabled":""}><span class="tr"></span></label>`;
+  const input=d.querySelector("input");
+  input.addEventListener("change",()=>{
+    if(input.checked){ S.statuses[i]="approved"; S.approvedSet.add(i); d.classList.add("live");
+      toast(`已上架「${c.title.slice(0,16)}…」 · 学员手机立即可见`); }
+    else{ S.statuses[i]="internal"; S.approvedSet.delete(i); d.classList.remove("live");
+      toast(`已下架「${c.title.slice(0,16)}…」 · C 端即时撤下`); }
+    $("#liveCount").textContent=S.approvedSet.size; mini(); renderPhone();
+  });
+  const lockEl=d.querySelector(".lock");
+  if(lockEl) lockEl.addEventListener("click",()=>{
+    const nx=d.nextElementSibling;
+    if(nx&&nx.classList.contains("riskNote")){ nx.remove(); return; }
+    const n=document.createElement("div"); n.className="riskNote";
+    n.innerHTML=`<b>为什么锁定（法务/编辑确认项）：</b><br>${RISKWHY[i]||c.sub}<br>
+     <button class="btn" data-a="ok">✓ 人工已确认 · 解锁开关</button>
+     <button class="btn" data-a="no" style="margin-left:6px">保持锁定</button>`;
+    d.after(n);
+    n.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+      if(b.dataset.a==="ok"){
+        S.statuses[i]="internal"; CARDS[i].risk="Medium";
+        qaLogPush("#22c55e",`人工确认 · ${c.title.slice(0,14)}…`,"法务/编辑已确认表述边界 · risk High→Medium · 开关已解锁");
+        toast("已解锁 · 现在可以拨开关上架了");
+        n.remove(); input.disabled=false; lockEl.remove();
+      } else n.remove(); }));
+  });
+  return d;
+}
+function renderSwitches(){
+  const w=$("#switchList"); w.innerHTML="";
+  const sec1=document.createElement("div"); sec1.className="swSec"; sec1.textContent="建议先上架的演示集";
+  w.appendChild(sec1);
+  DEMO_SET.forEach(i=>w.appendChild(srow(i)));
+  GRPORDER.forEach(g=>{
+    const items=CARDS.map((c,i)=>({c,i})).filter(x=>x.c.t===g&&!DEMO_SET.includes(x.i));
+    if(!items.length) return;
+    const s=document.createElement("div"); s.className="swSec"; s.textContent=TYPES[g].n+" · "+items.length;
+    w.appendChild(s);
+    items.forEach(({i})=>w.appendChild(srow(i)));
+  });
+  $("#liveCount").textContent=S.approvedSet.size;
+}
+$("#quickApprove").addEventListener("click",()=>{
+  DEMO_SET.forEach(i=>{ if(S.statuses[i]==="internal"){ S.statuses[i]="approved"; S.approvedSet.add(i); } });
+  mini(); renderSwitches(); renderPhone();
+  toast("演示集已上架：F1 测评 + 闪课① + 完课证书卡 → 看右侧手机");
+});
+
+/* ---------- 手机（1:1 可操作） ---------- */
+let pTab="home", quizState={step:0,score:0}, pDetail=null;
+$$(".ptab").forEach(b=>b.addEventListener("click",()=>{ pTab=b.dataset.p; pDetail=null;
+  $$(".ptab").forEach(x=>x.classList.toggle("on",x===b)); renderPhone(); }));
+const PQUIZ=[
+ {q:"你有了一个绝妙的产品想法，第一反应是？",o:[["马上开发，先做出来再说",0],["先申请专利防止被抄",0],["找 10 个目标用户聊聊，看是否真有痛点",3],["写一份完整商业计划书",1]]},
+ {q:"MVP 上线两周只有 5 个用户留存，你会？",o:[["加功能，一定是功能不够多",0],["找这 5 个留存用户深聊为什么留下",3],["加大推广预算",1],["放弃这个方向",1]]},
+ {q:"一次性拿到远超需要的融资，你认为？",o:[["太好了，大干一场",0],["警惕：充裕资金会掩盖问题",3],["存起来慢慢花",1],["马上扩团队抢市场",0]]},
+];
+function approved(i){ return S.statuses[i]==="approved"; }
+function renderPhone(){
+  const b=$("#phoneBody");
+  if(pTab==="home"){
+    if(pDetail!==null){
+      const c=CARDS[pDetail], m=TYPES[c.t];
+      b.innerHTML=`<button class="pBack">‹ 返回首页</button><div class="pDetail">
+        <div style="color:${m.c};font-size:9px;letter-spacing:1px">${m.n}</div>
+        <h4>${c.title}</h4>
+        <p style="font-size:11px;color:#aab0c8;line-height:1.9">${c.sub}</p>
+        <div class="why">💡 为什么是这个价：${priceWhy(c)}</div>
+        <div style="color:#ffd9a8;font-size:13px;margin-top:4px">${c.price}</div>
+        <button class="pBuy">${c.price.includes("免费")?"立即领取":"立即购买"}（演示）</button></div>`;
+      b.querySelector(".pBack").addEventListener("click",()=>{ pDetail=null; renderPhone(); });
+      b.querySelector(".pBuy").addEventListener("click",()=>toast("演示环境 · 已记录一次购买意向——它会成为 ④ 增长漏斗里的一个数字"));
+      return;
+    }
+    const list=CARDS.map((c,i)=>({c,i})).filter(x=>approved(x.i));
+    b.innerHTML=list.length?
+      `<div style="font-size:10px;color:#6e7591;margin-bottom:8px">已上架 ${list.length} 项 · 点卡片看详情</div>`+
+      list.map(({c,i})=>`<div class="pCard clickable" data-i="${i}"><div class="ty" style="color:${TYPES[c.t].c}">${TYPES[c.t].n}</div>${c.title}<div class="pr">${c.price}</div></div>`).join("")
+      :`<div class="pEmpty">暂无公开资产<br><br>46 项资产已生产完毕，<br>但还没有任何一项被上架。<br><br>← 拨开左侧任意开关试试</div>`;
+    b.querySelectorAll(".pCard.clickable").forEach(el=>el.addEventListener("click",()=>{
+      pDetail=+el.dataset.i; renderPhone(); }));
+  }
+  if(pTab==="quiz"){
+    if(!approved(3)){ b.innerHTML=`<div class="pEmpty">🔒 测评未上架<br><br>请先在左侧打开<br>「F1 测评」的开关</div>`; return; }
+    if(quizState.step<PQUIZ.length){
+      const q=PQUIZ[quizState.step];
+      b.innerHTML=`<div style="font-size:10px;color:#6e7591;margin-bottom:8px">你掉进技术陷阱了吗 · ${quizState.step+1}/${PQUIZ.length}（演示节选 3 题）</div>
+        <div class="pQ">${q.q}</div>`+q.o.map((o,oi)=>`<button class="pOpt" data-s="${o[1]}">${String.fromCharCode(97+oi)}. ${o[0]}</button>`).join("");
+      b.querySelectorAll(".pOpt").forEach(btn=>btn.addEventListener("click",()=>{
+        quizState.score+=+btn.dataset.s; quizState.step++; renderPhone(); }));
+    } else {
+      const lean=quizState.score>=7;
+      b.innerHTML=`<div class="pResult"><div class="face">${lean?"🚀":"🔧"}</div>
+        <h4>${lean?"精益验证者":"技术信徒"}</h4>
+        <p>${lean?"你已具备硅谷式创业直觉，缺一套完整框架。":"你最大的风险：拿着钥匙找宝箱。"}</p>
+        <p style="margin-top:8px;color:#6e7591;font-size:10px">画像 + 四维雷达 + 诊断报告 + 分享卡（演示简化）</p></div>
+        <div class="pCard" style="border-color:#818cf8"><div class="ty" style="color:#818cf8">为你推荐</div>
+        ${lean?"P3 AI 教练版「方法论私教班」<div class='pr'>¥599</div>":"闪课① 技术陷阱：为什么专利救不了你<div class='pr'>¥29.9</div>"}</div>
+        <button class="pOpt" style="text-align:center" id="reQuiz">↺ 重新测一次</button>`;
+      b.querySelector("#reQuiz").addEventListener("click",()=>{ quizState={step:0,score:0}; renderPhone(); });
+    }
+  }
+  if(pTab==="course"){
+    if(!approved(0)){ b.innerHTML=`<div class="pEmpty">🔒 课程未上架<br><br>请先在左侧打开<br>「闪课①」的开关</div>`; return; }
+    const d=DETAILS.flash1;
+    b.innerHTML=`<div style="font-size:10px;color:#6e7591;margin-bottom:8px">闪课① · ¥29.9 · 点任意段落展开全文 · 与编辑台同一数据源</div>`+
+      d.sections.map(s=>`<div class="pSect" data-cst="${s.cst}"><h5>${s.h}</h5><p>${s.t}</p><span class="more">点击展开 ▾</span></div>`).join("")+
+      `<button class="pOpt" style="text-align:center;border-color:#818cf8;color:#a5b4fc" id="pUp">升级「全程 6 讲」¥299 · 本课 ¥29.9 全额抵扣（48h）</button>`;
+    b.querySelectorAll(".pSect").forEach(el=>el.addEventListener("click",()=>{
+      el.classList.toggle("exp");
+      el.querySelector(".more").textContent=el.classList.contains("exp")?"收起 ▴":"点击展开 ▾"; }));
+    b.querySelector("#pUp").addEventListener("click",e=>{ e.stopPropagation();
+      toast("演示环境 · 升级钩子：已付 ¥29.9 全额抵扣，这就是「行为触发的升级路径」"); });
+  }
+  if(pTab==="cert"){
+    if(!approved(28)){ b.innerHTML=`<div class="pEmpty">🔒 证书体系未上架<br><br>请先在左侧打开<br>「完课证书卡」的开关</div>`; return; }
+    const d=DETAILS.cert;
+    b.innerHTML=`<div style="font-size:10px;color:#6e7591;margin-bottom:8px">长在主页的社交资本 · 离开平台即失效</div>
+      <div class="pCert"><h4>${d.cert.h}</h4>${d.cert.b.replace(/\n/g,"<br>")}</div>
+      <div class="pComment">${d.comment.b.replace(/\n/g,"<br>")}</div>`;
+  }
+}
+
+/* ---------- ④ 增长 ---------- */
+let grown=false;
+function renderGrowth(){
+  if(grown) return; grown=true;
+  $("#funnel").innerHTML=FUNNEL.map(f=>`<div class="fRow">
+    <div class="lbl"><span>${f.l} <b>${f.n.toLocaleString()} 人</b>${f.conv!=="—"?` · 转化 ${f.conv}`:""}</span>
+    <span class="rev">${f.rev?`¥${f.rev.toLocaleString()}`:""}</span></div>
+    <div class="fBarBg"><div class="fBar" style="--fc:${f.c}" data-w="${Math.max(2,Math.sqrt(f.n/3000)*100)}"></div></div></div>`).join("");
+  setTimeout(()=>$$("#funnel .fBar").forEach(b=>b.style.width=b.dataset.w+"%"),60);
+  $("#gates").innerHTML=GATES.map(g=>`<div class="gate"><span>${g[0]} <span style="color:#6e7591">（${g[1]}）</span>${g[4]?`<br><span style="font-size:10px;color:${g[3]?'#6e7591':'#fdba74'}">${g[4]}</span>`:""}</span>
+    <span class="v" style="color:${g[3]?'#86efac':'#fdba74'}">${g[2]} ${g[3]?"✅":"⚠️"}</span></div>`).join("");
+  $("#alerts").innerHTML=ALERTS.map(a=>`<div class="alert"><b>${a.t}</b><br>${a.d}<br>
+    <button class="go" data-c="${a.card}">→ 去编辑台修改对应资产</button></div>`).join("");
+  $$("#alerts .go").forEach(b=>b.addEventListener("click",()=>{
+    setLens(true); openStudio(+b.dataset.c);
+    toast("数据回流 → 内容生产：这就是数据闭环的那一跳。修改后将自动触发 QA 复审"); }));
+}
+$("#nextBook").addEventListener("click",()=>{ goto("scan");
+  toast("第二本书《人机沟通法则》：验证 Prompt/Schema 复用率 ≥80%，证明这是流水线，不是手工活"); });
+
+mini();
+</script>
+</body>
+</html>

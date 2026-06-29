@@ -1,0 +1,3463 @@
+{
+  "course_id": "book-book-to-course",
+  "book_meta": {
+    "book_title": "让大象飞",
+    "authors": [
+      "[美] 史蒂文·霍夫曼"
+    ],
+    "source_type": "txt"
+  },
+  "target_persona": {
+    "name": "默认知识学习者",
+    "cognitiveLevel": "intermediate",
+    "domain": "知识密集型阅读与未来议题学习",
+    "usageScenario": "自学、读书会、企业内训、主题工作坊"
+  },
+  "input_contract": {
+    "targetPersona": {
+      "name": "默认知识学习者",
+      "cognitiveLevel": "intermediate",
+      "domain": "知识密集型阅读与未来议题学习",
+      "usageScenario": "自学、读书会、企业内训、主题工作坊"
+    },
+    "constraints": {
+      "targetCardsPerChapter": 5,
+      "answerMinLen": 80,
+      "answerMaxLen": 150,
+      "questionMaxLen": 40,
+      "transitionMinLen": 15,
+      "transitionMaxLen": 30,
+      "typesShare": {
+        "choice": 0.55,
+        "truefalse": 0.25,
+        "open": 0.2
+      },
+      "maxTypeRun": 2,
+      "maxRetries": 2
+    },
+    "citationStyle": "sentence",
+    "forbidClaims": [],
+    "riskLevel": "strict",
+    "outputLanguage": "zh-CN"
+  },
+  "modules": [
+    {
+      "module_id": "m1",
+      "source_chapter": 1,
+      "title": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+      "central_claim": "本章围绕“寻找方向：不管是否寒冬，总有浪潮在往这里来”展开，重点说明寻找方向、总有浪潮在往这里来、技术并没有你以为的那么重要如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learning_goal": "学员能够解释“寻找方向：不管是否寒冬，总有浪潮在往这里来”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "content_atoms": [
+        "m1_atom_01",
+        "m1_atom_02",
+        "m1_atom_03",
+        "m1_atom_04",
+        "m1_atom_05"
+      ],
+      "interaction_blocks": [
+        "m1_i01",
+        "m1_i02",
+        "m1_i03",
+        "m1_i04",
+        "m1_i05"
+      ],
+      "deliverable": "寻找方向机会-风险-行动画布",
+      "assessment": {
+        "type": "module_task",
+        "rubric": [
+          "是否引用证据锚点",
+          "是否能识别关键假设",
+          "是否提出可验证行动"
+        ]
+      }
+    },
+    {
+      "module_id": "m2",
+      "source_chapter": 2,
+      "title": "准备启航：拉一支队伍，一起干吧",
+      "central_claim": "本章围绕“准备启航：拉一支队伍，一起干吧”展开，重点说明准备启航、拉一支队伍、一起干吧如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learning_goal": "学员能够解释“准备启航：拉一支队伍，一起干吧”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "content_atoms": [
+        "m2_atom_01",
+        "m2_atom_02",
+        "m2_atom_03",
+        "m2_atom_04",
+        "m2_atom_05"
+      ],
+      "interaction_blocks": [
+        "m2_i01",
+        "m2_i02",
+        "m2_i03",
+        "m2_i04",
+        "m2_i05"
+      ],
+      "deliverable": "准备启航机会-风险-行动画布",
+      "assessment": {
+        "type": "module_task",
+        "rubric": [
+          "是否引用证据锚点",
+          "是否能识别关键假设",
+          "是否提出可验证行动"
+        ]
+      }
+    },
+    {
+      "module_id": "m3",
+      "source_chapter": 3,
+      "title": "打造产品：爱它，但不要太爱它",
+      "central_claim": "本章围绕“打造产品：爱它，但不要太爱它”展开，重点说明打造产品、爱它、但不要太爱它如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learning_goal": "学员能够解释“打造产品：爱它，但不要太爱它”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "content_atoms": [
+        "m3_atom_01",
+        "m3_atom_02",
+        "m3_atom_03",
+        "m3_atom_04",
+        "m3_atom_05"
+      ],
+      "interaction_blocks": [
+        "m3_i01",
+        "m3_i02",
+        "m3_i03",
+        "m3_i04",
+        "m3_i05"
+      ],
+      "deliverable": "打造产品机会-风险-行动画布",
+      "assessment": {
+        "type": "module_task",
+        "rubric": [
+          "是否引用证据锚点",
+          "是否能识别关键假设",
+          "是否提出可验证行动"
+        ]
+      }
+    },
+    {
+      "module_id": "m4",
+      "source_chapter": 4,
+      "title": "锁定市场：你先吃透用户，用户才想吃透你",
+      "central_claim": "本章围绕“锁定市场：你先吃透用户，用户才想吃透你”展开，重点说明锁定市场、你先吃透用户、与其向用户疯狂推销，不如坐下来安静倾听如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learning_goal": "学员能够解释“锁定市场：你先吃透用户，用户才想吃透你”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "content_atoms": [
+        "m4_atom_01",
+        "m4_atom_02",
+        "m4_atom_03",
+        "m4_atom_04",
+        "m4_atom_05"
+      ],
+      "interaction_blocks": [
+        "m4_i01",
+        "m4_i02",
+        "m4_i03",
+        "m4_i04",
+        "m4_i05"
+      ],
+      "deliverable": "锁定市场机会-风险-行动画布",
+      "assessment": {
+        "type": "module_task",
+        "rubric": [
+          "是否引用证据锚点",
+          "是否能识别关键假设",
+          "是否提出可验证行动"
+        ]
+      }
+    },
+    {
+      "module_id": "m5",
+      "source_chapter": 5,
+      "title": "持续创新：基业长青，靠的是内部创新",
+      "central_claim": "本章围绕“持续创新：基业长青，靠的是内部创新”展开，重点说明持续创新、基业长青、靠的是内部创新如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learning_goal": "学员能够解释“持续创新：基业长青，靠的是内部创新”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "content_atoms": [
+        "m5_atom_01",
+        "m5_atom_02",
+        "m5_atom_03",
+        "m5_atom_04",
+        "m5_atom_05"
+      ],
+      "interaction_blocks": [
+        "m5_i01",
+        "m5_i02",
+        "m5_i03",
+        "m5_i04",
+        "m5_i05"
+      ],
+      "deliverable": "持续创新机会-风险-行动画布",
+      "assessment": {
+        "type": "module_task",
+        "rubric": [
+          "是否引用证据锚点",
+          "是否能识别关键假设",
+          "是否提出可验证行动"
+        ]
+      }
+    },
+    {
+      "module_id": "m6",
+      "source_chapter": 6,
+      "title": "高速运转：快点，一定要走在市场前列",
+      "central_claim": "本章围绕“高速运转：快点，一定要走在市场前列”展开，重点说明高速运转、快点、一定要走在市场前列如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learning_goal": "学员能够解释“高速运转：快点，一定要走在市场前列”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "content_atoms": [
+        "m6_atom_01",
+        "m6_atom_02",
+        "m6_atom_03",
+        "m6_atom_04",
+        "m6_atom_05"
+      ],
+      "interaction_blocks": [
+        "m6_i01",
+        "m6_i02",
+        "m6_i03",
+        "m6_i04",
+        "m6_i05"
+      ],
+      "deliverable": "高速运转机会-风险-行动画布",
+      "assessment": {
+        "type": "module_task",
+        "rubric": [
+          "是否引用证据锚点",
+          "是否能识别关键假设",
+          "是否提出可验证行动"
+        ]
+      }
+    }
+  ],
+  "adaptive_rules": {
+    "need_dimensions": {
+      "cognitive_opening": "用反常识问题打开认知差距。",
+      "method_learning": "把观点改写成步骤、清单和判断标准。",
+      "conversation_solving": "把观点改写成对话、教练问题和会议提示。",
+      "practice_participation": "把观点改写成可提交的小任务或项目动作。"
+    },
+    "interaction_score_formula": {
+      "content_type_fit": 0.35,
+      "user_need_fit": 0.35,
+      "learning_stage_fit": 0.2,
+      "media_availability": 0.1
+    },
+    "copy_rules": [
+      "不硬分类用户，只调整四类需求权重。",
+      "同一证据可改写为不同提问方式，但不得改变原始主张。",
+      "实践参与型版本必须包含可提交产物。"
+    ]
+  },
+  "quality_gate": {
+    "status": "pass",
+    "score": 0.929,
+    "checks": [
+      {
+        "gate": "evidence",
+        "passed": true,
+        "detail": "30/30 cards have readable evidence that shares a keyword with the card claim."
+      },
+      {
+        "gate": "accuracy",
+        "passed": true,
+        "detail": "Rule-level accuracy checks require claim-supported evidence, no forbidden claims, no unbounded absolutes, and no unsupported data-support phrases."
+      },
+      {
+        "gate": "interaction",
+        "passed": true,
+        "detail": "Every card maps to an interaction block."
+      },
+      {
+        "gate": "rhythm",
+        "passed": true,
+        "detail": "No chapter has more than two consecutive cards of the same type."
+      },
+      {
+        "gate": "user_adaptation",
+        "passed": true,
+        "detail": "Four need dimensions and scoring formula are present."
+      },
+      {
+        "gate": "service_handoff",
+        "passed": true,
+        "detail": "Certificate, learning profile, and recommendation paths are present."
+      },
+      {
+        "gate": "eight_asset_families",
+        "passed": true,
+        "detail": "All eight asset families required by the PDF are present."
+      },
+      {
+        "gate": "multimodal_materials",
+        "passed": true,
+        "detail": "Video prompts and audio blog scripts are present."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "passed": true,
+        "detail": "Hard rule failures: 0."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=128, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[1].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[1].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=寻找方向：不管是否寒冬，总有浪潮在往这里来, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.837, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=93, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=28, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[1].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[1].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=技术并没有你以为的那么重要, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=104, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=27, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[1].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=创新之前，别说你不屑于模仿, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[1].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[1].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[1].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=寻找方向：不管是否寒冬，总有浪潮在往这里来, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.842, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=123, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[2].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[2].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=准备启航：拉一支队伍，一起干吧, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=94, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=29, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[2].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[2].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=将初创团队成员控制在5人以内, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=104, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=27, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[2].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=过多的资金有可能是一味毒药, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[2].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[2].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[2].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=准备启航：拉一支队伍，一起干吧, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=126, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[3].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[3].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=打造产品：爱它，但不要太爱它, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=98, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=33, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[3].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[3].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=所谓的商业神话往往并不适用于你的世界, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=104, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=27, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[3].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=你最大的优势是已经输无可输, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[3].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[3].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[3].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=打造产品：爱它，但不要太爱它, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=132, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[4].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[4].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=锁定市场：你先吃透用户，用户才想吃透你, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=99, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=34, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[4].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[4].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=与其向用户疯狂推销，不如坐下来安静倾听, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=105, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=28, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[4].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=搜集数据，并用它检验你的创意, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[4].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[4].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[4].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=锁定市场：你先吃透用户，用户才想吃透你, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=125, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[5].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[5].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=持续创新：基业长青，靠的是内部创新, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=94, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=29, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[5].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[5].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=好好利用每一个员工的独特想法, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=108, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=31, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[5].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=最可怕的是没有从失败中获取新的洞见, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[5].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[5].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[5].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=持续创新：基业长青，靠的是内部创新, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=115, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[6].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[6].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=高速运转, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[6].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[6].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=高速运转, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=108, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=31, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[6].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=技术日新月异的时代，速度意味着一切, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[6].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[6].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[6].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=高速运转, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5463 @@
+{
+  "bookTitle": "让大象飞",
+  "bookSummary300": "《让大象飞》围绕寻找方向：不管是否寒冬，总有浪潮在往这里来、准备启航：拉一支队伍，一起干吧、打造产品：爱它，但不要太爱它、锁定市场：你先吃透用户，用户才想吃透你、持续创新：基业长青，靠的是内部创新、高速运转：快点，一定要走在市场前列展开。课程化处理应把每章拆成可互动、可评估、可迁移的学习任务，并保留证据锚点，而不是复述章节摘要。",
+  "diagnosticQuestion": "面对这本书的主题，你最需要理解哪一部分的机会、机制和风险：寻找方向：不管是否寒冬，总有浪潮在往这里来、准备启航：拉一支队伍，一起干吧、打造产品：爱它，但不要太爱它、锁定市场：你先吃透用户，用户才想吃透你、持续创新：基业长青，靠的是内部创新、高速运转：快点，一定要走在市场前列？",
+  "chapters": [
+    {
+      "chapterIndex": 1,
+      "chapterTitle": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+      "centralClaim": "本章围绕“寻找方向：不管是否寒冬，总有浪潮在往这里来”展开，重点说明寻找方向、总有浪潮在往这里来、技术并没有你以为的那么重要如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learningGoal": "学员能够解释“寻找方向：不管是否寒冬，总有浪潮在往这里来”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "candidateInsights": [
+        {
+          "candidateId": "ch1_cand_01",
+          "term": "寻找方向",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch1_cand_02",
+          "term": "总有浪潮在往这里来",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch1_cand_03",
+          "term": "技术并没有你以为的那么重要",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 13,
+            "paragraphIndexEnd": 14,
+            "quote": "技术并没有你以为的那么重要任何新的技术通常都会经历一个25年的接受和采用周期。",
+            "matchKeyword": "技术并没有你以为的那么重要",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch1_cand_04",
+          "term": "桀骜不驯的硅谷聚集了一群“疯子”",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch1_cand_05",
+          "term": "创新之前，别说你不屑于模仿",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 150,
+            "paragraphIndexEnd": 152,
+            "quote": "创新之前，别说你不屑于模仿独创性只不过是明智的模仿。哲学家和作家",
+            "matchKeyword": "创新之前，别说你不屑于模仿",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch1_cand_06",
+          "term": "信息的自由流动促使社会",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 6,
+            "paragraphIndexEnd": 6,
+            "quote": "的印刷机。以现代的眼光来看，这台印刷机实在是太简单了：不过采用了活字而已。但它对人类历史的影响是极其巨大的。单单这一项创新就使知识的传播和思想的...",
+            "matchKeyword": "信息的自由流动促使社会",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch1_cand_07",
+          "term": "人工智能",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 8,
+            "paragraphIndexEnd": 8,
+            "quote": "现在，我们又将会向前跨出新的一大步。我们已经在叩响认知时代的大门，在这个全新的时代，当机器开始处理极其大量的数据，做出复杂的决定，并在一个前所未...",
+            "matchKeyword": "人工智能",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "risk_or_reframe",
+          "selected": false
+        },
+        {
+          "candidateId": "ch1_cand_08",
+          "term": "但工厂和服务岗位上的工作",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 9,
+            "paragraphIndexEnd": 9,
+            "quote": "这听起来可能令人感到非常恐怖，但完全没有必要为之担心。就在不久以前，世界90%的人还被束缚在农田中辛苦劳作，但工厂和服务岗位上的工作也可能很快就...",
+            "matchKeyword": "但工厂和服务岗位上的工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch1_cand_09",
+          "term": "出来以从事更具有创造性的工作",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 9,
+            "paragraphIndexEnd": 9,
+            "quote": "这听起来可能令人感到非常恐怖，但完全没有必要为之担心。就在不久以前，世界90%的人还被束缚在农田中辛苦劳作，但工厂和服务岗位上的工作也可能很快就...",
+            "matchKeyword": "出来以从事更具有创造性的工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch1_cand_10",
+          "term": "的想象中都认为是不可能的工作",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 9,
+            "paragraphIndexEnd": 9,
+            "quote": "这听起来可能令人感到非常恐怖，但完全没有必要为之担心。就在不久以前，世界90%的人还被束缚在农田中辛苦劳作，但工厂和服务岗位上的工作也可能很快就...",
+            "matchKeyword": "的想象中都认为是不可能的工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch1_cand_11",
+          "term": "想象一下在未来的数十年里技术",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 12,
+            "paragraphIndexEnd": 12,
+            "quote": "想象一下在未来的数十年里技术发展又将如何沿着创新曲线向上提升。无论你靠什么谋生，你都将是这一正在发生的巨大变化的一部分，这一变化将改变你的工作、...",
+            "matchKeyword": "想象一下在未来的数十年里技术",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch1_cand_12",
+          "term": "这一变化将改变你的工作",
+          "evidenceSpan": {
+            "chapterIndex": 1,
+            "paragraphIndex": 12,
+            "paragraphIndexEnd": 12,
+            "quote": "想象一下在未来的数十年里技术发展又将如何沿着创新曲线向上提升。无论你靠什么谋生，你都将是这一正在发生的巨大变化的一部分，这一变化将改变你的工作、...",
+            "matchKeyword": "这一变化将改变你的工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "risk_or_reframe",
+          "selected": false
+        }
+      ],
+      "insights": [
+        {
+          "index": 1,
+          "insightId": "ch1_card_01",
+          "label": "寻找方向的核心命题",
+          "question": "寻找方向只是一个概念，还是会改变现实？",
+          "type": "choice",
+          "answer": "本章围绕“寻找方向：不管是否寒冬，总有浪潮在往这里来”，把“寻找方向”呈现为一种会改变行动环境的力量。学习者需要回到“技术并没有你以为的那么重要”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "有了这个判断，再看它怎样运作。",
+          "contentType": "core_claim",
+          "interactionType": "video_choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 1,
+              "paragraphIndex": 1,
+              "paragraphIndexEnd": 1,
+              "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+              "matchKeyword": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "寻找方向：不管是否寒冬，总有浪潮在往这里来"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.76,
+          "contestabilityScore": 0.79,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.69,
+          "qualityScore": 0.837,
+          "options": [
+            "只是概念名词",
+            "会改变现实行动环境",
+            "只适合专家讨论"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "index": 2,
+          "insightId": "ch1_card_02",
+          "label": "技术并没有你以为的那么重要的作用机制",
+          "question": "技术并没有你以为的那么重要为什么不是术语，却会形成力量？",
+          "type": "choice",
+          "answer": "课程不把本章处理成名词清单，而是要求学习者找出“技术并没有你以为的那么重要”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "机制明确后，继续放到具体场景里。",
+          "contentType": "mechanism",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 1,
+              "paragraphIndex": 13,
+              "paragraphIndexEnd": 14,
+              "quote": "技术并没有你以为的那么重要任何新的技术通常都会经历一个25年的接受和采用周期。",
+              "matchKeyword": "技术并没有你以为的那么重要",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.6900000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.77,
+          "qualityScore": 0.807,
+          "options": [
+            "说清机制和场景连接",
+            "记住更多术语",
+            "只看是否流行"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "index": 3,
+          "insightId": "ch1_card_03",
+          "label": "创新之前，别说你不屑于模仿带来的场景判断",
+          "question": "如果创新之前，别说你不屑于模仿成熟，哪个场景会先变化？",
+          "type": "open",
+          "answer": "本卡把“创新之前，别说你不屑于模仿”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "场景判断之后，再检查风险边界。",
+          "contentType": "scenario_judgement",
+          "interactionType": "open",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 1,
+              "paragraphIndex": 150,
+              "paragraphIndexEnd": 152,
+              "quote": "创新之前，别说你不屑于模仿独创性只不过是明智的模仿。哲学家和作家",
+              "matchKeyword": "创新之前，别说你不屑于模仿",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.9,
+          "transferScore": 0.79,
+          "questionScore": 0.69,
+          "qualityScore": 0.876
+        },
+        {
+          "index": 4,
+          "insightId": "ch1_card_04",
+          "label": "寻找方向的风险边界",
+          "question": "寻找方向越强，风险会自动变小吗？",
+          "type": "truefalse",
+          "answer": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "识别风险后，再把观点转成行动。",
+          "contentType": "risk_tradeoff",
+          "interactionType": "truefalse",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 1,
+              "paragraphIndex": 16,
+              "paragraphIndexEnd": 17,
+              "quote": "安德森·霍洛维茨风险投资公司联合创始人谈到创新，最大的误区之一是，认为创新指的就是技术创新。实际并非如此。在创新的过程中技术仅仅是其中的一部分，...",
+              "matchKeyword": "风险",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.8500000000000001,
+          "transferScore": 0.55,
+          "questionScore": 0.69,
+          "qualityScore": 0.866,
+          "correctAnswer": "false"
+        },
+        {
+          "index": 5,
+          "insightId": "ch1_card_05",
+          "label": "把寻找方向：不管是否寒冬，总有浪潮在往这里来转成行动任务",
+          "question": "学完本章只是理解概念，还是要提交练习？",
+          "type": "choice",
+          "answer": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“寻找方向”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "",
+          "contentType": "application_task",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 1,
+              "paragraphIndex": 1,
+              "paragraphIndexEnd": 1,
+              "quote": "当新技术的压路机向你碾压过来时，如果你不能成为压路机的一部分，那么你就只能成为路的一部分。",
+              "matchKeyword": "寻找方向：不管是否寒冬，总有浪潮在往这里来",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "寻找方向：不管是否寒冬，总有浪潮在往这里来"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.73,
+          "transferScore": 0.9,
+          "questionScore": 0.69,
+          "qualityScore": 0.842,
+          "options": [
+            "写一个机会-风险-验证表",
+            "背诵全部案例",
+            "只讨论未来想象"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "discussionQuestions": [
+        {
+          "question": "本章哪个观点最能改变你对寻找方向的默认判断？",
+          "hint": "请引用至少一个观点卡和一个证据锚点。"
+        },
+        {
+          "question": "如果把“寻找方向：不管是否寒冬，总有浪潮在往这里来”转成课程任务，第一步练习是什么？",
+          "hint": "把行动写成可观察、可提交、可反馈的小任务。"
+        }
+      ]
+    },
+    {
+      "chapterIndex": 2,
+      "chapterTitle": "准备启航：拉一支队伍，一起干吧",
+      "centralClaim": "本章围绕“准备启航：拉一支队伍，一起干吧”展开，重点说明准备启航、拉一支队伍、一起干吧如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learningGoal": "学员能够解释“准备启航：拉一支队伍，一起干吧”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "candidateInsights": [
+        {
+          "candidateId": "ch2_cand_01",
+          "term": "准备启航",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch2_cand_02",
+          "term": "拉一支队伍",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch2_cand_03",
+          "term": "一起干吧",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch2_cand_04",
+          "term": "将初创团队成员控制在5人以内",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 16,
+            "paragraphIndexEnd": 17,
+            "quote": "将初创团队成员控制在5人以内无论什么时候，一支优秀、快速、精干的团队都能击败一支庞大、缓慢的团队。",
+            "matchKeyword": "将初创团队成员控制在5人以内",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch2_cand_05",
+          "term": "过多的资金有可能是一味毒药",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 59,
+            "paragraphIndexEnd": 60,
+            "quote": "过多的资金有可能是一味毒药我们接受小额预算。我们喜欢这种受到约束的感觉。这能激发创造力。",
+            "matchKeyword": "过多的资金有可能是一味毒药",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch2_cand_06",
+          "term": "逼自己一把，你才知道你有多优秀",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 101,
+            "paragraphIndexEnd": 102,
+            "quote": "逼自己一把，你才知道你有多优秀如果你花太多的时间思考一件事，那么你永远也无法做成这件事。",
+            "matchKeyword": "逼自己一把，你才知道你有多优秀",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch2_cand_07",
+          "term": "停止空想，先把眼前的事做好",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 173,
+            "paragraphIndexEnd": 175,
+            "quote": "停止空想，先把眼前的事做好我不喜欢空想，那和我没关系。罗伯特·梅特卡夫",
+            "matchKeyword": "停止空想，先把眼前的事做好",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch2_cand_08",
+          "term": "这同样适用于技术",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 8,
+            "paragraphIndexEnd": 8,
+            "quote": "这同样适用于技术型创业的企业。让我们来看一个大家都熟悉的例子。视频网站YouTube在一开始并没有设定这样一个宏大的愿景——成为一个新的全球性的...",
+            "matchKeyword": "这同样适用于技术",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch2_cand_09",
+          "term": "数字娱乐网络",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 12,
+            "paragraphIndexEnd": 12,
+            "quote": "YouTube成为居世界首位的在线视频播放网站，这并不是一个大的愿景或计划所带来的结果，而只是一个小小的创新所产生的巨大效应。我甚至想更进一步地...",
+            "matchKeyword": "数字娱乐网络",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch2_cand_10",
+          "term": "家来自台湾的初创企业一起工作",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 13,
+            "paragraphIndexEnd": 13,
+            "quote": "这是一个很多初创企业通常都会犯的错误。例如，我曾和一家来自台湾的初创企业一起工作，这家创业公司想做一个通用的APP，用来打开任何智能设备的锁，包...",
+            "matchKeyword": "家来自台湾的初创企业一起工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch2_cand_11",
+          "term": "包括智能",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 13,
+            "paragraphIndexEnd": 13,
+            "quote": "这是一个很多初创企业通常都会犯的错误。例如，我曾和一家来自台湾的初创企业一起工作，这家创业公司想做一个通用的APP，用来打开任何智能设备的锁，包...",
+            "matchKeyword": "包括智能",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "risk_or_reframe",
+          "selected": false
+        },
+        {
+          "candidateId": "ch2_cand_12",
+          "term": "们的APP上建立一个社交网络",
+          "evidenceSpan": {
+            "chapterIndex": 2,
+            "paragraphIndex": 13,
+            "paragraphIndexEnd": 13,
+            "quote": "这是一个很多初创企业通常都会犯的错误。例如，我曾和一家来自台湾的初创企业一起工作，这家创业公司想做一个通用的APP，用来打开任何智能设备的锁，包...",
+            "matchKeyword": "们的APP上建立一个社交网络",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        }
+      ],
+      "insights": [
+        {
+          "index": 1,
+          "insightId": "ch2_card_01",
+          "label": "准备启航的核心命题",
+          "question": "准备启航只是一个概念，还是会改变现实？",
+          "type": "choice",
+          "answer": "本章围绕“准备启航：拉一支队伍，一起干吧”，把“准备启航”呈现为一种会改变行动环境的力量。学习者需要回到“将初创团队成员控制在5人以内”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "有了这个判断，再看它怎样运作。",
+          "contentType": "core_claim",
+          "interactionType": "video_choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 2,
+              "paragraphIndex": 3,
+              "paragraphIndexEnd": 3,
+              "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+              "matchKeyword": "准备启航：拉一支队伍，一起干吧",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "准备启航：拉一支队伍，一起干吧"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.76,
+          "contestabilityScore": 0.73,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.69,
+          "qualityScore": 0.825,
+          "options": [
+            "只是概念名词",
+            "会改变现实行动环境",
+            "只适合专家讨论"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "index": 2,
+          "insightId": "ch2_card_02",
+          "label": "将初创团队成员控制在5人以内的作用机制",
+          "question": "将初创团队成员控制在5人以内为什么不是术语，却会形成力量？",
+          "type": "choice",
+          "answer": "课程不把本章处理成名词清单，而是要求学习者找出“将初创团队成员控制在5人以内”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "机制明确后，继续放到具体场景里。",
+          "contentType": "mechanism",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 2,
+              "paragraphIndex": 16,
+              "paragraphIndexEnd": 17,
+              "quote": "将初创团队成员控制在5人以内无论什么时候，一支优秀、快速、精干的团队都能击败一支庞大、缓慢的团队。",
+              "matchKeyword": "将初创团队成员控制在5人以内",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.6900000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.77,
+          "qualityScore": 0.807,
+          "options": [
+            "说清机制和场景连接",
+            "记住更多术语",
+            "只看是否流行"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "index": 3,
+          "insightId": "ch2_card_03",
+          "label": "过多的资金有可能是一味毒药带来的场景判断",
+          "question": "如果过多的资金有可能是一味毒药成熟，哪个场景会先变化？",
+          "type": "open",
+          "answer": "本卡把“过多的资金有可能是一味毒药”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "场景判断之后，再检查风险边界。",
+          "contentType": "scenario_judgement",
+          "interactionType": "open",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 2,
+              "paragraphIndex": 59,
+              "paragraphIndexEnd": 60,
+              "quote": "过多的资金有可能是一味毒药我们接受小额预算。我们喜欢这种受到约束的感觉。这能激发创造力。",
+              "matchKeyword": "过多的资金有可能是一味毒药",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.9,
+          "transferScore": 0.79,
+          "questionScore": 0.69,
+          "qualityScore": 0.876
+        },
+        {
+          "index": 4,
+          "insightId": "ch2_card_04",
+          "label": "准备启航的风险边界",
+          "question": "准备启航越强，风险会自动变小吗？",
+          "type": "truefalse",
+          "answer": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "识别风险后，再把观点转成行动。",
+          "contentType": "risk_tradeoff",
+          "interactionType": "truefalse",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 2,
+              "paragraphIndex": 39,
+              "paragraphIndexEnd": 39,
+              "quote": "RocketOn是一个分布在整个互联网上的虚拟世界，你可以在其中为自己创建一个化身，这个化身可以在任何网页上行走，这些网页包括谷歌、亚马逊、CN...",
+              "matchKeyword": "风险",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.8500000000000001,
+          "transferScore": 0.55,
+          "questionScore": 0.69,
+          "qualityScore": 0.866,
+          "correctAnswer": "false"
+        },
+        {
+          "index": 5,
+          "insightId": "ch2_card_05",
+          "label": "把准备启航：拉一支队伍，一起干吧转成行动任务",
+          "question": "学完本章只是理解概念，还是要提交练习？",
+          "type": "choice",
+          "answer": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“准备启航”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "",
+          "contentType": "application_task",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 2,
+              "paragraphIndex": 3,
+              "paragraphIndexEnd": 3,
+              "quote": "很多人相信，如果要创新，你就必须从大处着眼。如果你是一家大公司的老板，那么你肯定会为此实施一项重大的创新计划，该计划将涉及你公司的所有部门。每个...",
+              "matchKeyword": "准备启航：拉一支队伍，一起干吧",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "准备启航：拉一支队伍，一起干吧"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.9,
+          "questionScore": 0.69,
+          "qualityScore": 0.83,
+          "options": [
+            "写一个机会-风险-验证表",
+            "背诵全部案例",
+            "只讨论未来想象"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "discussionQuestions": [
+        {
+          "question": "本章哪个观点最能改变你对准备启航的默认判断？",
+          "hint": "请引用至少一个观点卡和一个证据锚点。"
+        },
+        {
+          "question": "如果把“准备启航：拉一支队伍，一起干吧”转成课程任务，第一步练习是什么？",
+          "hint": "把行动写成可观察、可提交、可反馈的小任务。"
+        }
+      ]
+    },
+    {
+      "chapterIndex": 3,
+      "chapterTitle": "打造产品：爱它，但不要太爱它",
+      "centralClaim": "本章围绕“打造产品：爱它，但不要太爱它”展开，重点说明打造产品、爱它、但不要太爱它如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learningGoal": "学员能够解释“打造产品：爱它，但不要太爱它”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "candidateInsights": [
+        {
+          "candidateId": "ch3_cand_01",
+          "term": "打造产品",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch3_cand_02",
+          "term": "爱它",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch3_cand_03",
+          "term": "但不要太爱它",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch3_cand_04",
+          "term": "所谓的商业神话往往并不适用于你的世界",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 7,
+            "paragraphIndexEnd": 8,
+            "quote": "所谓的商业神话往往并不适用于你的世界当涉及任何具体的商业业务时，存在着同样强有力的一整套信条来引领我们的思考。我们用自以为是的设想来过滤、塑造和...",
+            "matchKeyword": "所谓的商业神话往往并不适用于你的世界",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch3_cand_05",
+          "term": "你最大的优势是已经输无可输",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 69,
+            "paragraphIndexEnd": 70,
+            "quote": "你最大的优势是已经输无可输永远不要和一个已经输无可输的人对抗。",
+            "matchKeyword": "你最大的优势是已经输无可输",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch3_cand_06",
+          "term": "设计创新就是为用户解决一个真正的问题",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 82,
+            "paragraphIndexEnd": 83,
+            "quote": "设计创新就是为用户解决一个真正的问题我的目标是让复杂变得简单。我只是想做出这样的东西，它能真正简化我们基本的人际交流。",
+            "matchKeyword": "设计创新就是为用户解决一个真正的问题",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch3_cand_07",
+          "term": "重写商业规则才是真正的成功",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 123,
+            "paragraphIndexEnd": 124,
+            "quote": "重写商业规则才是真正的成功相同的产品、服务或者技术可能会成功，也可能会失败，这取决于你所选择的商业模式。",
+            "matchKeyword": "重写商业规则才是真正的成功",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch3_cand_08",
+          "term": "不要轻易爱上你的作品",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 173,
+            "paragraphIndexEnd": 174,
+            "quote": "不要轻易爱上你的作品当你面对机器或者任何由你制造出来的东西时，无论你是一个多么出色的销售员，那东西要么能行，要么就是不行。",
+            "matchKeyword": "不要轻易爱上你的作品",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch3_cand_09",
+          "term": "隆重推出新产品之前请多打几遍草稿",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 189,
+            "paragraphIndexEnd": 190,
+            "quote": "隆重推出新产品之前请多打几遍草稿如果你知道这肯定能行，那么它就不是一次实验了。",
+            "matchKeyword": "隆重推出新产品之前请多打几遍草稿",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch3_cand_10",
+          "term": "一切均有着支配地位的信念系统",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "让事情更为复杂的是，我们在不断地过滤各种信息并且将过滤下来的信息扔在一边。这就是我们大脑的运作方式，它会对信息做出分类并竭力简化（甚至是过于简化...",
+            "matchKeyword": "一切均有着支配地位的信念系统",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch3_cand_11",
+          "term": "宗教和社会",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "让事情更为复杂的是，我们在不断地过滤各种信息并且将过滤下来的信息扔在一边。这就是我们大脑的运作方式，它会对信息做出分类并竭力简化（甚至是过于简化...",
+            "matchKeyword": "宗教和社会",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch3_cand_12",
+          "term": "以至它能把自己塑造成为现实",
+          "evidenceSpan": {
+            "chapterIndex": 3,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "让事情更为复杂的是，我们在不断地过滤各种信息并且将过滤下来的信息扔在一边。这就是我们大脑的运作方式，它会对信息做出分类并竭力简化（甚至是过于简化...",
+            "matchKeyword": "以至它能把自己塑造成为现实",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        }
+      ],
+      "insights": [
+        {
+          "index": 1,
+          "insightId": "ch3_card_01",
+          "label": "打造产品的核心命题",
+          "question": "打造产品只是一个概念，还是会改变现实？",
+          "type": "choice",
+          "answer": "本章围绕“打造产品：爱它，但不要太爱它”，把“打造产品”呈现为一种会改变行动环境的力量。学习者需要回到“所谓的商业神话往往并不适用于你的世界”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "有了这个判断，再看它怎样运作。",
+          "contentType": "core_claim",
+          "interactionType": "video_choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 3,
+              "paragraphIndex": 1,
+              "paragraphIndexEnd": 1,
+              "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+              "matchKeyword": "打造产品：爱它，但不要太爱它",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "打造产品：爱它，但不要太爱它"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.76,
+          "contestabilityScore": 0.73,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.69,
+          "qualityScore": 0.825,
+          "options": [
+            "只是概念名词",
+            "会改变现实行动环境",
+            "只适合专家讨论"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "index": 2,
+          "insightId": "ch3_card_02",
+          "label": "所谓的商业神话往往并不适用于你的世界的作用机制",
+          "question": "所谓的商业神话往往并不适用于你的世界为什么不是术语，却会形成力量？",
+          "type": "choice",
+          "answer": "课程不把本章处理成名词清单，而是要求学习者找出“所谓的商业神话往往并不适用于你的世界”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "机制明确后，继续放到具体场景里。",
+          "contentType": "mechanism",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 3,
+              "paragraphIndex": 7,
+              "paragraphIndexEnd": 8,
+              "quote": "所谓的商业神话往往并不适用于你的世界当涉及任何具体的商业业务时，存在着同样强有力的一整套信条来引领我们的思考。我们用自以为是的设想来过滤、塑造和...",
+              "matchKeyword": "所谓的商业神话往往并不适用于你的世界",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.6900000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.77,
+          "qualityScore": 0.807,
+          "options": [
+            "说清机制和场景连接",
+            "记住更多术语",
+            "只看是否流行"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "index": 3,
+          "insightId": "ch3_card_03",
+          "label": "你最大的优势是已经输无可输带来的场景判断",
+          "question": "如果你最大的优势是已经输无可输成熟，哪个场景会先变化？",
+          "type": "open",
+          "answer": "本卡把“你最大的优势是已经输无可输”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "场景判断之后，再检查风险边界。",
+          "contentType": "scenario_judgement",
+          "interactionType": "open",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 3,
+              "paragraphIndex": 69,
+              "paragraphIndexEnd": 70,
+              "quote": "你最大的优势是已经输无可输永远不要和一个已经输无可输的人对抗。",
+              "matchKeyword": "你最大的优势是已经输无可输",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.9,
+          "transferScore": 0.79,
+          "questionScore": 0.69,
+          "qualityScore": 0.876
+        },
+        {
+          "index": 4,
+          "insightId": "ch3_card_04",
+          "label": "打造产品的风险边界",
+          "question": "打造产品越强，风险会自动变小吗？",
+          "type": "truefalse",
+          "answer": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "识别风险后，再把观点转成行动。",
+          "contentType": "risk_tradeoff",
+          "interactionType": "truefalse",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 3,
+              "paragraphIndex": 103,
+              "paragraphIndexEnd": 103,
+              "quote": "现在看起来好像很显然，人们非常认同通过出租空余的房间来获得额外收入这一创意，但最初情况却并非如此。当布赖恩·切斯基、乔·吉比亚（JoeGebbi...",
+              "matchKeyword": "风险",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.8500000000000001,
+          "transferScore": 0.55,
+          "questionScore": 0.69,
+          "qualityScore": 0.866,
+          "correctAnswer": "false"
+        },
+        {
+          "index": 5,
+          "insightId": "ch3_card_05",
+          "label": "把打造产品：爱它，但不要太爱它转成行动任务",
+          "question": "学完本章只是理解概念，还是要提交练习？",
+          "type": "choice",
+          "answer": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“打造产品”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "",
+          "contentType": "application_task",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 3,
+              "paragraphIndex": 1,
+              "paragraphIndexEnd": 1,
+              "quote": "没有改变就没有进步，那些无法改变他们思想的人也同样无法改变任何东西。",
+              "matchKeyword": "打造产品：爱它，但不要太爱它",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "打造产品：爱它，但不要太爱它"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.9,
+          "questionScore": 0.69,
+          "qualityScore": 0.83,
+          "options": [
+            "写一个机会-风险-验证表",
+            "背诵全部案例",
+            "只讨论未来想象"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "discussionQuestions": [
+        {
+          "question": "本章哪个观点最能改变你对打造产品的默认判断？",
+          "hint": "请引用至少一个观点卡和一个证据锚点。"
+        },
+        {
+          "question": "如果把“打造产品：爱它，但不要太爱它”转成课程任务，第一步练习是什么？",
+          "hint": "把行动写成可观察、可提交、可反馈的小任务。"
+        }
+      ]
+    },
+    {
+      "chapterIndex": 4,
+      "chapterTitle": "锁定市场：你先吃透用户，用户才想吃透你",
+      "centralClaim": "本章围绕“锁定市场：你先吃透用户，用户才想吃透你”展开，重点说明锁定市场、你先吃透用户、与其向用户疯狂推销，不如坐下来安静倾听如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learningGoal": "学员能够解释“锁定市场：你先吃透用户，用户才想吃透你”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "candidateInsights": [
+        {
+          "candidateId": "ch4_cand_01",
+          "term": "锁定市场",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch4_cand_02",
+          "term": "你先吃透用户",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch4_cand_03",
+          "term": "与其向用户疯狂推销，不如坐下来安静倾听",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 91,
+            "paragraphIndexEnd": 92,
+            "quote": "与其向用户疯狂推销，不如坐下来安静倾听你需要内心的谦卑才会认识到我们还有很多不懂的东西，绝不要吃老本，我们应该而且必须不断地学习和观察。如果我们...",
+            "matchKeyword": "与其向用户疯狂推销，不如坐下来安静倾听",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch4_cand_04",
+          "term": "搜集数据，并用它检验你的创意",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 157,
+            "paragraphIndexEnd": 158,
+            "quote": "搜集数据，并用它检验你的创意没有数据，你只不过是另一个持有这一观点的人而已。",
+            "matchKeyword": "搜集数据，并用它检验你的创意",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch4_cand_05",
+          "term": "有哪些专业技术",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 4,
+            "paragraphIndexEnd": 4,
+            "quote": "开发你公司的核心竞争力可能要花好几年的时间，核心竞争力可以是你公司的生产流程、专有知识产权或者分销关系网。这些可能是你最有价值的资产，其中有些部...",
+            "matchKeyword": "有哪些专业技术",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch4_cand_06",
+          "term": "公司拥有一个世界性的分销网络",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "如果你的公司拥有一个世界性的分销网络、独家的销售渠道、强势的品牌、商业秘密、成熟的生态系统、精细化的流程或者可靠的专利，你肯定希望你的创新团队能...",
+            "matchKeyword": "公司拥有一个世界性的分销网络",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch4_cand_07",
+          "term": "成熟的生态系统",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "如果你的公司拥有一个世界性的分销网络、独家的销售渠道、强势的品牌、商业秘密、成熟的生态系统、精细化的流程或者可靠的专利，你肯定希望你的创新团队能...",
+            "matchKeyword": "成熟的生态系统",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch4_cand_08",
+          "term": "原因是耐克缺乏相关的专业技术",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 8,
+            "paragraphIndexEnd": 8,
+            "quote": "尽管在产品上市的初期市场很热闹，广告宣传也做得轰轰烈烈，智能手环FuelBand在销售上却从未能真正起飞。在同期的同类产品市场上，Fitbit占...",
+            "matchKeyword": "原因是耐克缺乏相关的专业技术",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch4_cand_09",
+          "term": "新的技术和新的生态系统",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 12,
+            "paragraphIndexEnd": 12,
+            "quote": "谷歌就是这一类型企业的一个例子。它愿意投入大量的金钱和资源来开发企业新的核心竞争力，这意味着企业需要有新的分销渠道、新的市场推广方式、新的技术和...",
+            "matchKeyword": "新的技术和新的生态系统",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch4_cand_10",
+          "term": "上少数几家能够承受这类高风险",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 12,
+            "paragraphIndexEnd": 12,
+            "quote": "谷歌就是这一类型企业的一个例子。它愿意投入大量的金钱和资源来开发企业新的核心竞争力，这意味着企业需要有新的分销渠道、新的市场推广方式、新的技术和...",
+            "matchKeyword": "上少数几家能够承受这类高风险",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "risk_or_reframe",
+          "selected": false
+        },
+        {
+          "candidateId": "ch4_cand_11",
+          "term": "基于Gmail的社交网络",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 23,
+            "paragraphIndexEnd": 24,
+            "quote": "•GoogleBuzz（基于Gmail的社交网络服务）•SearchWiki（维基百科搜索）",
+            "matchKeyword": "基于Gmail的社交网络",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch4_cand_12",
+          "term": "安卓系统",
+          "evidenceSpan": {
+            "chapterIndex": 4,
+            "paragraphIndex": 31,
+            "paragraphIndexEnd": 31,
+            "quote": "而这里还没有包括谷歌X实验室，这是一个“月球发射”工厂，至今在这里已经有超过100个项目被判处死刑，其中就包括悬浮滑板、太空电梯、悬浮式货运飞机...",
+            "matchKeyword": "安卓系统",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        }
+      ],
+      "insights": [
+        {
+          "index": 1,
+          "insightId": "ch4_card_01",
+          "label": "锁定市场的核心命题",
+          "question": "锁定市场只是一个概念，还是会改变现实？",
+          "type": "choice",
+          "answer": "本章围绕“锁定市场：你先吃透用户，用户才想吃透你”，把“锁定市场”呈现为一种会改变行动环境的力量。学习者需要回到“与其向用户疯狂推销，不如坐下来安静倾听”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "有了这个判断，再看它怎样运作。",
+          "contentType": "core_claim",
+          "interactionType": "video_choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 4,
+              "paragraphIndex": 1,
+              "paragraphIndexEnd": 1,
+              "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+              "matchKeyword": "锁定市场：你先吃透用户，用户才想吃透你",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "锁定市场：你先吃透用户，用户才想吃透你"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.76,
+          "contestabilityScore": 0.73,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.69,
+          "qualityScore": 0.825,
+          "options": [
+            "只是概念名词",
+            "会改变现实行动环境",
+            "只适合专家讨论"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "index": 2,
+          "insightId": "ch4_card_02",
+          "label": "与其向用户疯狂推销，不如坐下来安静倾听的作用机制",
+          "question": "与其向用户疯狂推销，不如坐下来安静倾听为什么不是术语，却会形成力量？",
+          "type": "choice",
+          "answer": "课程不把本章处理成名词清单，而是要求学习者找出“与其向用户疯狂推销，不如坐下来安静倾听”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "机制明确后，继续放到具体场景里。",
+          "contentType": "mechanism",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 4,
+              "paragraphIndex": 91,
+              "paragraphIndexEnd": 92,
+              "quote": "与其向用户疯狂推销，不如坐下来安静倾听你需要内心的谦卑才会认识到我们还有很多不懂的东西，绝不要吃老本，我们应该而且必须不断地学习和观察。如果我们...",
+              "matchKeyword": "与其向用户疯狂推销，不如坐下来安静倾听",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.6900000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.77,
+          "qualityScore": 0.807,
+          "options": [
+            "说清机制和场景连接",
+            "记住更多术语",
+            "只看是否流行"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "index": 3,
+          "insightId": "ch4_card_03",
+          "label": "搜集数据，并用它检验你的创意带来的场景判断",
+          "question": "如果搜集数据，并用它检验你的创意成熟，哪个场景会先变化？",
+          "type": "open",
+          "answer": "本卡把“搜集数据，并用它检验你的创意”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "场景判断之后，再检查风险边界。",
+          "contentType": "scenario_judgement",
+          "interactionType": "open",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 4,
+              "paragraphIndex": 157,
+              "paragraphIndexEnd": 158,
+              "quote": "搜集数据，并用它检验你的创意没有数据，你只不过是另一个持有这一观点的人而已。",
+              "matchKeyword": "搜集数据，并用它检验你的创意",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.9,
+          "transferScore": 0.79,
+          "questionScore": 0.69,
+          "qualityScore": 0.876
+        },
+        {
+          "index": 4,
+          "insightId": "ch4_card_04",
+          "label": "锁定市场的风险边界",
+          "question": "锁定市场越强，风险会自动变小吗？",
+          "type": "truefalse",
+          "answer": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "识别风险后，再把观点转成行动。",
+          "contentType": "risk_tradeoff",
+          "interactionType": "truefalse",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 4,
+              "paragraphIndex": 12,
+              "paragraphIndexEnd": 12,
+              "quote": "谷歌就是这一类型企业的一个例子。它愿意投入大量的金钱和资源来开发企业新的核心竞争力，这意味着企业需要有新的分销渠道、新的市场推广方式、新的技术和...",
+              "matchKeyword": "风险",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.8500000000000001,
+          "transferScore": 0.55,
+          "questionScore": 0.69,
+          "qualityScore": 0.866,
+          "correctAnswer": "false"
+        },
+        {
+          "index": 5,
+          "insightId": "ch4_card_05",
+          "label": "把锁定市场：你先吃透用户，用户才想吃透你转成行动任务",
+          "question": "学完本章只是理解概念，还是要提交练习？",
+          "type": "choice",
+          "answer": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“锁定市场”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "",
+          "contentType": "application_task",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 4,
+              "paragraphIndex": 1,
+              "paragraphIndexEnd": 1,
+              "quote": "了解你的核心竞争力，并专注于在你的核心竞争力领域做得更出色。",
+              "matchKeyword": "锁定市场：你先吃透用户，用户才想吃透你",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "锁定市场：你先吃透用户，用户才想吃透你"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.9,
+          "questionScore": 0.69,
+          "qualityScore": 0.83,
+          "options": [
+            "写一个机会-风险-验证表",
+            "背诵全部案例",
+            "只讨论未来想象"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "discussionQuestions": [
+        {
+          "question": "本章哪个观点最能改变你对锁定市场的默认判断？",
+          "hint": "请引用至少一个观点卡和一个证据锚点。"
+        },
+        {
+          "question": "如果把“锁定市场：你先吃透用户，用户才想吃透你”转成课程任务，第一步练习是什么？",
+          "hint": "把行动写成可观察、可提交、可反馈的小任务。"
+        }
+      ]
+    },
+    {
+      "chapterIndex": 5,
+      "chapterTitle": "持续创新：基业长青，靠的是内部创新",
+      "centralClaim": "本章围绕“持续创新：基业长青，靠的是内部创新”展开，重点说明持续创新、基业长青、靠的是内部创新如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learningGoal": "学员能够解释“持续创新：基业长青，靠的是内部创新”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "candidateInsights": [
+        {
+          "candidateId": "ch5_cand_01",
+          "term": "持续创新",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch5_cand_02",
+          "term": "基业长青",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch5_cand_03",
+          "term": "靠的是内部创新",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch5_cand_04",
+          "term": "好好利用每一个员工的独特想法",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 44,
+            "paragraphIndexEnd": 45,
+            "quote": "好好利用每一个员工的独特想法大企业推进创新会有很多困扰。创新会涉及一些糟糕的设想，或者某些看上去很糟糕的设想。",
+            "matchKeyword": "好好利用每一个员工的独特想法",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch5_cand_05",
+          "term": "最可怕的是没有从失败中获取新的洞见",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 115,
+            "paragraphIndexEnd": 116,
+            "quote": "最可怕的是没有从失败中获取新的洞见从每一次失败中我都能学到些东西。在我最早工作过的那两家公司里，我所参与设计的产品都彻底失败了，但现在我已经知道...",
+            "matchKeyword": "最可怕的是没有从失败中获取新的洞见",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch5_cand_06",
+          "term": "看一看那些走向失败的企业案例",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 199,
+            "paragraphIndexEnd": 200,
+            "quote": "看一看那些走向失败的企业案例创业是非常困难和痛苦的。我想我大概不会建议那些无法处理极端压力的人去创业。",
+            "matchKeyword": "看一看那些走向失败的企业案例",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch5_cand_07",
+          "term": "避免那些非常聪明的人阻挡你前进",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 263,
+            "paragraphIndexEnd": 264,
+            "quote": "避免那些非常聪明的人阻挡你前进一个马上就能强力执行的好计划，要比一个下周才能到手的完美计划好很多。",
+            "matchKeyword": "避免那些非常聪明的人阻挡你前进",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch5_cand_08",
+          "term": "照顾各方利益，务必让所有人都参与进来",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 358,
+            "paragraphIndexEnd": 359,
+            "quote": "照顾各方利益，务必让所有人都参与进来天才赢得一场比赛，但是团队合作和智慧能赢得冠军赛。",
+            "matchKeyword": "照顾各方利益，务必让所有人都参与进来",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch5_cand_09",
+          "term": "无论你是为初创企业工作",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+            "matchKeyword": "无论你是为初创企业工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch5_cand_10",
+          "term": "还是为大企业工作",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 3,
+            "paragraphIndexEnd": 3,
+            "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+            "matchKeyword": "还是为大企业工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch5_cand_11",
+          "term": "这是因为作为一种社会",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 4,
+            "paragraphIndexEnd": 4,
+            "quote": "让我们从人性开始讲起。人类生来就拥有恐惧感，它是我们基因的一部分，也是我们能存活下来的原因。我们尤其担忧和惧怕我们群体中的其他成员会如何看待我们...",
+            "matchKeyword": "这是因为作为一种社会",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch5_cand_12",
+          "term": "并作为一个群体一起工作",
+          "evidenceSpan": {
+            "chapterIndex": 5,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "史前世界是一个充满着凶猛的野兽、敌对的部落、干旱、饥荒以及疾病的残酷世界。智人要比其他物种更为成功的原因是智人学会了如何开展合作，并作为一个群体...",
+            "matchKeyword": "并作为一个群体一起工作",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        }
+      ],
+      "insights": [
+        {
+          "index": 1,
+          "insightId": "ch5_card_01",
+          "label": "持续创新的核心命题",
+          "question": "持续创新只是一个概念，还是会改变现实？",
+          "type": "choice",
+          "answer": "本章围绕“持续创新：基业长青，靠的是内部创新”，把“持续创新”呈现为一种会改变行动环境的力量。学习者需要回到“好好利用每一个员工的独特想法”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "有了这个判断，再看它怎样运作。",
+          "contentType": "core_claim",
+          "interactionType": "video_choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 5,
+              "paragraphIndex": 3,
+              "paragraphIndexEnd": 3,
+              "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+              "matchKeyword": "持续创新：基业长青，靠的是内部创新",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "持续创新：基业长青，靠的是内部创新"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.76,
+          "contestabilityScore": 0.73,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.69,
+          "qualityScore": 0.825,
+          "options": [
+            "只是概念名词",
+            "会改变现实行动环境",
+            "只适合专家讨论"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "index": 2,
+          "insightId": "ch5_card_02",
+          "label": "好好利用每一个员工的独特想法的作用机制",
+          "question": "好好利用每一个员工的独特想法为什么不是术语，却会形成力量？",
+          "type": "choice",
+          "answer": "课程不把本章处理成名词清单，而是要求学习者找出“好好利用每一个员工的独特想法”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "机制明确后，继续放到具体场景里。",
+          "contentType": "mechanism",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 5,
+              "paragraphIndex": 44,
+              "paragraphIndexEnd": 45,
+              "quote": "好好利用每一个员工的独特想法大企业推进创新会有很多困扰。创新会涉及一些糟糕的设想，或者某些看上去很糟糕的设想。",
+              "matchKeyword": "好好利用每一个员工的独特想法",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.6900000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.77,
+          "qualityScore": 0.807,
+          "options": [
+            "说清机制和场景连接",
+            "记住更多术语",
+            "只看是否流行"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "index": 3,
+          "insightId": "ch5_card_03",
+          "label": "最可怕的是没有从失败中获取新的洞见带来的场景判断",
+          "question": "如果最可怕的是没有从失败中获取新的洞见成熟，哪个场景会先变化？",
+          "type": "open",
+          "answer": "本卡把“最可怕的是没有从失败中获取新的洞见”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "场景判断之后，再检查风险边界。",
+          "contentType": "scenario_judgement",
+          "interactionType": "open",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 5,
+              "paragraphIndex": 115,
+              "paragraphIndexEnd": 116,
+              "quote": "最可怕的是没有从失败中获取新的洞见从每一次失败中我都能学到些东西。在我最早工作过的那两家公司里，我所参与设计的产品都彻底失败了，但现在我已经知道...",
+              "matchKeyword": "最可怕的是没有从失败中获取新的洞见",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.9,
+          "transferScore": 0.79,
+          "questionScore": 0.69,
+          "qualityScore": 0.876
+        },
+        {
+          "index": 4,
+          "insightId": "ch5_card_04",
+          "label": "持续创新的风险边界",
+          "question": "持续创新越强，风险会自动变小吗？",
+          "type": "truefalse",
+          "answer": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "识别风险后，再把观点转成行动。",
+          "contentType": "risk_tradeoff",
+          "interactionType": "truefalse",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 5,
+              "paragraphIndex": 6,
+              "paragraphIndexEnd": 6,
+              "quote": "如果你打算作为一个企业家来进行创新，那么你就必须克服这种刻在你基因里的恐惧。这是因为创新是与明哲保身完全相反的一种人类行为，创新本身就蕴含了风险...",
+              "matchKeyword": "风险",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.8500000000000001,
+          "transferScore": 0.55,
+          "questionScore": 0.69,
+          "qualityScore": 0.866,
+          "correctAnswer": "false"
+        },
+        {
+          "index": 5,
+          "insightId": "ch5_card_05",
+          "label": "把持续创新：基业长青，靠的是内部创新转成行动任务",
+          "question": "学完本章只是理解概念，还是要提交练习？",
+          "type": "choice",
+          "answer": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“持续创新”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "",
+          "contentType": "application_task",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 5,
+              "paragraphIndex": 3,
+              "paragraphIndexEnd": 3,
+              "quote": "在本章中，我会解释为什么恐惧是创新的死敌。无论你是为初创企业工作还是为大企业工作，如果你让恐惧占据了你的内心，那么你做出再大的努力也终将无济于事...",
+              "matchKeyword": "持续创新：基业长青，靠的是内部创新",
+              "anchorStatus": "chapter_title_context",
+              "sourceHeading": "持续创新：基业长青，靠的是内部创新"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.9,
+          "questionScore": 0.69,
+          "qualityScore": 0.83,
+          "options": [
+            "写一个机会-风险-验证表",
+            "背诵全部案例",
+            "只讨论未来想象"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "discussionQuestions": [
+        {
+          "question": "本章哪个观点最能改变你对持续创新的默认判断？",
+          "hint": "请引用至少一个观点卡和一个证据锚点。"
+        },
+        {
+          "question": "如果把“持续创新：基业长青，靠的是内部创新”转成课程任务，第一步练习是什么？",
+          "hint": "把行动写成可观察、可提交、可反馈的小任务。"
+        }
+      ]
+    },
+    {
+      "chapterIndex": 6,
+      "chapterTitle": "高速运转：快点，一定要走在市场前列",
+      "centralClaim": "本章围绕“高速运转：快点，一定要走在市场前列”展开，重点说明高速运转、快点、一定要走在市场前列如何改变现实场景，并要求学习者同时理解机会、机制与风险。",
+      "learningGoal": "学员能够解释“高速运转：快点，一定要走在市场前列”的关键机制，识别应用场景和风险边界，并设计一个可验证的行动任务。",
+      "candidateInsights": [
+        {
+          "candidateId": "ch6_cand_01",
+          "term": "高速运转",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 5,
+            "paragraphIndexEnd": 5,
+            "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+            "matchKeyword": "高速运转",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch6_cand_02",
+          "term": "快点",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "动作要快。与一些庞大的竞争对手相比，速度才是你的主要优势之一。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch6_cand_03",
+          "term": "一定要走在市场前列",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 1,
+            "paragraphIndexEnd": 1,
+            "quote": "动作要快。与一些庞大的竞争对手相比，速度才是你的主要优势之一。",
+            "matchKeyword": null,
+            "anchorStatus": "fallback_unmatched"
+          },
+          "supportScore": 0.35,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch6_cand_04",
+          "term": "技术日新月异的时代，速度意味着一切",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 8,
+            "paragraphIndexEnd": 9,
+            "quote": "技术日新月异的时代，速度意味着一切请记住，时间会影响到你业务的方方面面。技术永远不会停滞不前，它始终在不断地进化。只需要一项新技术就可以在一个晚...",
+            "matchKeyword": "技术日新月异的时代，速度意味着一切",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch6_cand_05",
+          "term": "毫不犹豫地一次次按下重启按钮",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 55,
+            "paragraphIndexEnd": 56,
+            "quote": "毫不犹豫地一次次按下重启按钮真正衡量成功的标准是你能挤在24小时之内进行的实验数量。",
+            "matchKeyword": "毫不犹豫地一次次按下重启按钮",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": true
+        },
+        {
+          "candidateId": "ch6_cand_06",
+          "term": "随时随地准备调整方向",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 86,
+            "paragraphIndexEnd": 87,
+            "quote": "随时随地准备调整方向永远不要放弃。今天很困难，明天会更糟，但是后天将阳光明媚。",
+            "matchKeyword": "随时随地准备调整方向",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch6_cand_07",
+          "term": "创新需要多元化，别只看到明星员工",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 135,
+            "paragraphIndexEnd": 136,
+            "quote": "创新需要多元化，别只看到明星员工这个世界并不会因人的智商而受到限制。但我们每个人都会受限于我们的勇气和创造力。",
+            "matchKeyword": "创新需要多元化，别只看到明星员工",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch6_cand_08",
+          "term": "去做一些截然不同的事情吧",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 158,
+            "paragraphIndexEnd": 159,
+            "quote": "去做一些截然不同的事情吧最开始他们不理睬你，接着他们嘲笑你，再接着他们开始反对你，然后你就赢了。",
+            "matchKeyword": "去做一些截然不同的事情吧",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch6_cand_09",
+          "term": "成为一个赢家的七件法宝",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 200,
+            "paragraphIndexEnd": 202,
+            "quote": "成为一个赢家的七件法宝不要担心失败；你只要做对一次就行了。德鲁·休斯敦",
+            "matchKeyword": "成为一个赢家的七件法宝",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch6_cand_10",
+          "term": "现在，迎接企业的腾飞吧",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 228,
+            "paragraphIndexEnd": 229,
+            "quote": "现在，迎接企业的腾飞吧请记住，在经历了所有那些尴尬、那些失败的实验、那些被取消的项目后，你只需要有一个项目能够脱颖而出，就能转变你的整个企业。大...",
+            "matchKeyword": "现在，迎接企业的腾飞吧",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch6_cand_11",
+          "term": "附录 你必须知道的与创新有关的概念",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 236,
+            "paragraphIndexEnd": 237,
+            "quote": "MakingElephantsFly附录你必须知道的与创新有关的概念",
+            "matchKeyword": "附录",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        },
+        {
+          "candidateId": "ch6_cand_12",
+          "term": "创新的神话",
+          "evidenceSpan": {
+            "chapterIndex": 6,
+            "paragraphIndex": 238,
+            "paragraphIndexEnd": 239,
+            "quote": "创新的神话关于创新的神话可以说比比皆是，而且所有这些神话听起来就好像是真的一样，这也正是为什么它们会不断传播开来。作为这个附录的一部分，我们会罗...",
+            "matchKeyword": "创新的神话",
+            "anchorStatus": "keyword"
+          },
+          "supportScore": 0.88,
+          "paradoxHint": "needs_review",
+          "selected": false
+        }
+      ],
+      "insights": [
+        {
+          "index": 1,
+          "insightId": "ch6_card_01",
+          "label": "高速运转的核心命题",
+          "question": "高速运转只是一个概念，还是会改变现实？",
+          "type": "choice",
+          "answer": "本章围绕“高速运转：快点，一定要走在市场前列”，把“高速运转”呈现为一种会改变行动环境的力量。学习者需要回到“高速运转”等原文证据，判断它影响的是连接方式、组织流程、市场结构还是决策边界，再把判断带入具体案例，避免只把它当成热词。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "有了这个判断，再看它怎样运作。",
+          "contentType": "core_claim",
+          "interactionType": "video_choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 6,
+              "paragraphIndex": 5,
+              "paragraphIndexEnd": 5,
+              "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+              "matchKeyword": "高速运转",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.76,
+          "contestabilityScore": 0.73,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.69,
+          "qualityScore": 0.825,
+          "options": [
+            "只是概念名词",
+            "会改变现实行动环境",
+            "只适合专家讨论"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "index": 2,
+          "insightId": "ch6_card_02",
+          "label": "高速运转的作用机制",
+          "question": "高速运转为什么不是术语，却会形成力量？",
+          "type": "choice",
+          "answer": "课程不把本章处理成名词清单，而是要求学习者找出“高速运转”如何连接技术、场景和行为变化。回答时要说明触发条件、受影响对象和可能后果；只有能说清机制，才算真正理解这一章。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "机制明确后，继续放到具体场景里。",
+          "contentType": "mechanism",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 6,
+              "paragraphIndex": 5,
+              "paragraphIndexEnd": 5,
+              "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+              "matchKeyword": "高速运转",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.6900000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.6100000000000001,
+          "questionScore": 0.77,
+          "qualityScore": 0.807,
+          "options": [
+            "说清机制和场景连接",
+            "记住更多术语",
+            "只看是否流行"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "index": 3,
+          "insightId": "ch6_card_03",
+          "label": "技术日新月异的时代，速度意味着一切带来的场景判断",
+          "question": "如果技术日新月异的时代，速度意味着一切成熟，哪个场景会先变化？",
+          "type": "open",
+          "answer": "本卡把“技术日新月异的时代，速度意味着一切”转成场景判断任务：学习者需要从书中证据出发，判断它先改变个人体验、组织流程、产业结构还是公共治理，并解释为什么这个场景比其他场景更早出现变化，同时标出一个可回读的证据锚点。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "场景判断之后，再检查风险边界。",
+          "contentType": "scenario_judgement",
+          "interactionType": "open",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 6,
+              "paragraphIndex": 8,
+              "paragraphIndexEnd": 9,
+              "quote": "技术日新月异的时代，速度意味着一切请记住，时间会影响到你业务的方方面面。技术永远不会停滞不前，它始终在不断地进化。只需要一项新技术就可以在一个晚...",
+              "matchKeyword": "技术日新月异的时代，速度意味着一切",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.9,
+          "transferScore": 0.79,
+          "questionScore": 0.69,
+          "qualityScore": 0.876
+        },
+        {
+          "index": 4,
+          "insightId": "ch6_card_04",
+          "label": "高速运转的风险边界",
+          "question": "高速运转越强，风险会自动变小吗？",
+          "type": "truefalse",
+          "answer": "不会。越强大的力量越需要讨论边界、治理和副作用。本章学习不能只抓机会，也要识别隐私、安全、伦理、权力或资源分配方面的代价，并把这些代价写成可以被讨论和复核的判断。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "识别风险后，再把观点转成行动。",
+          "contentType": "risk_tradeoff",
+          "interactionType": "truefalse",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 6,
+              "paragraphIndex": 11,
+              "paragraphIndexEnd": 11,
+              "quote": "沃尔玛的CIO罗林·福特（RollinFord）这样说道：“每天你醒来后所说的第一句话是‘我们有没有错过了什么？’你所要做的就是比别人跑得更快。...",
+              "matchKeyword": "风险",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.8500000000000001,
+          "transferScore": 0.55,
+          "questionScore": 0.69,
+          "qualityScore": 0.866,
+          "correctAnswer": "false"
+        },
+        {
+          "index": 5,
+          "insightId": "ch6_card_05",
+          "label": "把高速运转：快点，一定要走在市场前列转成行动任务",
+          "question": "学完本章只是理解概念，还是要提交练习？",
+          "type": "choice",
+          "answer": "把本章转化为一个可提交任务：选择一个真实行业或个人场景，写出“高速运转”带来的机会、受影响对象、关键风险和下一步验证方式。这个练习要能被同伴检查，而不是停留在泛泛感想。",
+          "feedbackCorrect": "判断到位",
+          "feedbackIncorrect": "回到证据",
+          "transition": "",
+          "contentType": "application_task",
+          "interactionType": "choice",
+          "evidenceSpans": [
+            {
+              "chapterIndex": 6,
+              "paragraphIndex": 5,
+              "paragraphIndexEnd": 5,
+              "quote": "高速运转的初创企业不会有这样的问题，它们的动作很快，可以在几个月内——不是几年，就完成从概念到产品发布的整个过程。你的团队也需要能做到同样的事情...",
+              "matchKeyword": "高速运转",
+              "anchorStatus": "keyword"
+            }
+          ],
+          "supportScore": 1.0,
+          "paradoxScore": 0.8300000000000001,
+          "contestabilityScore": 0.67,
+          "transferScore": 0.9,
+          "questionScore": 0.69,
+          "qualityScore": 0.83,
+          "options": [
+            "写一个机会-风险-验证表",
+            "背诵全部案例",
+            "只讨论未来想象"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "discussionQuestions": [
+        {
+          "question": "本章哪个观点最能改变你对高速运转的默认判断？",
+          "hint": "请引用至少一个观点卡和一个证据锚点。"
+        },
+        {
+          "question": "如果把“高速运转：快点，一定要走在市场前列”转成课程任务，第一步练习是什么？",
+          "hint": "把行动写成可观察、可提交、可反馈的小任务。"
+        }
+      ]
+    }
+  ],
+  "globalDiscussionQuestions": [
+    {
+      "question": "这些章节合在一起形成了怎样的判断框架？",
+      "hint": "用每章的核心力量、作用机制、风险边界和行动任务回答。"
+    },
+    {
+      "question": "哪些观点适合转成你所在领域的一周学习或验证任务？",
+      "hint": "优先选择能被证据验证的观点。"
+    }
+  ],
+  "inputContract": {
+    "targetPersona": {
+      "name": "默认知识学习者",
+      "cognitiveLevel": "intermediate",
+      "domain": "知识密集型阅读与未来议题学习",
+      "usageScenario": "自学、读书会、企业内训、主题工作坊"
+    },
+    "constraints": {
+      "targetCardsPerChapter": 5,
+      "answerMinLen": 80,
+      "answerMaxLen": 150,
+      "questionMaxLen": 40,
+      "transitionMinLen": 15,
+      "transitionMaxLen": 30,
+      "typesShare": {
+        "choice": 0.55,
+        "truefalse": 0.25,
+        "open": 0.2
+      },
+      "maxTypeRun": 2,
+      "maxRetries": 2
+    },
+    "citationStyle": "sentence",
+    "forbidClaims": [],
+    "riskLevel": "strict",
+    "outputLanguage": "zh-CN"
+  },
+  "workflowDiagnostics": {
+    "extractor": "deterministic candidates generated from chapter headings, source terms, and paragraph anchors",
+    "scorer": "heuristic scores computed from evidence support, question hooks, contestability, and transfer markers",
+    "reviewer": "strict hard-rule validation runs after asset generation",
+    "reviser": "local deterministic length fixes are embedded in templates; failed cards are reported for future local rewrite"
+  },
+  "qualityGate": {
+    "status": "pass",
+    "score": 0.929,
+    "checks": [
+      {
+        "gate": "evidence",
+        "passed": true,
+        "detail": "30/30 cards have readable evidence that shares a keyword with the card claim."
+      },
+      {
+        "gate": "accuracy",
+        "passed": true,
+        "detail": "Rule-level accuracy checks require claim-supported evidence, no forbidden claims, no unbounded absolutes, and no unsupported data-support phrases."
+      },
+      {
+        "gate": "interaction",
+        "passed": true,
+        "detail": "Every card maps to an interaction block."
+      },
+      {
+        "gate": "rhythm",
+        "passed": true,
+        "detail": "No chapter has more than two consecutive cards of the same type."
+      },
+      {
+        "gate": "user_adaptation",
+        "passed": true,
+        "detail": "Four need dimensions and scoring formula are present."
+      },
+      {
+        "gate": "service_handoff",
+        "passed": true,
+        "detail": "Certificate, learning profile, and recommendation paths are present."
+      },
+      {
+        "gate": "eight_asset_families",
+        "passed": true,
+        "detail": "All eight asset families required by the PDF are present."
+      },
+      {
+        "gate": "multimodal_materials",
+        "passed": true,
+        "detail": "Video prompts and audio blog scripts are present."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "passed": true,
+        "detail": "Hard rule failures: 0."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[1]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=128, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[1].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[1].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=寻找方向：不管是否寒冬，总有浪潮在往这里来, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.837, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=93, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=28, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[1].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[1].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=技术并没有你以为的那么重要, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=104, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=27, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[1].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=创新之前，别说你不屑于模仿, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[1].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[1].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[1].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[1].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[1].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[1].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[1].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[1].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[1].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[1].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=寻找方向：不管是否寒冬，总有浪潮在往这里来, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[1].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[1].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[1].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.842, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[2]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=123, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[2].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[2].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=准备启航：拉一支队伍，一起干吧, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=94, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=29, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[2].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[2].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=将初创团队成员控制在5人以内, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=104, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=27, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[2].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=过多的资金有可能是一味毒药, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[2].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[2].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[2].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[2].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[2].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[2].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[2].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[2].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[2].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[2].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=准备启航：拉一支队伍，一起干吧, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[2].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[2].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[2].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[3]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=126, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[3].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[3].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=打造产品：爱它，但不要太爱它, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=98, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=33, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[3].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[3].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=所谓的商业神话往往并不适用于你的世界, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=104, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=27, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[3].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=你最大的优势是已经输无可输, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[3].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[3].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[3].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[3].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[3].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[3].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[3].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[3].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[3].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[3].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=打造产品：爱它，但不要太爱它, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[3].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[3].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[3].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[4]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=132, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[4].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[4].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=锁定市场：你先吃透用户，用户才想吃透你, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=99, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=34, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[4].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[4].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=与其向用户疯狂推销，不如坐下来安静倾听, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=105, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=28, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[4].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=搜集数据，并用它检验你的创意, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[4].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[4].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[4].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[4].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[4].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[4].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[4].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[4].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[4].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[4].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=锁定市场：你先吃透用户，用户才想吃透你, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[4].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[4].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[4].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[5]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=125, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[5].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[5].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=持续创新：基业长青，靠的是内部创新, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=94, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=29, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[5].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[5].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=好好利用每一个员工的独特想法, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=108, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=31, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[5].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=最可怕的是没有从失败中获取新的洞见, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[5].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[5].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[5].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[5].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[5].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[5].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[5].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[5].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[5].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[5].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=持续创新：基业长青，靠的是内部创新, keywordInClaim=True, substantive=True, anchor=chapter_title_context"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[5].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[5].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[5].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.card_count",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, required=5-7"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.target_card_count",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "cardCount=5, target=5"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.type_distribution",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "choice=3/5(0.60), expected=3, truefalse=1/5(0.20), expected=1, open=1/5(0.20), expected=1"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.max_type_run",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "maxTypeRun=2, allowed<=2"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.transition_logic",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "At least one non-final transition should show logical continuation."
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.estimated_duration",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "estimatedMinutes=11.0, expected=10-20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "chapter.discussion_questions",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "discussionQuestionCount=2, required=1-2"
+      },
+      {
+        "gate": "extraction_workflow",
+        "code": "chapter.candidate_insights",
+        "path": "chapters[6]",
+        "passed": true,
+        "severity": "warn",
+        "detail": "candidateCount=12, target=10-12 when source terms allow"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[1].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=115, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[1].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[1].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[1].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[1].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[1].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[6].insights[1].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[6].insights[1].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=1"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[1].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=高速运转, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[1]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[1].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.825, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[2].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[2].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[2].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=16, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[2].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[2].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[2].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[6].insights[2].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[6].insights[2].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[2].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=高速运转, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[2]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[2].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.807, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[3].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=108, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[3].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=31, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[3].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[3].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[3].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[3].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=open"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.open.no_choice_fields",
+        "path": "chapters[6].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "open cards must not carry choice answer fields"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[3].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=技术日新月异的时代，速度意味着一切, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[3]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[3].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.876, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[4].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=81, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[4].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=16, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[4].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=15, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[4].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[4].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[4].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=truefalse"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.truefalse.correct_answer",
+        "path": "chapters[6].insights[4].correctAnswer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctAnswer='false', required string true/false"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[4].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=风险, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[4]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[4].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.866, required>=0.78"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.answer_length",
+        "path": "chapters[6].insights[5].answer",
+        "passed": true,
+        "severity": "hard",
+        "detail": "answerLen=84, required=80-150"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.question_length",
+        "path": "chapters[6].insights[5].question",
+        "passed": true,
+        "severity": "hard",
+        "detail": "questionLen=19, max=40"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.transition_length",
+        "path": "chapters[6].insights[5].transition",
+        "passed": true,
+        "severity": "hard",
+        "detail": "transitionLen=0, required=15-30 for non-final cards; final may be empty"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackCorrect.length",
+        "path": "chapters[6].insights[5].feedbackCorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackCorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.feedbackIncorrect.length",
+        "path": "chapters[6].insights[5].feedbackIncorrect",
+        "passed": true,
+        "severity": "hard",
+        "detail": "feedbackIncorrectLen=4, required<20"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.type",
+        "path": "chapters[6].insights[5].type",
+        "passed": true,
+        "severity": "hard",
+        "detail": "type=choice"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.options",
+        "path": "chapters[6].insights[5].options",
+        "passed": true,
+        "severity": "hard",
+        "detail": "optionCount=3, required=2-3"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.choice.correct_index",
+        "path": "chapters[6].insights[5].correctIndex",
+        "passed": true,
+        "severity": "hard",
+        "detail": "correctIndex=0"
+      },
+      {
+        "gate": "evidence",
+        "code": "card.evidence_claim_support",
+        "path": "chapters[6].insights[5].evidenceSpans",
+        "passed": true,
+        "severity": "hard",
+        "detail": "readback=True, keyword=高速运转, keywordInClaim=True, substantive=True, anchor=keyword"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.absolute_claim",
+        "path": "chapters[6].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "absolute expression=none"
+      },
+      {
+        "gate": "accuracy",
+        "code": "risk.unsupported_data_claim",
+        "path": "chapters[6].insights[5]",
+        "passed": true,
+        "severity": "hard",
+        "detail": "data-support phrase=none"
+      },
+      {
+        "gate": "book_breakdown_rules",
+        "code": "card.quality_threshold",
+        "path": "chapters[6].insights[5].qualityScore",
+        "passed": true,
+        "severity": "hard",
+        "detail": "qualityScore=0.83, required>=0.78"
+      }
+    ]
+  }
+}

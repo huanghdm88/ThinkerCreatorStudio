@@ -1,0 +1,42 @@
+{
+  "certificate": {
+    "name": "主题课程学习完成证书",
+    "completion_requirements": [
+      "完成全部模块互动",
+      "提交至少 80% 模块交付物",
+      "完成最终机会-风险-行动画布"
+    ]
+  },
+  "learning_profile": {
+    "dimensions": [
+      "寻找方向",
+      "准备启航",
+      "打造产品",
+      "锁定市场",
+      "持续创新",
+      "高速运转"
+    ],
+    "source_modules": [
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5",
+      "m6"
+    ]
+  },
+  "recommendations": [
+    {
+      "condition": "核心概念理解弱",
+      "next_path": "进入概念复习、案例解释或专家 Agent 诊断"
+    },
+    {
+      "condition": "实践提交充分但风险判断弱",
+      "next_path": "推荐风险辨析、伦理讨论和导师复盘"
+    },
+    {
+      "condition": "全部模块通过",
+      "next_path": "推荐形成主题展示页、读书会分享或行业应用提案"
+    }
+  ]
+}
